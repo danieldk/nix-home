@@ -7,6 +7,7 @@ in {
     ./cfg/dropbox.nix
     ./cfg/git.nix
     ./cfg/fzf.nix
+    ./cfg/rust.nix
     ./cfg/vim.nix
     ./cfg/zsh.nix
   ];
@@ -20,6 +21,7 @@ in {
     ncdu
     pass
     ripgrep
+    rustChannels.stable.rust
     skypeforlinux
     spotify
     tdesktop
