@@ -7,20 +7,20 @@
     ./cfg/zsh.nix
   ];
 
-  home.packages = [
-    pkgs.gcc
-    pkgs.gdb
-    pkgs.gnupg
-    pkgs.htop
-    pkgs.mpv
-    pkgs.ncdu
-    pkgs.pass
-    pkgs.ripgrep
-    pkgs.skypeforlinux
-    pkgs.spotify
-    pkgs.tdesktop
-    pkgs.unstable.makemkv
-    pkgs.youtube-dl
+  home.packages = with pkgs; [
+    gcc
+    gdb
+    gnupg
+    htop
+    mpv
+    ncdu
+    pass
+    ripgrep
+    skypeforlinux
+    spotify
+    tdesktop
+    unstable.makemkv
+    youtube-dl
   ];
 
   programs.emacs = {
