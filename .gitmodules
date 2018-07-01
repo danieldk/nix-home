@@ -1,0 +1,3 @@
+[submodule "overlays/rust-overlay"]
+	path = overlays/rust-overlay
+	url = https://github.com/mozilla/nixpkgs-mozilla.git
