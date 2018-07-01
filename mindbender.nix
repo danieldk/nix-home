@@ -4,6 +4,7 @@ let
   unstable = import <nixos-unstable> {};
 in {
   imports = [
+    ./cfg/dropbox.nix
     ./cfg/git.nix
     ./cfg/fzf.nix
     ./cfg/vim.nix
