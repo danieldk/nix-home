@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
-{
+let
+  unstable = import <nixos-unstable> {};
+in {
   imports = [
     ./cfg/git.nix
     ./cfg/fzf.nix
