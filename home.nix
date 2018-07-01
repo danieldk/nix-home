@@ -6,6 +6,7 @@
     pkgs.gdb
     pkgs.gnupg
     pkgs.htop
+    pkgs.mpv
     pkgs.ncdu
     pkgs.pass
     pkgs.ripgrep
