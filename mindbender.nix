@@ -3,6 +3,7 @@
 {
   imports = [
     ./cfg/git.nix
+    ./cfg/fzf.nix
     ./cfg/vim.nix
     ./cfg/zsh.nix
   ];
