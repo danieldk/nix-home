@@ -8,6 +8,7 @@ in {
     ./cfg/git.nix
     ./cfg/fzf.nix
     ./cfg/rust.nix
+    ./cfg/ssh.nix
     ./cfg/vim.nix
     ./cfg/zsh.nix
   ];
