@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./cfg/git.nix
     ./cfg/vim.nix
     ./cfg/zsh.nix
   ];
@@ -33,12 +34,5 @@
 
   programs.firefox = {
     enable = true;
-  };
-
-  programs.git = {
-    package = pkgs.gitAndTools.gitFull;
-    enable = true;
-    userName = "Daniël de Kok";
-    userEmail = "me@danieldk.eu";
   };
 }
