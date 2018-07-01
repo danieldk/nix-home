@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./cfg/vim.nix
+  ];
+
   home.packages = [
     pkgs.gcc
     pkgs.gdb
@@ -43,13 +47,5 @@
     enable = true;
     plugins = [ "git" "pass" ];
     theme = "agnoster";
-  };
-
-  programs.vim = {
-    enable = true;
-    settings = {
-      relativenumber = true;
-      number = true;
-    };
   };
 }
