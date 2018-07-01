@@ -3,6 +3,7 @@
 {
   imports = [
     ./cfg/vim.nix
+    ./cfg/zsh.nix
   ];
 
   home.packages = [
@@ -39,13 +40,5 @@
     enable = true;
     userName = "Daniël de Kok";
     userEmail = "me@danieldk.eu";
-  };
-
-  programs.zsh.enable = true;
-
-  programs.zsh.oh-my-zsh = {
-    enable = true;
-    plugins = [ "git" "pass" ];
-    theme = "agnoster";
   };
 }
