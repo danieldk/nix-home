@@ -23,7 +23,6 @@ in {
     ncdu
     pass
     ripgrep
-    rustChannels.stable.rust
     skypeforlinux
     spotify
     tdesktop
