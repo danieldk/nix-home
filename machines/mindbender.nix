@@ -7,6 +7,7 @@ in {
     ../cfg/dropbox.nix
     ../cfg/git.nix
     ../cfg/fzf.nix
+    ../cfg/openconnect.nix
     ../cfg/rust.nix
     ../cfg/ssh.nix
     ../cfg/vim.nix
