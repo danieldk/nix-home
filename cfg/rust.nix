@@ -2,6 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    rustChannels.stable.rust
+    latest.rustChannels.stable.rust
   ];
 }
