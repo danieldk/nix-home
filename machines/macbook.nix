@@ -1,11 +1,12 @@
 { pkgs, ... }:
 
 let
-  unstable = import <nixos-unstable> {};
+  unstable = import <nixpgs-unstable> {};
 in {
   imports = [
-    ../cfg/git.nix
+    ../cfg/emacs.nix
     ../cfg/fzf.nix
+    ../cfg/git.nix
     ../cfg/rust.nix
     ../cfg/ssh.nix
     ../cfg/vim.nix
