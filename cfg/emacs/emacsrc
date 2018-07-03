@@ -166,6 +166,7 @@
   :ensure t
   :config
   (my-local-leader-def
+   :states 'normal
    :keymaps 'rust-mode-map
    "c." 'cargo-process-repeat
    "cC" 'cargo-process-clean
