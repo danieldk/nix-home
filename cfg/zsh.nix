@@ -12,7 +12,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "pass" "vi-mode" ];
+      plugins = [ "git" "pass" "vi-mode" "z" ];
       theme = "agnoster";
     };
   };
