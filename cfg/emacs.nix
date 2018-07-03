@@ -17,6 +17,12 @@
       epkgs.swiper
       epkgs.use-package
       epkgs.which-key
+
+      # Rust
+      epkgs.cargo
+      epkgs.flycheck-rust
+      epkgs.racer
+      epkgs.rust-mode
     ];
   };
 
