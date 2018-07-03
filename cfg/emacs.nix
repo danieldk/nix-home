@@ -12,6 +12,7 @@
       epkgs.flycheck
       epkgs.general
       epkgs.ivy
+      epkgs.leuven-theme
       epkgs.magit
       epkgs.nix-mode
       epkgs.swiper

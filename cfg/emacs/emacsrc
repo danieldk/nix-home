@@ -5,13 +5,14 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-
 (eval-when-compile
   (require 'use-package))
 
 (require 'bind-key)
 
 (use-package diminish)
+
+(setq inhibit-startup-screen t)
 
 (when window-system
   (dolist (mode
@@ -24,6 +25,10 @@
 
 (when window-system
   (set-frame-font "Source Code Pro 14"))
+
+(use-package leuven-theme
+  :config
+  (load-theme 'leuven t))
 
 (use-package evil
   :init
