@@ -5,6 +5,7 @@ let
 in {
   imports = [
     ../cfg/dropbox.nix
+    ../cfg/emacs.nix
     ../cfg/git.nix
     ../cfg/fzf.nix
     ../cfg/openconnect.nix
@@ -29,15 +30,6 @@ in {
     unstable.makemkv
     youtube-dl
   ];
-
-  programs.emacs = {
-    enable = true;
-    extraPackages = epkgs: [
-      epkgs.evil
-      epkgs.magit
-      epkgs.nix-mode
-    ];
-  };
 
   programs.firefox = {
     enable = true;

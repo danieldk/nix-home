@@ -1,0 +1,142 @@
+(require 'package)
+
+(setq package-archives nil)
+
+(setq package-enable-at-startup nil)
+(package-initialize)
+
+
+(eval-when-compile
+  (require 'use-package))
+
+(require 'bind-key)
+
+(use-package diminish)
+
+(when window-system
+  (dolist (mode
+	   '(tool-bar-mode
+	     tooltip-mode
+	     scroll-bar-mode
+	     menu-bar-mode
+	     blink-cursor-mode))
+    (funcall mode 0)))
+
+(when window-system
+  (set-frame-font "Source Code Pro 14"))
+
+(use-package evil
+  :init
+  (setq evil-want-C-i-jump nil)
+
+  :config
+  (evil-mode 1))
+
+(use-package which-key
+  :diminish which-key-mode
+  :init (which-key-mode)
+
+  :config
+  (which-key-setup-side-window-right-bottom)
+  (setq which-key-sort-order 'which-key-key-order-alpha
+	  which-key-side-window-max-width 0.33
+	  which-key-idle-delay 0.05)
+)
+
+(use-package general
+  :config
+  (general-evil-setup t)
+
+  (general-def 'motion
+    ";" 'evil-ex
+    ":" 'evil-repeat-find-char)
+
+  (general-create-definer my-leader-def
+    :prefix "SPC")
+
+  (general-create-definer my-local-leader-def
+    :prefix "SPC m")
+
+  (my-leader-def
+   :keymaps 'normal
+   "b"  '(:ignore t :which-key "buffer")
+   "bb" '(ivy-switch-buffer :which-key "switch buffer")
+   "bd" '(kill-this-buffer :which-key "kill buffer")
+
+   "f"  '(:ignore t :which-key "file")
+   "ff" '(find-file :which-key "find")
+   "fs" '(save-buffer :which-key "save")
+   "fr" '(ivy-recentf :which-key "recent file")
+
+   "m"  '(:ignore t :which-key "mode")
+
+   "t"  '(:ignore t :which-key "toggle")
+   "tf" '(toggle-frame-fullscreen :which-key "fullscreen")
+
+   "wv" '(split-window-horizontally :which-key "split vertical")
+   "ws" '(split-window-vertically :which-key "split horizontal")
+   "wk" '(evil-window-up :which-key "up")
+   "wj" '(evil-window-down :which-key "down")
+   "wh" '(evil-window-left :which-key "left")
+   "wl" '(evil-window-right :which-key "right")
+   "wd" '(delete-window :which-key "delete")
+
+   "q"  '(:ignore t :which-key "quit")
+   "qq" '(save-buffers-kill-emacs :which-key "quit")))
+
+(use-package ivy
+  :init (ivy-mode 1)
+  :config
+  (setq ivy-use-virtual-buffers t
+	  ivy-hight 20
+	  ivy-count-format "(%d/%d) "
+	  ivy-initial-inputs-alist nil)
+  :diminish ivy-mode)
+
+
+(use-package counsel
+  :demand
+  :bind*                           ; load counsel when pressed
+  (("M-x"     . counsel-M-x)       ; M-x use counsel
+   ("C-x C-f" . counsel-find-file) ; C-x C-f use counsel-find-file
+   ("C-x C-r" . counsel-recentf)   ; search recently edited files
+   ("C-c f"   . counsel-git)       ; search for files in git repo
+   ("C-c s"   . counsel-git-grep)  ; search for regexp in git repo
+   ("C-c /"   . counsel-rg)        ; search for regexp in git repo using ag
+   ("C-c l"   . counsel-locate)    ; search for files or else using locate
+   ("M-y"     . counsel-yank-pop))
+
+  :config
+  (my-leader-def
+    :keymaps 'normal
+    "SPC" '(counsel-M-x :which-key "M-x")
+    "fo"  '(counsel-find-file :which-key "find file")
+    "s"   '(:ignore t :which-key "search")
+    "sc"  '(counsel-unicode-char :which-key "find character")
+    "sg"  '(counsel-rg :which-key "rg git")))
+
+(use-package swiper
+  :bind*
+  (("\C-s" . swiper))
+  :config
+  (my-leader-def
+    :keymaps 'normal
+    "ss" '(swiper :which-key "swiper")))
+
+(use-package magit
+  :config
+
+  (my-leader-def
+    :keymaps 'normal
+   "g"  '(:ignore t :which-key "Git")
+   "gs" 'magit-status)
+
+  (use-package evil-magit))
+
+(use-package company
+  :diminish company-mode
+  :init (company-mode))
+
+(use-package flycheck
+  :init (global-flycheck-mode)
+  :diminish flycheck-mode)
