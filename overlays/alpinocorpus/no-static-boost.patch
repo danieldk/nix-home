@@ -1,8 +1,23 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 54c925d..afd4bb5 100644
+index 925331b..5923877 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -47,8 +47,6 @@ endif()
+@@ -32,13 +32,8 @@ include_directories(
+   ${AlpinoCorpus_BINARY_DIR}/include
+ )
+ 
+-if (APPLE OR WIN32)
+-  set(Boost_USE_STATIC_LIBS ON)
+-else(APPLE OR WIN32)
+-  set(Boost_USE_STATIC_LIBS OFF)
+-endif(APPLE OR WIN32)
+-
+ set(Boost_USE_MULTITHREADED ON)
++set(Boost_USE_STATIC_LIBS OFF)
+ set(Boost_USE_STATIC_RUNTIME OFF)
+ 
+ if(BOOST_ROOT)
+@@ -47,8 +42,6 @@ endif()
  
  include(GNUInstallDirs REQUIRED)
  

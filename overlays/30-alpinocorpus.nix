@@ -1,6 +1,8 @@
 self: super: {
 
-alpinocorpus = with super; stdenv.mkDerivation rec {
+alpinocorpus = with super; let
+  unstable = import <nixpkgs-unstable> {};
+in stdenv.mkDerivation rec {
   name = "alpinocorpus-${version}";
   version = "2.8.1";
 
@@ -16,11 +18,11 @@ alpinocorpus = with super; stdenv.mkDerivation rec {
   ];
 
   nativeBuildInputs = [
-    cmake
+    unstable.cmake
   ];
 
   buildInputs = [
-    boost db dbxml libxml2 libxslt xercesc xqilla
+    boost db dbxml libiconv libxml2 libxslt xercesc xqilla
   ];
 
   meta = with stdenv.lib; {

@@ -1,6 +1,8 @@
 self: super: {
 
-dact = with super; stdenv.mkDerivation rec {
+dact = with super; let
+  unstable = import <nixpkgs-unstable> {};
+in stdenv.mkDerivation rec {
   name = "dact-${version}";
   version = "2.6.6";
 
@@ -12,7 +14,7 @@ dact = with super; stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [
-    cmake git
+    unstable.cmake git
   ];
 
   buildInputs = [
