@@ -15,7 +15,7 @@ dbxml = with super; stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
-    db xercesc xqilla
+    db62 xercesc xqilla
   ];
 
   configureFlags = [

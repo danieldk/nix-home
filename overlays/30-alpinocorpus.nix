@@ -1,7 +1,7 @@
 self: super: {
 
 alpinocorpus = with super; let
-  unstable = import <nixpkgs-unstable> {};
+  unstable = if stdenv.isDarwin then import <nixpkgs-unstable> {} else import <nixos-unstable> {};
 in stdenv.mkDerivation rec {
   name = "alpinocorpus-${version}";
   version = "2.8.1";
@@ -22,7 +22,7 @@ in stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
-    boost db dbxml libiconv libxml2 libxslt xercesc xqilla
+    boost db62 dbxml libiconv libxml2 libxslt xercesc xqilla
   ];
 
   meta = with stdenv.lib; {
