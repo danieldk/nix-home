@@ -19,17 +19,17 @@ in {
   home.packages = with pkgs; [
     gcc
     gdb
-    gnupg
+    unstable.gnupg
     htop
-    mpv
+    unstable.mpv
     ncdu
-    pass
-    ripgrep
+    unstable.pass
+    unstable.ripgrep
     skypeforlinux
     spotify
-    tdesktop
+    unstable.tdesktop
     unstable.makemkv
-    youtube-dl
+    unstable.youtube-dl
   ];
 
   programs.firefox = {

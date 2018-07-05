@@ -14,11 +14,11 @@ in {
   ];
 
   home.packages = with pkgs; [
-    gnupg
+    unstable.gnupg
     htop
     ncdu
-    pass
-    ripgrep
-    youtube-dl
+    unstable.pass
+    unstable.ripgrep
+    unstable.youtube-dl
   ];
 }
