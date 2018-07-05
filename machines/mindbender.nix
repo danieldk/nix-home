@@ -29,6 +29,7 @@ in {
     spotify
     unstable.tdesktop
     unstable.makemkv
+    unstable.mupdf
     unstable.youtube-dl
   ];
 
