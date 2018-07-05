@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  unstable = import <nixpgs-unstable> {};
+  unstable = import <nixpkgs-unstable> {};
 in {
   imports = [
     ../cfg/emacs.nix
