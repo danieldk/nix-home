@@ -9,6 +9,7 @@ in {
     ../cfg/git.nix
     ../cfg/fzf.nix
     ../cfg/openconnect.nix
+    ../cfg/restic.nix
     ../cfg/rust.nix
     ../cfg/ssh.nix
     ../cfg/vim.nix

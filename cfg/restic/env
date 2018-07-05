@@ -1,0 +1,3 @@
+export B2_ACCOUNT_ID=$(pass show Storage/Backblaze/AppKey | grep AccountID: | cut -d ' ' -f 2)
+export B2_ACCOUNT_KEY=$(pass Storage/Backblaze/AppKey | head -n1)
+export RESTIC_PASSWORD=$(pass Storage/Restic)
