@@ -132,11 +132,29 @@
   :config
 
   (my-leader-def
-    :keymaps 'normal
+   :keymaps 'normal
    "g"  '(:ignore t :which-key "Git")
    "gs" 'magit-status)
 
   (use-package evil-magit))
+
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode 1)
+  (progn
+    (setq projectile-enable-caching t)
+    (setq projectile-require-project-root nil)
+    (setq projectile-completion-system 'ivy)
+    (add-to-list 'projectile-globally-ignored-files ".DS_Store"))
+  (my-leader-def
+   :keymaps 'normal
+   :prefix "SPC"
+   "p"  '(:ignore t :which-key "Project")
+   "pf" '(projectile-find-file :which-key "Find in project")
+   "pl" '(projectile-switch-project :which-key "Switch project"))
+ 
+  :diminish projectile-mode)
 
 (use-package company
   :diminish company-mode

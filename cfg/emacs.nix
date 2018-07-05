@@ -15,6 +15,7 @@
       epkgs.leuven-theme
       epkgs.magit
       epkgs.nix-mode
+      epkgs.projectile
       epkgs.swiper
       epkgs.use-package
       epkgs.which-key
