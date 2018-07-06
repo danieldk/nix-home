@@ -8,6 +8,7 @@ in {
     ../cfg/emacs.nix
     ../cfg/git.nix
     ../cfg/fzf.nix
+    ../cfg/mail.nix
     ../cfg/openconnect.nix
     ../cfg/restic.nix
     ../cfg/rust.nix
