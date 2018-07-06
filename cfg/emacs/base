@@ -1,3 +1,5 @@
+;; -*- mode: emacs-lisp; -*-
+
 (require 'package)
 
 (setq package-archives nil)
@@ -24,7 +26,7 @@
     (funcall mode 0)))
 
 (when window-system
-  (set-frame-font "Source Code Pro 14"))
+  (set-frame-font "Source Code Pro 12"))
 
 (use-package leuven-theme
   :config

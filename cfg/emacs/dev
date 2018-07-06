@@ -1,3 +1,5 @@
+;; -*- mode: emacs-lisp; -*-
+
 (use-package company
   :diminish company-mode
   :init (company-mode))
@@ -7,11 +9,9 @@
   :diminish flycheck-mode)
 
 (use-package rust-mode
-  :ensure t
   :mode "\\.rs\\'")
 
 (use-package racer
-  :ensure t
   :after rust-mode
   :diminish racer-mode
   :config
@@ -22,13 +22,11 @@
   (setq company-tooltip-align-annotations t))
 
 (use-package flycheck-rust
-  :ensure t
   :after rust-mode
   :config
   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
 (use-package cargo
-  :ensure t
   :config
   (my-local-leader-def
    :states 'normal
