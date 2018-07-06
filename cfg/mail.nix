@@ -1,11 +1,12 @@
 { pkgs, ... }:
 
-{
-
+let
+  unstable = import <nixos-unstable> {};
+in {
   home.packages = with pkgs; [
     isync
     msmtp
-    mu
+    unstable.mu
   ];
 
   home.file = {
