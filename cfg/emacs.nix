@@ -1,14 +1,18 @@
 { pkgs, ... }:
 
-{
+let
+  unstable = import <nixos-unstable> {};
+in {
   programs.emacs = {
     enable = true;
+    package = unstable.emacs;
     extraPackages = epkgs: [
       epkgs.company
       epkgs.counsel
       epkgs.diminish
       epkgs.evil
       epkgs.evil-magit
+      epkgs.evil-mu4e
       epkgs.flycheck
       epkgs.general
       epkgs.ivy
@@ -31,5 +35,11 @@
   home.file = {
     ".emacs".text = builtins.readFile ./emacs/base +
       builtins.readFile ./emacs/dev;
+    ".emacs-mu4e".text = builtins.readFile ./emacs/base +
+      builtins.readFile ./emacs/mu4e;
+  };
+
+  programs.zsh.shellAliases = {
+    mue = "emacs -q --load ~/.emacs-mu4e";
   };
 }
