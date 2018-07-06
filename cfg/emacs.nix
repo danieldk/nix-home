@@ -29,6 +29,7 @@
   };
 
   home.file = {
-    ".emacs".source = ./emacs/emacsrc;
+    ".emacs".text = builtins.readFile ./emacs/base +
+      builtins.readFile ./emacs/dev;
   };
 }
