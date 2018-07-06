@@ -1,7 +1,9 @@
 { pkgs, ... }:
 
 let
-  unstable = import <nixos-unstable> {};
+  unstable = with pkgs.stdenv;
+  if isDarwin then import <nixpkgs-unstable> {}
+  else import <nixos-unstable> {};
 in {
   programs.emacs = {
     enable = true;
