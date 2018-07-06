@@ -18,6 +18,7 @@ in {
   ];
 
   home.packages = with pkgs; [
+    binutils
     gcc
     gdb
     unstable.gnupg
