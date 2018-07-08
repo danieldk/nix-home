@@ -1,0 +1,134 @@
+;; -*- mode: emacs-lisp; -*-
+
+(use-package org
+   :config
+   (my-local-leader-def
+     :states 'normal
+     :keymaps 'org-mode-map
+     "a" '(org-agenda :which-key "agenda")
+     "A" '(org-archive-subtree :which-key "archive")
+     "d" '(org-deadline :which-key "deadline")
+     "e" '(org-export-dispatch :which-key "export")
+     "l" '(org-open-at-point :which-key "open")
+     "n" '(org-narrow-to-subtree :which-key "narrow")
+     "N" '(widen :which-key "widen")
+     "P" '(org-set-property :which-key "property")
+     "s" '(org-edit-special :which-key "edit special")
+     ;":" '(org-set-tags :which-key "Tags")
+
+     ;; insert
+     "i"  '(:ignore t :which-key "insert")
+     "ia" '(org-attach :which-key "attach")
+     "if" '(org-footnote-new :which-key "footnote")
+     "il" '(org-insert-link :which-key "link")
+
+     ;; tables
+     "t"  '(:ignore t :which-key "table")
+     "tdc" '(org-table-delete-column)
+     "tdr" '(org-table-kill-row)
+     "te" '(org-table-eval-formula)
+     "tE" '(org-table-export)
+     "th" '(org-table-previous-field)
+     "tH" '(org-table-move-column-left)
+     "tic" '(org-table-insert-column)
+     "tih" '(org-table-insert-hline)
+     "tiH" '(org-table-hline-and-move)
+     "tir" '(org-table-insert-row)
+     "tI" '(org-table-import)
+     "tj" '(org-table-next-row)
+     "tJ" '(org-table-move-row-down)
+     "tK" '(org-table-move-row-up)
+     "tl" '(org-table-next-field)
+     "tL" '(org-table-move-column-right)
+     "tn" '(org-table-create)
+     "tN" '(org-table-create-with-table.el)
+     "tr" '(org-table-recalculate)
+     "ts" '(org-table-sort-lines)
+     "ttf" '(org-table-toggle-formula-debugger)
+     "tto" '(org-table-toggle-coordinate-overlays)
+     "tw" '(org-table-wrap-region))
+
+   (my-leader-def 'normal
+     ;; Global agenda mappings
+     "ao"  '(:ignore t :which-key "org agenda")
+     "ao#" '(org-agenda-list-stuck-projects :which-key "agenda stuck")
+     "ao/" '(org-occur-in-agenda-files)
+     "aoa" '(org-agenda-list :which-key "agenda")
+     "aom" '(org-tags-view)
+     "aoo" '(org-agenda)
+     "aos" '(org-search-view)
+     "aot" '(org-todo-list)
+     "aov" '(org-store-agenda-views)
+
+     ;; other
+     "aoO" '(org-clock-out)
+     "aoc" '(org-capture)
+     "aol" '(org-store-link))
+
+   (general-define-key
+    :keymaps 'org-agenda-mode-map
+    "h" 'evil-backward-char
+    "l" 'evil-forward-char
+    "j" 'evil-next-line
+    "k" 'evil-previous-line)
+
+   (add-hook 'org-mode-hook
+	     (lambda ()
+	       (add-to-list 'write-file-functions 'delete-trailing-whitespace))
+
+	     ;; Display images immediately after code block execution.
+	     (add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images))
+
+
+   (setq org-agenda-files '("~/git/org/")
+	  org-attach-commit nil
+	  org-directory "~/git/org/"
+	  org-mobile-directory "~/Dropbox/Apps/MobileOrg"
+	  org-mobile-inbox-for-pull (expand-file-name "flagged.org" org-directory)
+	  org-mobile-force-id-on-agenda-items nil
+
+	  org-preview-latex-default-process 'dvisvgm
+	  org-latex-pdf-process
+	  '("pdflatex -interaction nonstopmode -output-directory %o %f"
+	    "bibtex %b"
+	    "pdflatex -interaction nonstopmode -output-directory %o %f"
+	    "pdflatex -interaction nonstopmode -output-directory %o %f")
+	  org-latex-table-scientific-notation "$%s\\times10^{%s}$"
+
+	  ; https://github.com/fniessen/org-html-themes/issues/60
+	  org-html-keep-old-src t
+
+	  org-capture-templates
+	  '(("t" "Todo" entry (file+headline "~/git/org/tasks.org" "Tasks")
+	     "* TODO %?\n  %i\n  %a")
+	    ("j" "Journal" entry (file+datetree "~/git/org/journal.org")
+	     "* %?\nEntered on %U\n  %i\n  %a"))
+	  org-refile-targets '((nil :maxlevel . 2)
+			       (org-agenda-files :maxlevel . 2))
+	  org-outline-path-complete-in-steps nil
+	  org-refile-use-outline-path t
+	  org-pretty-entities t)
+
+   (org-babel-do-load-languages
+    'org-babel-load-languages
+    '((gnuplot . t)
+      (python . t)
+      (latex . t)
+      (shell . t))))
+
+(use-package org-evil
+  :after org)
+;  :diminish evil-org-mode
+;  :config
+;  (add-hook 'org-mode-hook 'evil-org-mode)
+;  (add-hook 'evil-org-mode-hook
+;	      (lambda ()
+;		(evil-org-set-key-theme)))
+;  (require 'evil-org-agenda)
+;  :diminish evil-org-mode)
+
+(use-package org-bullets
+  :after org
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (setq org-bullets-bullet-list '("①" "②" "③ " "④" "⑤" "⑥" "⑦" "⑧" "⑨" "⑩" "⑪" "⑫" "⑬" "⑭" "⑮")))
