@@ -20,6 +20,7 @@ in {
   home.packages = with pkgs; [
     binutils
     unstable.corebird
+    fsa6
     gcc
     gdb
     google-chrome
