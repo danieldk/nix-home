@@ -19,8 +19,10 @@ in {
 
   home.packages = with pkgs; [
     binutils
+    unstable.corebird
     gcc
     gdb
+    google-chrome
     unstable.gnupg
     htop
     unstable.mpv
