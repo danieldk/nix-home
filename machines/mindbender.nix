@@ -9,6 +9,7 @@ in {
     ../cfg/git.nix
     ../cfg/fzf.nix
     ../cfg/mail.nix
+    ../cfg/mupdf.nix
     ../cfg/openconnect.nix
     ../cfg/restic.nix
     ../cfg/rust.nix
@@ -19,6 +20,7 @@ in {
 
   home.packages = with pkgs; [
     binutils
+    unstable.bubblewrap
     unstable.corebird
     fsa6
     gcc
@@ -34,7 +36,6 @@ in {
     spotify
     unstable.tdesktop
     unstable.makemkv
-    unstable.mupdf
     unstable.youtube-dl
   ];
 
