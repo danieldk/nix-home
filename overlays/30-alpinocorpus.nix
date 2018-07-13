@@ -4,18 +4,14 @@ alpinocorpus = with super; let
   unstable = if stdenv.isDarwin then import <nixpkgs-unstable> {} else import <nixos-unstable> {};
 in stdenv.mkDerivation rec {
   name = "alpinocorpus-${version}";
-  version = "2.8.1";
+  version = "2.8.2";
 
   src = fetchFromGitHub {
     owner = "rug-compling";
     repo = "alpinocorpus";
-    rev = "2.8.1";
-    sha256 = "16wvydlapvghdnynv1kcq16i017r32q4566dvmil8nnkj5h1pwhq";
+    rev = "2.8.2";
+    sha256 = "17lfa3104653j0v1kis7jzp70lpdy8l89f6wwlh3mbjw2bi8hj7z";
   };
-
-  patches = [ 
-    ./alpinocorpus/no-static-boost.patch
-  ];
 
   nativeBuildInputs = [
     unstable.cmake
