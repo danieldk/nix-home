@@ -157,3 +157,9 @@
    "pl" '(projectile-switch-project :which-key "Switch project"))
  
   :diminish projectile-mode)
+
+(use-package markdown-mode
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+	   ("\\.md\\'" . markdown-mode)
+	   ("\\.markdown\\'" . markdown-mode)))

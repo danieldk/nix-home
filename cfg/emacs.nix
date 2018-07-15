@@ -20,6 +20,7 @@ in {
       epkgs.ivy
       epkgs.leuven-theme
       epkgs.magit
+      epkgs.markdown-mode
       epkgs.nix-mode
       epkgs.projectile
       epkgs.swiper
