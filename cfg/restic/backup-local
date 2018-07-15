@@ -2,6 +2,22 @@
 
 source ${HOME}/.config/restic/env
 
+CASTLE_BACKUP_DIR=${HOME}/.var/backup/castle/
+
+if [ ! -d ${CASTLE_BACKUP_DIR} ] ; then
+  mkdir -p ${CASTLE_BACKUP_DIR}
+fi
+
+sshfs root@castle.danieldk.eu:/srv/www ${CASTLE_BACKUP_DIR}
+
+if [ -d ${CASTLE_BACKUP_DIR}/danieldk.eu ]; then
+  restic -r sftp:umbrella:/data/daniel-backup backup --tag=castle ${CASTLE_BACKUP_DIR}
+else
+  >&2 echo "Could not find danieldk.eu in castle backup directory."
+fi
+
+fusermount -u ${CASTLE_BACKUP_DIR}
+
 restic -r sftp:umbrella:/data/daniel-backup backup --tag=dropbox ~/Dropbox
 
 restic -r sftp:umbrella:/data/daniel-backup backup -e target --tag=git ~/git

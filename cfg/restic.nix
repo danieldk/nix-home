@@ -5,6 +5,7 @@ let
 in {
   home.packages = with pkgs; [
     unstable.restic
+    sshfs
   ];
 
   home.file = {
