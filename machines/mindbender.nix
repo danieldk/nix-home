@@ -21,6 +21,7 @@ in {
   home.packages = with pkgs; [
     binutils
     unstable.bubblewrap
+    cargo-asm
     unstable.corebird
     fsa6
     gcc
