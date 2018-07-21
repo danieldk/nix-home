@@ -1,0 +1,13 @@
+#!/bin/sh
+
+source ${HOME}/.config/restic/env
+
+echo
+
+#restic -r sftp:umbrella:/data/daniel-backup backup --tag=dropbox ~/Dropbox
+
+restic -r b2:restic-mindbender backup -e target --tag=git ~/git
+
+restic -r b2:restic-mindbender backup --tag=mail ~/Maildir
+
+restic -r b2:restic-mindbender forget --prune -H 10 -d 10 -w 10 -m 10 -y 10 
