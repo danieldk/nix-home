@@ -23,6 +23,8 @@ in {
     unstable.bubblewrap
     cargo-asm
     unstable.corebird
+    gnome3.dconf
+    gnome3.defaultIconTheme
     fsa6
     gcc
     gdb
