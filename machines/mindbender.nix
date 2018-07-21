@@ -35,7 +35,7 @@ in {
     ncdu
     unstable.pass
     unstable.ripgrep
-    skypeforlinux
+    unstable.skypeforlinux
     spotify
     unstable.tdesktop
     unstable.makemkv
