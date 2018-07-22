@@ -13,7 +13,9 @@ in {
       epkgs.counsel
       epkgs.diminish
       epkgs.evil
-      epkgs.evil-magit
+      (epkgs.evil-magit.overrideAttrs (attrs: {
+        nativeBuildInputs = (attrs.nativeBuildInputs or []) ++ [ pkgs.git ];
+      }))
       epkgs.evil-mu4e
       epkgs.flycheck
       epkgs.general
