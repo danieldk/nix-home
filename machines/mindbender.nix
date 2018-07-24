@@ -31,8 +31,10 @@ in {
     google-chrome
     unstable.gnupg
     htop
+    jupyterEnv
     unstable.mpv
     ncdu
+    pandocEnv
     unstable.pass
     unstable.ripgrep
     unstable.skypeforlinux
