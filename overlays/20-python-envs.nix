@@ -1,15 +1,18 @@
 self: super: {
 
-jupyterEnv = with super; let
-  unstable = if stdenv.isDarwin then import <nixpkgs-unstable> {} else import <nixos-unstable> {};
-  skl = unstable.python36.pkgs.scikitlearn.overridePythonAttrs (oldAttrs: { checkPhase = ""; });
-in unstable.python36.withPackages (ps: with ps; [
-  matplotlib
-  notebook
-  numpy
-  skl
-  scipy
-  tensorflowWithoutCuda
-]);
+  jupyterEnv =
+    let unstable = import (if self.stdenv.isDarwin then <nixpkgs-unstable> else <nixos-unstable>) {};
+  skl = unstable.python36Packages.scikitlearn.overridePythonAttrs (oldAttrs: { checkPhase = ""; });
+  in self.myEnvFun {
+    name = "jupyter36";
 
+    buildInputs = with unstable.python36Packages; [
+      matplotlib
+      notebook
+      numpy
+      skl
+      scipy
+      tensorflowWithoutCuda
+    ];
+  };
 }
