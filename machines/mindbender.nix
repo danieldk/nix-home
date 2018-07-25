@@ -23,6 +23,7 @@ in {
     unstable.bubblewrap
     cargo-asm
     unstable.corebird
+    danieldk.dbxml
     gnome3.dconf
     gnome3.defaultIconTheme
     fsa6
