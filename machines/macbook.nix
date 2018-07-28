@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
-let
-  unstable = import <nixpkgs-unstable> {};
-in {
+{
   imports = [
     ../cfg/emacs.nix
     ../cfg/fzf.nix
@@ -14,12 +12,13 @@ in {
   ];
 
   home.packages = with pkgs; [
-    unstable.gnupg
+    dact
+    gnupg
     htop
     ncdu
-    unstable.pass
-    unstable.ripgrep
-    unstable.youtube-dl
+    pass
+    ripgrep
+    youtube-dl
 
     # Environments
     pandocEnv
