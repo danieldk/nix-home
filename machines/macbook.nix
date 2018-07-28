@@ -22,6 +22,10 @@
 
     # Environments
     pandocEnv
+
+    # Fonts
+    source-code-pro
+
     Dash
     iTerm2
   ];
