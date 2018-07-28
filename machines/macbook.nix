@@ -20,5 +20,7 @@ in {
     unstable.pass
     unstable.ripgrep
     unstable.youtube-dl
+    Dash
+    iTerm2
   ];
 }
