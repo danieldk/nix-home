@@ -62,4 +62,18 @@ installApplication =
     '';
     homepage = https://www.obdev.at/products/launchbar;
   };
+
+  TableFlip = self.installApplication rec {
+    name = "TableFlip";
+    version = "1.1.8";
+    sourceRoot = "TableFlip.app";
+    src = super.fetchurl {
+    url = "https://s3.amazonaws.com/tableflip/TableFlip-v${version}.zip";
+      sha256 = "0e1e735c90c36ea7e595a915ad974975879785dc79383e0386f866ceb67a5bef";
+    };
+    description = ''
+      TableFlip is a visual Markdown table editor.
+    '';
+    homepage = https://tableflipapp.com/;
+  };
 }

@@ -28,6 +28,7 @@
 
     Dash
     iTerm2
+    TableFlip
   ];
 
   home.sessionVariables = {
