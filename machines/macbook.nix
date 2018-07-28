@@ -20,6 +20,9 @@ in {
     unstable.pass
     unstable.ripgrep
     unstable.youtube-dl
+
+    # Environments
+    pandocEnv
     Dash
     iTerm2
   ];
