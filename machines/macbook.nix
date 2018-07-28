@@ -26,4 +26,8 @@ in {
     Dash
     iTerm2
   ];
+
+  home.sessionVariables = {
+    NIX_PATH = "$HOME/git/nixpkgs:nixpkgs=$HOME/git/nixpkgs:nixpkgs-unstable=$HOME/git/nixpkgs";
+  };
 }
