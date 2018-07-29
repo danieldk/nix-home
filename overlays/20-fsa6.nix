@@ -10,7 +10,7 @@ fsa6 = with super; stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [ autoPatchelfHook makeWrapper ];
-  buildInputs = [ glibc_2_27 tcl-8_5 tk-8_5 ];
+  buildInputs = [ tcl-8_5 tk-8_5 ];
 
   dontStrip = true;
 

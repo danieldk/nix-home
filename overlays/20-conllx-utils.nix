@@ -1,9 +1,6 @@
 self: super: {
 
-  conllx-utils = with super; let
-    unstable = if stdenv.isDarwin then import <nixpkgs-unstable> {}
-      else import <nixos-unstable> {};
-  in unstable.rustPlatform.buildRustPackage rec {
+  conllx-utils = with super; rustPlatform.buildRustPackage rec {
   name = "conllx-utils-${version}";
   version = "0.4.2";
 

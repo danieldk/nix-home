@@ -1,10 +1,8 @@
 { pkgs, ... }:
 
-let
-  unstable = import <nixos-unstable> {};
-in {
+{
   home.packages = with pkgs; [
-    unstable.dropbox
+    dropbox
   ];
 
   systemd.user.services.dropbox = {

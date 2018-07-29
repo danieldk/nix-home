@@ -1,8 +1,5 @@
 self: super: {
-  citar = with super; let
-    unstable = if stdenv.isDarwin then import <nixpkgs-unstable> {}
-    else import <nixos-unstable> {};
-  in unstable.buildGoPackage rec {
+  citar = with super; buildGoPackage rec {
     name = "citar-${version}";
     version = "1.0.0";
 

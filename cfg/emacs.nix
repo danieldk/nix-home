@@ -1,13 +1,8 @@
 { pkgs, ... }:
 
-let
-  unstable = with pkgs.stdenv;
-  if isDarwin then import <nixpkgs-unstable> {}
-  else import <nixos-unstable> {};
-in {
+{
   programs.emacs = {
     enable = true;
-    package = unstable.emacs;
     extraPackages = epkgs: [
       epkgs.company
       epkgs.counsel

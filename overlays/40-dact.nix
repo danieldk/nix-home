@@ -1,8 +1,6 @@
 self: super: {
 
-dact = with super; let
-  unstable = if stdenv.isDarwin then import <nixpkgs-unstable> {} else import <nixos-unstable> {};
-in stdenv.mkDerivation rec {
+dact = with super; stdenv.mkDerivation rec {
   name = "dact-${version}";
   version = "2.6.6";
 

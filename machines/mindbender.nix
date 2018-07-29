@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
-let
-  unstable = import <nixos-unstable> {};
-in {
+{
   imports = [
     ../cfg/dropbox.nix
     ../cfg/emacs.nix
@@ -20,33 +18,37 @@ in {
 
   home.packages = with pkgs; [
     binutils
-    unstable.bubblewrap
+    bubblewrap
     cargo-asm
-    unstable.corebird
-    danieldk.dbxml
+    corebird
+    dbxml
     gnome3.dconf
     gnome3.defaultIconTheme
     fsa6
     gcc
     gdb
     google-chrome
-    unstable.gnupg
+    gnupg
     htop
     jupyterEnv
-    unstable.mpv
+    mpv
     ncdu
     nixops-pinned
     pandocEnv
-    unstable.pass
-    unstable.ripgrep
-    unstable.skypeforlinux
+    pass
+    ripgrep
+    skypeforlinux
     spotify
-    unstable.tdesktop
-    unstable.makemkv
-    unstable.youtube-dl
+    tdesktop
+    makemkv
+    youtube-dl
   ];
 
   programs.firefox = {
     enable = true;
+  };
+
+  home.sessionVariables = {
+    NIX_PATH = "$HOME/git/nixpkgs:nixpkgs=$HOME/git/nixpkgs:nixpkgs-unstable=$HOME/git/nixpkgs";
   };
 }

@@ -1,9 +1,5 @@
 self: super: {
-
-  cargo-asm = with super; let
-    unstable = if stdenv.isDarwin then import <nixpkgs-unstable> {}
-  else import <nixos-unstable> {};
-  in unstable.rustPlatform.buildRustPackage rec {
+  cargo-asm = with super; rustPlatform.buildRustPackage rec {
     name = "cargo-asm-${version}";
     version = "0.1.16";
 
