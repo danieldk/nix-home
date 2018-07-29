@@ -35,6 +35,7 @@ in {
     jupyterEnv
     unstable.mpv
     ncdu
+    nixops-pinned
     pandocEnv
     unstable.pass
     unstable.ripgrep
