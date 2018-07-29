@@ -4,6 +4,7 @@ self: super: {
     name = "jupyter36";
 
     buildInputs = with python36Packages; [
+      gensim
       matplotlib
       notebook
       numpy
