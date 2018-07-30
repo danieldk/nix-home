@@ -12,7 +12,7 @@ dact = with super; stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [
-    unstable.cmake git
+    cmake git
   ];
 
   buildInputs = [
