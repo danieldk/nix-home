@@ -5,12 +5,14 @@ self: super: {
 
     buildInputs = with python36Packages; [
       gensim
-      matplotlib
-      notebook
       numpy
       scikitlearn
       scipy
       tensorflowWithoutCuda
+
+      ipywidgets
+      notebook
+      matplotlib
     ];
   };
 }
