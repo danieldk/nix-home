@@ -31,6 +31,8 @@
     gnupg
     htop
     jupyterEnv
+    keybase
+    keybase-gui
     mpv
     ncdu
     nixops-pinned
@@ -53,4 +55,7 @@
     GDK_SCALE = "2";
     GDK_DPI_SCALE = "0.5";
   };
+
+  services.keybase.enable = true;
+  services.kbfs.enable = true;
 }
