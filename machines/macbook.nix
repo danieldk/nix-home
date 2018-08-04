@@ -5,6 +5,7 @@
     ../cfg/emacs.nix
     ../cfg/fzf.nix
     ../cfg/git.nix
+    ../cfg/mupdf.nix
     ../cfg/rust.nix
     ../cfg/ssh.nix
     ../cfg/vim.nix
