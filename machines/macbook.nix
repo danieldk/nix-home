@@ -21,6 +21,7 @@
     youtube-dl
 
     # Environments
+    jupyterEnv
     latexEnv
     pandocEnv
 
