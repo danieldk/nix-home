@@ -21,6 +21,7 @@
     youtube-dl
 
     # Environments
+    latexEnv
     pandocEnv
 
     # Fonts
