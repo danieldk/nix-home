@@ -37,12 +37,21 @@
     ];
   };
 
-  home.file = {
-    ".emacs".text = builtins.readFile ./emacs/base +
+ 
+
+  home.file =
+    let
+      fontSize = if pkgs.stdenv.isDarwin then "15" else "12";
+      emacsFont = ''
+        (when window-system
+        (set-frame-font "Source Code Pro ${fontSize}"))
+       '';
+    in {
+    ".emacs".text = emacsFont + builtins.readFile ./emacs/base +
       builtins.readFile ./emacs/dev;
-    ".emacs-mu4e".text = builtins.readFile ./emacs/base +
+    ".emacs-mu4e".text = emacsFont + builtins.readFile ./emacs/base +
       builtins.readFile ./emacs/mu4e;
-    ".emacs-org".text = builtins.readFile ./emacs/base +
+    ".emacs-org".text = emacsFont + builtins.readFile ./emacs/base +
       builtins.readFile ./emacs/org;
   };
 
