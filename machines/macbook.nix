@@ -21,6 +21,13 @@
     ripgrep
     youtube-dl
 
+    # Better userland for macOS
+    coreutils
+    fd
+    findutils
+    gnugrep
+    gnused
+
     # Environments
     jupyterEnv
     latexEnv
