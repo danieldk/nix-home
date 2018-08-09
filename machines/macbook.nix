@@ -44,6 +44,8 @@
     # Networking
     sshuttle
 
+    # Publishing
+    librsvg
 
     #Arq
     #Dash
