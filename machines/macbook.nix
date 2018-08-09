@@ -28,6 +28,9 @@
     gnugrep
     gnused
 
+    # Development
+    go
+
     # Environments
     jupyterEnv
     latexEnv
