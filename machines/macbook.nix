@@ -41,9 +41,12 @@
     lato
     source-code-pro
 
-    Dash
-    iTerm2
-    TableFlip
+
+    #Arq
+    #Dash
+    #iTerm2
+    #OmniGraffle
+    #TableFlip
   ];
 
   fonts.fontconfig.enableProfileFonts = true;
