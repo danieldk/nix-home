@@ -41,6 +41,9 @@
     lato
     source-code-pro
 
+    # Networking
+    sshuttle
+
 
     #Arq
     #Dash
