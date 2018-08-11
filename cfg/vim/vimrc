@@ -29,6 +29,7 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
+set number
 set relativenumber
 set undofile
 
@@ -90,7 +91,7 @@ if exists('g:colors_name') && colors_name == 'solarized'
     colorscheme solarized
   endif
 
-  call togglebg#map("<F2>")
+  " call togglebg#map("<F2>")
 endif
 
 " git
