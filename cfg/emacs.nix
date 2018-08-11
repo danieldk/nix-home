@@ -16,6 +16,7 @@
       epkgs.general
       epkgs.ivy
       epkgs.leuven-theme
+      epkgs.nlinum-relative
       epkgs.magit
       epkgs.markdown-mode
       epkgs.nix-mode
