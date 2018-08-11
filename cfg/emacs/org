@@ -72,8 +72,13 @@
     "j" 'evil-next-line
     "k" 'evil-previous-line)
 
+   (defun my-beamer-bold (contents backend info)
+     (when (eq backend 'beamer)
+       (replace-regexp-in-string "\\`\\\\[A-Za-z0-9]+" "\\\\textbf" contents)))
+
    (add-hook 'org-mode-hook
 	     (lambda ()
+	       (add-to-list 'org-export-filter-bold-functions 'my-beamer-bold)
 	       (add-to-list 'write-file-functions 'delete-trailing-whitespace))
 
 	     ;; Display images immediately after code block execution.
