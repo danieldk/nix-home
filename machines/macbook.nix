@@ -27,6 +27,7 @@
     findutils
     gnugrep
     gnused
+    zstd
 
     # Development
     go
