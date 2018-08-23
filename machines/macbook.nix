@@ -47,6 +47,7 @@
 
     # Publishing
     librsvg
+    pandoc
 
     #Arq
     #Dash
