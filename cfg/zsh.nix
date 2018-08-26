@@ -1,14 +1,34 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    direnv
-  ];
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   programs.zsh = {
     enable = true;
 
-    initExtra = builtins.readFile zsh/zshrc;
+    initExtra = ''
+      nixify() {
+        if [ ! -e ./.envrc ]; then
+          echo "use nix" > .envrc
+          ${pkgs.direnv}/bin/direnv allow
+        fi
+        if [ ! -e default.nix ]; then
+            cat > default.nix <<'EOF'
+      with import <nixpkgs> {};
+      stdenv.mkDerivation {
+      name = "env";
+      buildInputs = [
+          bashInteractive
+      ];
+      }
+      EOF
+          ''${EDITOR:-vim} default.nix
+        fi
+      }
+    '';
 
     oh-my-zsh = {
       enable = true;
