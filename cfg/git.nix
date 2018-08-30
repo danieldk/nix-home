@@ -15,6 +15,10 @@
       process = "${pkgs.git-lfs}/bin/git-lfs filter-process";
       required = true;
     };
+
+    "protocol \"keybase\"" = {
+      allow = "always";
+    };
   };
 
   home.packages = with pkgs; [
