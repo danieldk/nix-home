@@ -22,7 +22,7 @@
 	mu4e-change-filenames-when-moving t
 	mu4e-context-policy 'pick-first
 	mu4e-view-show-addresses t
-	mu4e-html2text-command "textutil -stdin -format html -convert txt -stdout"
+	mu4e-html2text-command "html2text -width 72 -nobs"
 	mu4e-contexts `( ,(make-mu4e-context
 			   :name "Home"
 			   :enter-func (lambda () (mu4e-message "Entering Home context"))

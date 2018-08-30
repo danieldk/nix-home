@@ -28,6 +28,7 @@
     gcc
     gdb
     google-chrome
+    html2text
     jupyterEnv
     keybase
     keybase-gui
