@@ -51,6 +51,15 @@
     GDK_DPI_SCALE = "0.5";
   };
 
+  home.file = {
+    ".config/autostart/gnome-keyring-ssh.desktop".text = ''
+      [Desktop Entry]
+      Type=Application
+      Name=SSH Key Agent
+      Hidden=true
+    '';
+  };
+
   services.keybase.enable = true;
   services.kbfs.enable = true;
 }
