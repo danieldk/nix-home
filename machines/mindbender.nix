@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../cfg/base-unix.nix
     ../cfg/dropbox.nix
     ../cfg/emacs.nix
     ../cfg/git.nix
@@ -19,7 +20,6 @@
   home.packages = with pkgs; [
     binutils
     bubblewrap
-    cargo-asm
     corebird
     dbxml
     gnome3.dconf
@@ -28,22 +28,16 @@
     gcc
     gdb
     google-chrome
-    gnupg
-    htop
     jupyterEnv
     keybase
     keybase-gui
     mpv
-    ncdu
     nixops-pinned
     pandocEnv
-    pass
-    ripgrep
     skypeforlinux
     spotify
     tdesktop
     makemkv
-    youtube-dl
   ];
 
   programs.firefox = {

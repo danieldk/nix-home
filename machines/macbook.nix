@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../cfg/base-unix.nix
     ../cfg/emacs.nix
     ../cfg/fzf.nix
     ../cfg/git.nix
@@ -14,23 +15,12 @@
 
   home.packages = with pkgs; [
     dact
-    gnupg
-    htop
-    ncdu
-    pass
-    ripgrep
-    youtube-dl
 
     # Better userland for macOS
     coreutils
-    fd
     findutils
     gnugrep
     gnused
-    zstd
-
-    # Development
-    go
 
     # Environments
     jupyterEnv
@@ -41,13 +31,6 @@
     fontconfig
     lato
     source-code-pro
-
-    # Networking
-    sshuttle
-
-    # Publishing
-    librsvg
-    pandoc
 
     #Arq
     #Dash
