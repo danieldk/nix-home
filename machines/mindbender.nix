@@ -58,6 +58,14 @@
       Name=SSH Key Agent
       Hidden=true
     '';
+
+    ".local/share/applications/passmenu.desktop".text = ''
+      [Desktop Entry]
+      Type=Application
+      Name=passmenu
+      Exec=${pkgs.pass}/bin/passmenu -i -b
+      Terminal=false
+    '';
   };
 
   services.keybase.enable = true;
