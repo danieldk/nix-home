@@ -3,6 +3,7 @@
 {
   imports = [
     ../cfg/base-unix.nix
+    ../cfg/direnv.nix
     ../cfg/emacs.nix
     ../cfg/fzf.nix
     ../cfg/git.nix
