@@ -16,7 +16,7 @@ alpinocorpus = with super; stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
-    boost db62 dbxml libiconv libxml2 libxslt xercesc xqilla
+    boost dbxml libxml2 libxslt xercesc xqilla
   ];
 
   meta = with stdenv.lib; {
