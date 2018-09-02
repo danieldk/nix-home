@@ -12,7 +12,6 @@ in {
     sshfs
   ];
 
-
   systemd.user.services = {
     restic-local = let
       backup-local = pkgs.writeScript "restic-backup-local" ''
@@ -33,7 +32,7 @@ in {
       '';
     in {
       Unit = {
-        Description = "Local Restic backup";
+        Description = "Restic backup (local)";
       };
 
       Service = {
@@ -41,12 +40,48 @@ in {
         ExecStart = "${backup-local}";
       };
     };
+
+    restic-castle = let
+      backup-castle = pkgs.writeScript "restic-backup-castle" ''
+        #! ${pkgs.bash}/bin/sh
+
+        set -e
+
+        CASTLE_BACKUP_DIR=''${HOME}/.var/backup/castle/
+
+        if [ ! -d ''${CASTLE_BACKUP_DIR} ] ; then
+          mkdir -p ''${CASTLE_BACKUP_DIR}
+        fi
+
+        rsync -avz root@castle.danieldk.eu:/var/lib/gitolite/ \
+          ''${CASTLE_BACKUP_DIR}/gitosis/
+        rsync -avz root@castle.danieldk.eu:/srv/www/ \
+          ''${CASTLE_BACKUP_DIR}/www/
+
+        source ${resticEnv}
+
+        UMBRELLA=sftp:umbrella:/data/castle-backup
+        restic -r $UMBRELLA backup --tag=castle ~/.var/backup/castle
+
+        B2=b2:restic-castle
+        restic -r $B2 backup -e target --tag=castle ~/.var/backup/castle
+      '';
+    in {
+      Unit = {
+        Description = "Restic backup (castle)";
+      };
+
+      Service = {
+        Type = "oneshot";
+        ExecStart = "${backup-castle}";
+      };
+    };
   };
 
   systemd.user.timers = {
     restic-local = {
       Unit = {
-        Description = "Scheduled local Restic backup";
+        Description = "Scheduled Restic backup (local)";
       };
 
       Timer = {
@@ -59,10 +94,21 @@ in {
         WantedBy = [ "graphical-session.target" ];
       };
     };
-  };
 
-  home.file = {
-    ".config/restic/env".source = ./restic/env;
-    "bin/backup-local".source = ./restic/backup-local;
+    restic-castle = {
+      Unit = {
+        Description = "Scheduled Restic backup (castle)";
+      };
+
+      Timer = {
+        Persistent = "true";
+        Unit = "restic-castle.service";
+        OnCalendar = "0/2:00:00";
+      };
+
+      Install = {
+        WantedBy = [ "graphical-session.target" ];
+      };
+    };
   };
 }
