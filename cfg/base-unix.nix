@@ -28,4 +28,8 @@
     librsvg
     pandoc
   ];
+
+  programs.home-manager = {
+    enable = true;
+  };
 }
