@@ -28,7 +28,7 @@ let
     # org-mode
     epkgs.org
     epkgs.org-bullets
-    epkgs.org-evil
+    epkgs.evil-org
 
     # Rust
     epkgs.cargo

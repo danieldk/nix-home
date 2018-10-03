@@ -78,7 +78,7 @@
 
    (add-hook 'org-mode-hook
 	     (lambda ()
-	       (add-to-list 'org-export-filter-bold-functions 'my-beamer-bold)
+	       ;(add-to-list 'org-export-filter-bold-functions 'my-beamer-bold)
 	       (add-to-list 'write-file-functions 'delete-trailing-whitespace))
 
 	     ;; Display images immediately after code block execution.
@@ -121,16 +121,15 @@
       (latex . t)
       (shell . t))))
 
-(use-package org-evil
-  :after org)
-;  :diminish evil-org-mode
-;  :config
-;  (add-hook 'org-mode-hook 'evil-org-mode)
-;  (add-hook 'evil-org-mode-hook
-;	      (lambda ()
-;		(evil-org-set-key-theme)))
-;  (require 'evil-org-agenda)
-;  :diminish evil-org-mode)
+(use-package evil-org
+  :after org
+  :diminish evil-org-mode
+  :ghook 'org-mode-hook
+  :gfhook #'evil-org-set-key-theme
+  :config
+  (setq evil-org-key-theme '(textobjects navigation additional todo))
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
 
 (use-package org-bullets
   :after org
