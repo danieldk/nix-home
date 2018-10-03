@@ -19,15 +19,15 @@
   ];
 
   home.packages = with pkgs; [
+    alpinocorpus
     binutils
     bubblewrap
     corebird
     dbxml
-    gnome3.dconf
-    gnome3.defaultIconTheme
     fsa6
     gcc
     gdb
+    gnome-mpv
     google-chrome
     html2text
     jupyterEnv
@@ -40,6 +40,15 @@
     spotify
     tdesktop
     makemkv
+    qutebrowser
+
+    asciidoc
+    libxslt
+    docbook_xsl
+
+    proprietary-fonts
+
+    pyo3-pack
   ];
 
   programs.firefox = {
