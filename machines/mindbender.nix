@@ -11,6 +11,7 @@
     ../cfg/mail.nix
     ../cfg/mupdf.nix
     ../cfg/openconnect.nix
+    ../cfg/resilio.nix
     ../cfg/restic.nix
     ../cfg/rust.nix
     ../cfg/ssh.nix
