@@ -32,8 +32,6 @@
     google-chrome
     html2text
     jupyterEnv
-    keybase
-    keybase-gui
     mpv
     nixops-pinned
     pandocEnv
@@ -78,7 +76,4 @@
       Terminal=false
     '';
   };
-
-  services.keybase.enable = true;
-  services.kbfs.enable = true;
 }
