@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   accounts.email.accounts.fastmail = {
@@ -48,6 +48,7 @@
   };
 
   programs.mbsync.enable = true;
+
   programs.notmuch = {
     enable = true;
     extraConfig = {
@@ -55,5 +56,10 @@
         synchronize_flags = "true";
       };
     };
+  };
+
+  services.mbsync = {
+    enable = true;
+    postExec = "${pkgs.notmuch}/bin/notmuch --config=${config.xdg.configHome}/notmuch/notmuchrc new";
   };
 }
