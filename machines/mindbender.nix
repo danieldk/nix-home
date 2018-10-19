@@ -68,12 +68,12 @@
       Hidden=true
     '';
 
-    ".local/share/applications/passmenu.desktop".text = ''
+    ".local/share/applications/pass-find.desktop".text = ''
       [Desktop Entry]
       Type=Application
-      Name=passmenu
-      Exec=${pkgs.pass}/bin/passmenu -i -b
-      Terminal=false
+      Name=pass-find
+      Exec=${pkgs.pass-find}/bin/pass-find
+      Terminal=true
     '';
   };
 }
