@@ -17,6 +17,7 @@
     # Encryption
     gnupg
     pass
+    pass-find
 
     # Multimedia
     youtube-dl
