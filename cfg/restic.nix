@@ -19,11 +19,11 @@ in {
 
         source ${resticEnv}
 
-        UMBRELLA=sftp:umbrella:/data/daniel-backup
-        restic -r $UMBRELLA backup --tag=dropbox ~/Dropbox
-        restic -r $UMBRELLA backup -e target --tag=git ~/git
-        restic -r $UMBRELLA backup --tag=mail ~/Maildir
-        restic -r $UMBRELLA forget --prune -H 10 -d 10 -w 10 -m 10 -y 10 
+        HOST=sftp:mindfuzz:/home/daniel/backups/daniel
+        restic -r $HOST backup --tag=dropbox ~/Dropbox
+        restic -r $HOST backup -e target --tag=git ~/git
+        restic -r $HOST backup --tag=mail ~/Maildir
+        restic -r $HOST forget --prune -H 10 -d 10 -w 10 -m 10 -y 10 
 
         B2=b2:restic-mindbender
         restic -r $B2 backup -e target --tag=git ~/git
@@ -60,8 +60,8 @@ in {
 
         source ${resticEnv}
 
-        UMBRELLA=sftp:umbrella:/data/castle-backup
-        restic -r $UMBRELLA backup --tag=castle ~/.var/backup/castle
+        HOST=sftp:mindfuzz:/home/daniel/backups/castle
+        restic -r $HOST backup --tag=castle ~/.var/backup/castle
 
         B2=b2:restic-castle
         restic -r $B2 backup -e target --tag=castle ~/.var/backup/castle
