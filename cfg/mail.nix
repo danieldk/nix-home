@@ -41,10 +41,13 @@
   };
 
   home.packages = with pkgs; [
-    mu
+    neomutt
   ];
 
   home.file = {
+    ".mutt/mailcap".text = ''
+      text/html; ${pkgs.w3m}/bin/w3m -dump %s; nametemplate=%s.html; copiousoutput
+    '';
   };
 
   programs.mbsync.enable = true;
