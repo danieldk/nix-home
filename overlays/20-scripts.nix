@@ -16,7 +16,7 @@ self: super: {
     [[ -n ''${ACCOUNT} ]] || exit
 
     if [ $? -eq 0 ]; then
-      nohup pass -c "''${ACCOUNT}"
+      nohup pass -c "''${ACCOUNT}" >/dev/null 2>&1
     fi
   '';
 }
