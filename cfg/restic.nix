@@ -91,7 +91,7 @@ in {
       Timer = {
         Persistent = "true";
         Unit = "restic-local.service";
-        OnCalendar = "0/2:00:00";
+        OnCalendar = "00/2:00";
       };
 
       Install = {
@@ -107,7 +107,7 @@ in {
       Timer = {
         Persistent = "true";
         Unit = "restic-castle.service";
-        OnCalendar = "0/2:00:00";
+        OnCalendar = "00/2:30";
       };
 
       Install = {
