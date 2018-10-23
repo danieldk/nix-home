@@ -17,18 +17,20 @@ in {
       backup-local = pkgs.writeScript "restic-backup-local" ''
         #! ${pkgs.bash}/bin/sh
 
+        restic=${pkgs.restic}/bin/restic
+
         source ${resticEnv}
 
         HOST=sftp:mindfuzz:/home/daniel/backups/daniel
-        restic -r $HOST backup --tag=dropbox ~/Dropbox
-        restic -r $HOST backup -e target --tag=git ~/git
-        restic -r $HOST backup --tag=mail ~/Maildir
-        restic -r $HOST forget --prune -H 10 -d 10 -w 10 -m 10 -y 10 
+        $restic -r $HOST backup --tag=dropbox ~/Dropbox
+        $restic -r $HOST backup -e target --tag=git ~/git
+        $restic -r $HOST backup --tag=mail ~/Maildir
+        $restic -r $HOST forget --prune -H 10 -d 10 -w 10 -m 10 -y 10 
 
         B2=b2:restic-mindbender
-        restic -r $B2 backup -e target --tag=git ~/git
-        restic -r $B2 backup --tag=mail ~/Maildir
-        restic -r $B2 forget --prune -H 10 -d 10 -w 10 -m 10 -y 10
+        $restic -r $B2 backup -e target --tag=git ~/git
+        $restic -r $B2 backup --tag=mail ~/Maildir
+        $restic -r $B2 forget --prune -H 10 -d 10 -w 10 -m 10 -y 10
       '';
     in {
       Unit = {
@@ -60,11 +62,13 @@ in {
 
         source ${resticEnv}
 
+        restic=${pkgs.restic}/bin/restic
+
         HOST=sftp:mindfuzz:/home/daniel/backups/castle
-        restic -r $HOST backup --tag=castle ~/.var/backup/castle
+        $restic -r $HOST backup --tag=castle ~/.var/backup/castle
 
         B2=b2:restic-castle
-        restic -r $B2 backup -e target --tag=castle ~/.var/backup/castle
+        $restic -r $B2 backup -e target --tag=castle ~/.var/backup/castle
       '';
     in {
       Unit = {
