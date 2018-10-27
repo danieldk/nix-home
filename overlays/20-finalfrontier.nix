@@ -28,7 +28,7 @@ self: super: {
 
   meta = with stdenv.lib; {
     description = "Train word embeddings with subword representations";
-    license = licenses.apache2;
+    license = licenses.asl20;
     platforms = platforms.all;
   };
 

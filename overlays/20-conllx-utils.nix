@@ -15,7 +15,7 @@ self: super: {
 
   meta = with stdenv.lib; {
     description = "CoNLL-X utilities";
-    license = licenses.apache2;
+    license = licenses.asl20;
     platforms = platforms.all;
   };
 

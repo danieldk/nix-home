@@ -21,7 +21,7 @@ dact = with super; stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "Alpino treebank search tool";
-    license = licenses.lgpl2_1;
+    license = licenses.lgpl21;
     platforms = platforms.unix;
   };
 

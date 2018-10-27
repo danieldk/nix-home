@@ -21,7 +21,7 @@ alpinocorpus = with super; stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "Library for Alpino treebanks";
-    license = licenses.lgpl2_1;
+    license = licenses.lgpl21;
     platforms = platforms.unix;
   };
 
