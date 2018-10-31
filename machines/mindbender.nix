@@ -56,8 +56,6 @@
 
   home.sessionVariables = {
     NIX_PATH = "$HOME/git/nixpkgs:nixpkgs=$HOME/git/nixpkgs:nixpkgs-unstable=$HOME/git/nixpkgs";
-    GDK_SCALE = "2";
-    GDK_DPI_SCALE = "0.5";
   };
 
   home.file = {
