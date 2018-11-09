@@ -86,6 +86,7 @@ in {
     restic-local = {
       Unit = {
         Description = "Scheduled Restic backup (local)";
+        PartOf = [ "network-online.target" ];
       };
 
       Timer = {
@@ -95,13 +96,14 @@ in {
       };
 
       Install = {
-        WantedBy = [ "graphical-session.target" ];
+        WantedBy = [ "timers.target" ];
       };
     };
 
     restic-castle = {
       Unit = {
         Description = "Scheduled Restic backup (castle)";
+        PartOf = [ "network-online.target" ];
       };
 
       Timer = {
@@ -111,7 +113,7 @@ in {
       };
 
       Install = {
-        WantedBy = [ "graphical-session.target" ];
+        WantedBy = [ "timers.target" ];
       };
     };
   };
