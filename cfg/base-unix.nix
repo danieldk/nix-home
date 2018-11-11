@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     # Basic utilities
+    bat
     fd
     htop
     ncdu
