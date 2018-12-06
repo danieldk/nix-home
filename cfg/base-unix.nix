@@ -15,6 +15,12 @@
     gnupg
     pass
     pass-find
+  ] ++ lib.optionals pkgs.stdenv.isDarwin [
+    # Better userland for macOS
+    coreutils
+    findutils
+    gnugrep
+    gnused
   ];
 
   programs.home-manager = {

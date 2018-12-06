@@ -18,12 +18,6 @@
   home.packages = with pkgs; [
     dact
 
-    # Better userland for macOS
-    coreutils
-    findutils
-    gnugrep
-    gnused
-
     # Environments
     jupyterEnv
     latexEnv
