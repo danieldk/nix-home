@@ -55,20 +55,28 @@
     ApplePressAndHoldEnabled = false;
     NSAutomaticCapitalizationEnabled = false;
     NSAutomaticSpellingCorrectionEnabled = false;
+    NSDocumentSaveNewDocumentsToCloud = false;
     NSNavPanelExpandedStateForSaveMode = true;
     NSNavPanelExpandedStateForSaveMode2 = true;
+    PMPrintingExpandedStateForPrint = true;
+    PMPrintingExpandedStateForPrint2 = true;
   };
 
   system.defaults.dock = {
     autohide = true;
     showhidden = true;
     mru-spaces = false;
+    static-only = true;
   };
 
   system.defaults.finder = {
     AppleShowAllExtensions = true;
     QuitMenuItem = true;
     FXEnableExtensionChangeWarning = false;
+  };
+
+  system.defaults.trackpad = {
+    Clicking = true;
   };
 
   system.keyboard = {
