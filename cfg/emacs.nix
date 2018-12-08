@@ -40,8 +40,17 @@ let
     "${emacsWithPackages}/Applications/Emacs.app/Contents/MacOS/Emacs"
   else
     "${emacsWithPackages}/bin/emacs";
+
+  org = pkgs.writeScriptBin "org" ''
+    #!/bin/sh
+    ${emacsBinary} -q --load ~/.emacs-org $@
+  '';
+  mue = pkgs.writeScriptBin "mue" ''
+    #!/bin/sh
+    ${emacsBinary} -q --load ~/.emacs-mu4e $@
+  '';
 in {
-  home.packages = [ emacsWithPackages ];
+  home.packages = [ emacsWithPackages org mue ];
 
   home.file =
     let
@@ -59,9 +68,7 @@ in {
       builtins.readFile ./emacs/org;
   };
 
-  programs.zsh.shellAliases = {
-    emacs = "${emacsBinary} -q --load ~/.emacs";
-    mue = "${emacsBinary} -q --load ~/.emacs-mu4e";
-    org = "${emacsBinary} -q --load ~/.emacs-org";
-  };
+ programs.zsh.shellAliases = {
+   emacs = "${emacsBinary} -q --load ~/.emacs";
+ };
 }
