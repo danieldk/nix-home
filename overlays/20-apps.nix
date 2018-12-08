@@ -25,11 +25,11 @@ installApplication =
 
   Dash = self.installApplication rec {
     name = "Dash";
-    version = "4.2.0";
+    version = "4.5.3";
     sourceRoot = "Dash.app";
     src = super.fetchurl {
       url = https://kapeli.com/downloads/v4/Dash.zip;
-      sha256 = "fcd9f71c45fa53b77a57134d342ed186b7d65ca88f434361c560ea964f04ecbd";
+      sha256 = "0z8365shmwn26c2fcwv18drmi1i06myj1wspc563kaic7g7z9l4v";
     };
    description = "Dash is an API Documentation Browser and Code Snippet Manager";
     homepage = https://kapeli.com/dash;
@@ -38,11 +38,11 @@ installApplication =
   iTerm2 = self.installApplication rec {
     name = "iTerm2";
     appname = "iTerm";
-    version = "3.1.7";
+    version = "3.2.6";
     sourceRoot = "iTerm.app";
     src = super.fetchurl {
-      url = "https://iterm2.com/downloads/stable/iTerm2-3_1_7.zip";
-      sha256 = "d5496b3c42fe2eaf65befef7d6d6682cde3e8cd1f042f63343f821e8582b1ede";
+      url = "https://iterm2.com/downloads/stable/iTerm2-3_2_6.zip";
+      sha256 = "116qmdcbbga8hr9q9n1yqnhrmmq26l7pb5lgvlgp976yqa043i6v";
     };
     description = "iTerm2 is a replacement for Terminal and the successor to iTerm";
     homepage = https://www.iterm2.com;
