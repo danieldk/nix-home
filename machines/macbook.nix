@@ -37,10 +37,6 @@
 
   fonts.fontconfig.enableProfileFonts = true;
 
-  home.sessionVariables = {
-    NIX_PATH = "$HOME/git/nixpkgs:nixpkgs=$HOME/git/nixpkgs:nixpkgs-unstable=$HOME/git/nixpkgs";
-  };
-
   xdg = {
     enable = true;
   };
