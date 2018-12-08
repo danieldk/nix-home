@@ -39,6 +39,17 @@
     trustedUsers = [ "daniel" "@admin" ];
   };
 
+  nixpkgs = {
+    # Bring the overlays into scope, from:
+    # https://github.com/jwiegley/nix-config/blob/master/config/darwin.nix
+    overlays =
+      let path = ../overlays; in with builtins;
+      map (n: import (path + ("/" + n)))
+          (filter (n: match ".*\\.nix" n != null ||
+                      pathExists (path + ("/" + n + "/default.nix")))
+                  (attrNames (readDir path)));
+  };
+
   system.defaults.NSGlobalDomain = {
     AppleKeyboardUIMode = 3;
     ApplePressAndHoldEnabled = false;
