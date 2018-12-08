@@ -7,3 +7,6 @@
 [submodule "nixpkgs-proprietary"]
 	path = nixpkgs-proprietary
 	url = keybase://private/danieldk/nixpkgs-proprietary
+[submodule "darwin"]
+	path = darwin
+	url = https://github.com/LnL7/nix-darwin.git
