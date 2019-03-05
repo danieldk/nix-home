@@ -19,6 +19,7 @@
     # Better userland for macOS
     coreutils
     findutils
+    gawk
     gnugrep
     gnused
   ];
