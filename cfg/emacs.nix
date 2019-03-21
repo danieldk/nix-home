@@ -12,6 +12,7 @@ let
     epkgs.evil-magit
     epkgs.evil-mu4e
     epkgs.flycheck
+    epkgs.forge
     epkgs.general
     epkgs.ivy
     epkgs.leuven-theme
