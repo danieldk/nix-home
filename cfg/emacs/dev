@@ -9,7 +9,9 @@
   :diminish flycheck-mode)
 
 (use-package rust-mode
-  :mode "\\.rs\\'")
+  :mode "\\.rs\\'"
+  :config
+  (setq rust-format-on-save t))
 
 (use-package racer
   :after rust-mode
