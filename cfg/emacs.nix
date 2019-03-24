@@ -4,7 +4,9 @@ let
   package = if pkgs.stdenv.isDarwin then pkgs.emacsMacport else pkgs.emacs;
   emacsPackages = pkgs.emacsPackagesNgGen package;
   emacsWithPackages = emacsPackages.emacsWithPackages (epkgs: [
+    epkgs.auctex
     epkgs.company
+    epkgs.company-math
     epkgs.counsel
     epkgs.diminish
     epkgs.direnv
@@ -15,6 +17,7 @@ let
     epkgs.forge
     epkgs.general
     epkgs.ivy
+    epkgs.ivy-bibtex
     epkgs.leuven-theme
     epkgs.nlinum-relative
     epkgs.magit

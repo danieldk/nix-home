@@ -60,3 +60,28 @@
 (use-package nix-repl
   :ensure nix-mode
   :commands (nix-repl))
+(use-package nix-update)
+
+(use-package tex
+  :load-path "pkg/auctex"
+  ;:mode ("\\.tex\\'" . TeX-latex-mode)
+  :commands latex-mode
+  :config
+  (use-package preview)
+  ;(use-package ivy-bibtex
+  ;  :load-path "pkg/helm-bibtex")
+  (setq TeX-parse-self t
+	TeX-auto-save t)
+  (my-local-leader-def
+    :states 'normal
+    :keymaps 'LaTeX-mode-map
+    "\\" '(TeX-insert-macro :which-key "insert macro")
+    "-"  '(TeX-recenter-output-buffer :which-key "recenter output buffer")
+    "%"  '(TeX-comment-or-uncomment-paragraph :which-key "(un)comment paragraph")
+    ";"  '(TeX-comment-or-uncomment-region :which-key "(un)comment region")
+    "a"  '(TeX-command-run-all :which-key "run all")
+    "b"  '(latex/build)
+    "l"  '(TeX-recenter-output-buffer :which-key "recenter output buffer")
+    "m"  '(TeX-insert-macro :which-key "insert macro")
+    "p"  '(preview-buffer :which-key "preview")
+    "v"  '(TeX-view :which-key "view")))
