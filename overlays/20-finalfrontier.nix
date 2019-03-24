@@ -1,19 +1,20 @@
 self: super: {
   finalfrontier = with super; rustPlatform.buildRustPackage rec {
   name = "finalfrontier-${version}";
-  version = "0.2.0-dev";
+  version = "0.4.1";
 
   src = fetchFromGitHub {
     owner = "danieldk";
     repo = "finalfrontier";
-    rev = "cf9d215f505a760397f4179a997994669864c640";
-    sha256 = "1rgl83ia26ll5g9ih2hh9qjh5qc7fsgd3xhm8gi2yjk9gnb3vc29";
-    #ref = "tags/v0.1.0";
+    rev = "v${version}";
+    sha256 = "0qzapf0prfxpxxy501qcwzh3silvpfjcxb36pa175w2149r3qd8m";
   };
 
-  cargoSha256 = "1wpn8x5sdig56h2hia3ic0izwya1yvz5mq89nqjx6vibnj9q4qg1";
+  cargoSha256 = "0w6s88kx95f57fn6rr2n8h9q2bhpbz03aip2k5nc5y3g7dfnmcj4";
 
   nativeBuildInputs = [ gnumake pandoc ];
+
+  buildInputs = with super; stdenv.lib.optional stdenv.isDarwin darwin.Security;
 
   postBuild = ''
     ( cd man ; make )
@@ -22,8 +23,6 @@ self: super: {
   preFixup = ''
     mkdir -p "$out/man/man1"
     cp man/*.1 "$out/man/man1/"
-    mkdir -p "$out/man/man5"
-    cp man/*.5 "$out/man/man5/"
   '';
 
   meta = with stdenv.lib; {
