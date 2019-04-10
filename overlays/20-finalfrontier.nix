@@ -6,8 +6,8 @@ self: super: {
   src = fetchFromGitHub {
     owner = "danieldk";
     repo = "finalfrontier";
-    rev = "v${version}";
-    sha256 = "0qzapf0prfxpxxy501qcwzh3silvpfjcxb36pa175w2149r3qd8m";
+    rev = "${version}";
+    sha256 = "17sg415471mr335p2m5dj28yhzrivcv2sj6bfvnzbvgnbvgwl203";
   };
 
   cargoSha256 = "0w6s88kx95f57fn6rr2n8h9q2bhpbz03aip2k5nc5y3g7dfnmcj4";
