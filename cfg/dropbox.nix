@@ -1,25 +1,15 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    dropbox
-  ];
-
-  systemd.user.services.dropbox = {
-    Unit = {
-      Description = "Dropbox";
-      PartOf = [ "network-online.target" ];
-    };
-
-    Service = {
-      Restart = "on-failure";
-      RestartSec = 5;
-      ExecStart = "${pkgs.dropbox}/bin/dropbox";
-      Environment = "QT_PLUGIN_PATH=/run/current-system/sw/${pkgs.qt5.qtbase.qtPluginPrefix}";
-    };
-
-    Install = {
-      WantedBy = [ "basic.target" ];
-    };
-  };
+  xdg.configFile."autostart/dropbox.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Exec=${pkgs.dropbox-filesystem-agnostic}/bin/dropbox
+    Terminal=false
+    Name=Dropbox
+    Categories=Network;FileTransfer;
+    Comment=Sync your files across computers and to the web
+    GenericName=File Synchronizer
+    StartupNotify=false
+  '';
 }
