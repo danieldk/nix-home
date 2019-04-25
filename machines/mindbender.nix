@@ -36,7 +36,6 @@
     jupyterEnv
     mpv
     nixops-pinned
-    pandocEnv
     skypeforlinux
     spotify
     tdesktop
