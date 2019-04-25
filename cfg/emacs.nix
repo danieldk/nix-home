@@ -23,6 +23,7 @@ let
     epkgs.magit
     epkgs.markdown-mode
     epkgs.nix-mode
+    epkgs.nix-update
     epkgs.projectile
     epkgs.swiper
     epkgs.use-package
