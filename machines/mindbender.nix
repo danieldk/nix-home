@@ -9,6 +9,7 @@
     ../cfg/emacs.nix
     ../cfg/git.nix
     ../cfg/fzf.nix
+    ../cfg/kitty.nix
     ../cfg/mail.nix
     ../cfg/mupdf.nix
     ../cfg/openconnect.nix
