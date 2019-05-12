@@ -92,12 +92,19 @@
 	  org-mobile-inbox-for-pull (expand-file-name "flagged.org" org-directory)
 	  org-mobile-force-id-on-agenda-items nil
 
+          org-src-preserve-indentation t
+
+	  org-latex-listings 'minted
+	  org-latex-packages-alist '(("" "minted"))
+	  org-latex-minted-options '(("breaklines" "true")
+				     ("breakafter" "-/"))
+
 	  org-preview-latex-default-process 'dvisvgm
 	  org-latex-pdf-process
-	  '("pdflatex -interaction nonstopmode -output-directory %o %f"
+	  '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
 	    "bibtex %b"
-	    "pdflatex -interaction nonstopmode -output-directory %o %f"
-	    "pdflatex -interaction nonstopmode -output-directory %o %f")
+	    "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+	    "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f")
 	  org-latex-table-scientific-notation "$%s\\times10^{%s}$"
 
 	  ; https://github.com/fniessen/org-html-themes/issues/60
