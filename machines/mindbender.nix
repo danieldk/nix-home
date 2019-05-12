@@ -42,10 +42,6 @@
     makemkv
     qutebrowser
 
-    asciidoc
-    libxslt
-    docbook_xsl
-
     proprietary-fonts
 
     pyo3-pack
