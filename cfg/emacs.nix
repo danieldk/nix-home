@@ -5,6 +5,7 @@ let
   emacsPackages = pkgs.emacsPackagesNgGen package;
   emacsWithPackages = emacsPackages.emacsWithPackages (epkgs: [
     epkgs.auctex
+    epkgs.avy
     epkgs.company
     epkgs.company-math
     epkgs.counsel

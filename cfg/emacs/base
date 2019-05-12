@@ -133,6 +133,12 @@
     :keymaps 'normal
     "ss" '(swiper :which-key "swiper")))
 
+(use-package avy
+  :demand
+  :bind*
+  (("C-:" . avy-goto-char)
+   ("C-c j" . avy-goto-word-1)))
+
 (use-package magit
   :config
 
