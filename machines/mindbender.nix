@@ -44,7 +44,7 @@
 
     proprietary-fonts
 
-    pyo3-pack
+    #pyo3-pack
   ];
 
   programs.firefox = {
