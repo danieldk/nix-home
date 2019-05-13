@@ -5,6 +5,10 @@
     kitty
   ];
 
+  programs.zsh.initExtra = ''
+    ${pkgs.kitty}/bin/kitty + complete setup zsh | source /dev/stdin
+  '';
+
   xdg.configFile."kitty/kitty.conf".text = ''
     enable_audio_bell no
     font_size 10.0
