@@ -3,17 +3,26 @@
 {
   programs.zsh = {
     enable = true;
+
     enableCompletion = true;
-    history.expireDuplicatesFirst = true;
+
+    history = {
+      expireDuplicatesFirst = true;
+      extended = true;
+      save = 100000;
+      size = 100000;
+    };
+
+    defaultKeymap = "viins";
+
+    localVariables = {
+      KEYTIMEOUT = 1;
+      PS1="%F{green}%~%f %# ";
+      RPS1="";
+    };
 
     initExtra = ''
-      # vi-style input
-      bindkey -v
-      export KEYTIMEOUT=1
-
       bindkey '^R' history-incremental-pattern-search-backward
-
-      export PS1='%F{green}%~%f %# '
 
       nixify() {
         if [ ! -e ./.envrc ]; then
