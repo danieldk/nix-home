@@ -11,6 +11,11 @@
         user = "daniel";
       };
 
+      "tesniere" = {
+        hostname = "tesniere.sfs.uni-tuebingen.de";
+        user = "ddekok";
+      };
+
       "turing" = {
         hostname = "turing.sfs.uni-tuebingen.de";
         user = "daniel";
