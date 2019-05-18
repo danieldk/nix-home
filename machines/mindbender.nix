@@ -28,7 +28,6 @@
 
     binutils
     bubblewrap
-    corebird
     dbxml
     fsa6
     gcc
