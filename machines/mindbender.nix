@@ -23,7 +23,8 @@
   ];
 
   home.packages = with pkgs; [
-    alpinocorpus
+    danieldk.alpinocorpus
+
     binutils
     bubblewrap
     corebird
