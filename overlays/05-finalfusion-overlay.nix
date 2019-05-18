@@ -1,1 +1,1 @@
-../finalfusion-overlay/finalfusion.nix
+../finalfusion-overlay/overlay.nix
