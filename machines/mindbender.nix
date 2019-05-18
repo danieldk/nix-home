@@ -24,6 +24,7 @@
 
   home.packages = with pkgs; [
     danieldk.alpinocorpus
+    danieldk.dact
 
     binutils
     bubblewrap
