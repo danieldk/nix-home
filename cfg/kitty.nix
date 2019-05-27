@@ -9,6 +9,12 @@
     ${pkgs.kitty}/bin/kitty + complete setup zsh | source /dev/stdin
   '';
 
+
+  pam.sessionVariables = {
+    # Kitty is complaining about old OpenGL drivers with the Wayland backend.
+    KITTY_DISABLE_WAYLAND = 1;
+  };
+
   xdg.configFile."kitty/kitty.conf".text = ''
     enable_audio_bell no
     font_size 10.0
