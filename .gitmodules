@@ -10,9 +10,6 @@
 [submodule "darwin"]
 	path = darwin
 	url = https://github.com/LnL7/nix-darwin.git
-[submodule "finalfusion-overlay"]
-	path = finalfusion-overlay
-	url = git@github.com:finalfusion/finalfusion-overlay.git
 [submodule "danieldk-nix-packages"]
 	path = danieldk-nix-packages
 	url = git@git.sr.ht:~danieldk/nix-packages

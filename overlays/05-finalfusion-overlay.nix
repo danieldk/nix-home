@@ -1,1 +1,0 @@
-../finalfusion-overlay/overlay.nix
