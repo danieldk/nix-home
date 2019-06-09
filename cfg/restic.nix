@@ -1,14 +1,30 @@
 { pkgs, ... }:
 
 let
-  resticEnv = builtins.toFile "restic-env" ''
-    export B2_ACCOUNT_ID=$(pass show Storage/Backblaze/AppKey | grep AccountID: | cut -d ' ' -f 2)
-    export B2_ACCOUNT_KEY=$(pass Storage/Backblaze/AppKey | head -n1)
-    export RESTIC_PASSWORD=$(pass Storage/Restic)
+  resticPassword = "export RESTIC_PASSWORD=$(pass Storage/Restic)";
+  restic-b2 = pkgs.runCommand "restic-b2" {
+    buildInputs = [ pkgs.makeWrapper ];
+  } ''
+    mkdir -p $out/bin
+    makeWrapper ${pkgs.restic}/bin/restic $out/bin/restic-b2 \
+      --run "export B2_ACCOUNT_ID=\"\$(pass show Storage/Backblaze/AppKey | grep AccountID: | cut -d ' ' -f 2)\"" \
+      --run "export B2_ACCOUNT_KEY=\"\$(pass Storage/Backblaze/AppKey | head -n1)\"" \
+      --add-flags "--password-command='pass Storage/Restic'" \
+      --add-flags "-r b2:restic-mindbender"
+  '';
+  restic-mindfuzz = pkgs.runCommand "restic-mindfuzz" {
+    buildInputs = [ pkgs.makeWrapper ];
+  } ''
+    mkdir -p $out/bin
+    makeWrapper ${pkgs.restic}/bin/restic $out/bin/restic-mindfuzz \
+      --add-flags "--password-command='pass Storage/Restic'" \
+      --add-flags "-r sftp:mindfuzz:/home/daniel/backups/daniel"
   '';
 in {
   home.packages = with pkgs; [
     restic
+    restic-b2
+    restic-mindfuzz
     sshfs
   ];
 
@@ -17,21 +33,17 @@ in {
       backup-local = pkgs.writeScript "restic-backup-local" ''
         #! ${pkgs.bash}/bin/sh
 
-        restic=${pkgs.restic}/bin/restic
+        restic=${restic-mindfuzz}/bin/restic-mindfuzz
+        $restic backup --tag=resilio ~/resilio
+        $restic backup -e target --tag=git ~/git
+        $restic backup --tag=mail ~/Maildir
+        #$restic forget --prune -H 10 -d 10 -w 10 -m 10 -y 10
 
-        source ${resticEnv}
-
-        HOST=sftp:mindfuzz:/home/daniel/backups/daniel
-        $restic -r $HOST backup --tag=resilio ~/resilio
-        $restic -r $HOST backup -e target --tag=git ~/git
-        $restic -r $HOST backup --tag=mail ~/Maildir
-        $restic -r $HOST forget --prune -H 10 -d 10 -w 10 -m 10 -y 10 
-
-        B2=b2:restic-mindbender
-        $restic -r $HOST backup --tag=resilio ~/resilio
-        $restic -r $B2 backup -e target --tag=git ~/git
-        $restic -r $B2 backup --tag=mail ~/Maildir
-        $restic -r $B2 forget --prune -H 10 -d 10 -w 10 -m 10 -y 10
+        restic=${restic-b2}/bin/restic-b2
+        $restic backup --tag=resilio ~/resilio
+        $restic backup -e target --tag=git ~/git
+        $restic backup --tag=mail ~/Maildir
+        #$restic forget --prune -H 10 -d 10 -w 10 -m 10 -y 10
       '';
     in {
       Unit = {
@@ -61,15 +73,11 @@ in {
         rsync -avz root@castle.danieldk.eu:/srv/www/ \
           ''${CASTLE_BACKUP_DIR}/www/
 
-        source ${resticEnv}
+        restic=${restic-mindfuzz}/bin/restic-mindfuzz
+        $restic backup --tag=castle ~/.var/backup/castle
 
-        restic=${pkgs.restic}/bin/restic
-
-        HOST=sftp:mindfuzz:/home/daniel/backups/castle
-        $restic -r $HOST backup --tag=castle ~/.var/backup/castle
-
-        B2=b2:restic-castle
-        $restic -r $B2 backup -e target --tag=castle ~/.var/backup/castle
+        restic=${restic-b2}/bin/restic-b2
+        $restic backup -e target --tag=castle ~/.var/backup/castle
       '';
     in {
       Unit = {
