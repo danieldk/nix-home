@@ -5,7 +5,6 @@
     ../cfg/base-unix.nix
     ../cfg/base-network.nix
     ../cfg/direnv.nix
-    ../cfg/dropbox.nix
     ../cfg/emacs.nix
     ../cfg/git.nix
     ../cfg/fzf.nix
