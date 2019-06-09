@@ -22,12 +22,13 @@ in {
         source ${resticEnv}
 
         HOST=sftp:mindfuzz:/home/daniel/backups/daniel
-        $restic -r $HOST backup --tag=dropbox ~/Dropbox
+        $restic -r $HOST backup --tag=resilio ~/resilio
         $restic -r $HOST backup -e target --tag=git ~/git
         $restic -r $HOST backup --tag=mail ~/Maildir
         $restic -r $HOST forget --prune -H 10 -d 10 -w 10 -m 10 -y 10 
 
         B2=b2:restic-mindbender
+        $restic -r $HOST backup --tag=resilio ~/resilio
         $restic -r $B2 backup -e target --tag=git ~/git
         $restic -r $B2 backup --tag=mail ~/Maildir
         $restic -r $B2 forget --prune -H 10 -d 10 -w 10 -m 10 -y 10
