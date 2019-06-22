@@ -49,8 +49,17 @@
    "cx" 'cargo-process-run
    "t"  'cargo-process-test))
 
-(use-package nix-mode
-  :mode ("\\.nix\\'" "\\.nix.in\\'"))
+(use-package nix
+  :demand
+  :config
+  (use-package nix-mode)
+  ;(use-package nix-company)
+  (use-package nix-prettify-mode
+    :config
+    (nix-prettify-global-mode))
+  :bind (:map nix-mode-map ([tab] . nix-indent-line))
+  :mode ("\\.nix\\'" . nix-mode))
+
 (use-package nix-drv-mode
   :ensure nix-mode
   :mode "\\.drv\\'")
