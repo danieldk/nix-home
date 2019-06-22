@@ -16,6 +16,10 @@
       required = true;
     };
 
+    github = {
+      user = "danieldk";
+    };
+
     "protocol \"keybase\"" = {
       allow = "always";
     };
