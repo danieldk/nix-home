@@ -26,11 +26,11 @@
 
       nixify() {
         if [ ! -e ./.envrc ]; then
-          echo "use nix" > .envrc
+          echo "use nix -s shell.nix" > .envrc
           ${pkgs.direnv}/bin/direnv allow
         fi
-        if [ ! -e default.nix ]; then
-            cat > default.nix <<'EOF'
+        if [ ! -e shell.nix ]; then
+            cat > shell.nix <<'EOF'
       with import <nixpkgs> {};
       stdenv.mkDerivation {
       name = "env";
@@ -39,7 +39,7 @@
       ];
       }
       EOF
-          ''${EDITOR:-vim} default.nix
+          ''${EDITOR:-vim} shell.nix
         fi
       }
     '';
