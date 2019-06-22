@@ -8,11 +8,12 @@
 
   (my-local-leader-def
     :keymaps 'normal
-    :states '(mu4e-headers-mode-map mu4e-view-mode-map)
+    :keymaps '(mu4e-headers-mode-map mu4e-view-mode-map)
     "mr" '(mu4e-headers-toggle-include-related :which-key "related")
     "t" '(mu4e-headers-toggle-threading :which-key "threading"))
 
-  (setq mu4e-drafts-folder "/Drafts"
+  (setq mu4e-maildir "/home/daniel/Maildir/fastmail"
+	mu4e-drafts-folder "/Drafts"
 	mu4e-trash-folder  "/Trash"
 	mu4e-sent-folder   "/Sent Items"
 	mu4e-sent-messages-behavior 'delete
