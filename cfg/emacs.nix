@@ -20,6 +20,7 @@ let
     epkgs.ivy
     epkgs.ivy-bibtex
     epkgs.leuven-theme
+    pkgs.mu
     epkgs.nlinum-relative
     epkgs.magit
     epkgs.markdown-mode
