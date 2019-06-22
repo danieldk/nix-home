@@ -60,7 +60,7 @@ in {
 
   home.file =
     let
-      fontSize = if pkgs.stdenv.isDarwin then "15" else "12";
+      fontSize = if pkgs.stdenv.isDarwin then "15" else "10";
       emacsFont = ''
         (when window-system
         (set-frame-font "Source Code Pro ${fontSize}"))
