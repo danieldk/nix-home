@@ -12,6 +12,7 @@
     ../cfg/mail.nix
     ../cfg/mupdf.nix
     ../cfg/openconnect.nix
+    ../cfg/podman.nix
     ../cfg/resilio.nix
     ../cfg/restic.nix
     ../cfg/publishing.nix
