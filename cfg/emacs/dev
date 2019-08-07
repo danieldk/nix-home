@@ -69,7 +69,7 @@
 (use-package nix-repl
   :ensure nix-mode
   :commands (nix-repl))
-(use-package nix-update)
+;(use-package nix-update)
 
 (use-package tex-site
   :load-path "pkg/auctex"

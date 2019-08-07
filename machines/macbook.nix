@@ -8,20 +8,22 @@
     ../cfg/emacs.nix
     ../cfg/fzf.nix
     ../cfg/git.nix
-    ../cfg/mupdf.nix
-    ../cfg/rust.nix
+    #../cfg/mupdf.nix
+    #../cfg/rust.nix
     ../cfg/ssh.nix
     ../cfg/vim.nix
     ../cfg/zsh.nix
   ];
 
   home.packages = with pkgs; [
-    dact
+    rustup
+    texlive.combined.scheme-full
+    danieldk.dact
 
     # Environments
-    jupyterEnv
-    latexEnv
-    pandocEnv
+    #jupyterEnv
+    #latexEnv
+    #pandocEnv
 
     # Fonts
     fontconfig
@@ -35,7 +37,11 @@
     #TableFlip
   ];
 
-  fonts.fontconfig.enableProfileFonts = true;
+  home.sessionVariables = {
+    #NIX_PATH = "nixpkgs=/Users/daniel/git/nixpkgs";
+  };
+
+  fonts.fontconfig.enable = true;
 
   xdg = {
     enable = true;
