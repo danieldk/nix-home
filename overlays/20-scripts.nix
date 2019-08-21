@@ -1,4 +1,4 @@
-self: super: {
+self: super: rec {
   pass-find = with self; writeScriptBin "pass-find" ''
     #! ${bash}/bin/sh
 
@@ -19,4 +19,10 @@ self: super: {
       nohup pass -c "''${ACCOUNT}" >/dev/null 2>&1
     fi
   '';
+  pass-find-desktop = super.makeDesktopItem {
+    name = "pass-find";
+    desktopName = "pass-find";
+    exec = "${pass-find}/bin/pass-find";
+    terminal = "true";
+  };
 }

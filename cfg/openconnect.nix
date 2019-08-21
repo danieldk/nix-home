@@ -16,15 +16,12 @@ let
     sudo ${pkgs.openconnect}/bin/openconnect --passwd-on-stdin -u nnsdd01 --no-dtls \
     --script ${vpncScript} ras.uni-tuebingen.de
   '';
-in {
-  home.packages = [ vpnScript ];
-  home.file = {
-    ".local/share/applications/vpn.desktop".text = ''
-      [Desktop Entry]
-      Type=Application
-      Name=vpn
-      Exec=${vpnScript}/bin/vpn
-      Terminal=true
-    '';
+  vpnDesktopItem = pkgs.makeDesktopItem {
+    name = "uni-tuebingen-vpn";
+    desktopName = "University of Tübingen VPN";
+    exec = "${vpnScript}/bin/vpn";
+    terminal = "true";
   };
+in {
+  home.packages = [ vpnDesktopItem vpnScript ];
 }

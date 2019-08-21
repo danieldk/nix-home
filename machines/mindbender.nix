@@ -38,6 +38,7 @@
     jupyterEnv
     mpv
     nixops-pinned
+    pass-find-desktop
     skypeforlinux
     spotify
     tdesktop
