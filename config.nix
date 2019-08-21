@@ -2,8 +2,8 @@
   allowUnfree = true;
 
   packageOverrides = pkgs: {
-    danieldk = import ./danieldk-nix-packages/default.nix {
+    danieldk = pkgs.recurseIntoAttrs (import ./danieldk-nix-packages/default.nix {
       inherit pkgs;
-    };
+    });
   };
 }
