@@ -6,6 +6,11 @@
 
     compression = true;
     matchBlocks = {
+      "hopper" = {
+        hostname = "hopper.sfs.uni-tuebingen.de";
+        user = "daniel";
+      };
+
       "shaw" = {
         hostname = "shaw.sfs.uni-tuebingen.de";
         user = "daniel";
