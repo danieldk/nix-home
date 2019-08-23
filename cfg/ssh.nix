@@ -23,7 +23,7 @@
 
       "turing" = {
         hostname = "turing.sfs.uni-tuebingen.de";
-        user = "daniel";
+        user = "ddekok";
       };
 
       "turing-sfb" = {
