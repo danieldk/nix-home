@@ -1,26 +1,13 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    resilio-sync
-  ];
+  imports = [ ../modules/resilio.nix ];
 
-  systemd.user.services.rslsync = {
-    Unit = {
-      Description = "Resilio Sync";
-      After = [ "graphical-session-pre.target" ];
-      PartOf = [ "graphical-session.target" ];
-    };
-
-    Service = {
-      Type = "simple";
-      Restart = "on-failure";
-      RestartSec = 1;
-      ExecStart = "${pkgs.resilio-sync}/bin/rslsync --nodaemon";
-    };
-
-    Install = {
-      WantedBy = [ "graphical-session.target" ];
-    };
+  services.resilio = {
+    enable = true;
+    enableWebUI = true;
+    deviceName = "mindbender";
+    directoryRoot = "/home/daniel/resilio";
+    httpListenPort = 10000;
   };
 }
