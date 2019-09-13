@@ -27,27 +27,23 @@
     danieldk.dact
 
     binutils
-    bubblewrap
-    dbxml
-    fsa6
-    gcc
+    drawio
+    firefox-bin
     gdb
+    gitAndTools.hub
     gnome-mpv
-    google-chrome
+    handbrake
     html2text
-    jupyterEnv
     mpv
-    nixops-pinned
+    nix-bundle
+    nixops
+    nixops-19_03
     pass-find-desktop
+    signal-desktop
     skypeforlinux
     spotify
     tdesktop
     makemkv
-    qutebrowser
-
-    proprietary-fonts
-
-    #pyo3-pack
   ];
 
 
