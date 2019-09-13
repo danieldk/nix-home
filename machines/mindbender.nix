@@ -66,13 +66,5 @@
       Name=SSH Key Agent
       Hidden=true
     '';
-
-    ".local/share/applications/pass-find.desktop".text = ''
-      [Desktop Entry]
-      Type=Application
-      Name=pass-find
-      Exec=${pkgs.pass-find}/bin/pass-find
-      Terminal=true
-    '';
   };
 }
