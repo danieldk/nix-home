@@ -50,13 +50,14 @@
     #pyo3-pack
   ];
 
-  programs.firefox = {
-    enable = true;
-  };
 
   home.sessionVariables = {
     NIX_PATH = "$HOME/git/nixpkgs:nixpkgs=$HOME/git/nixpkgs:nixpkgs-unstable=$HOME/git/nixpkgs";
   };
+  #programs.firefox = {
+  #  enable = true;
+  #  package = pkgs.firefox-bin;
+  #};
 
   home.file = {
     ".config/autostart/gnome-keyring-ssh.desktop".text = ''
