@@ -13,9 +13,9 @@
     ../cfg/mupdf.nix
     ../cfg/openconnect.nix
     ../cfg/podman.nix
+    ../cfg/publishing.nix
     ../cfg/resilio.nix
     ../cfg/restic.nix
-    ../cfg/publishing.nix
     ../cfg/rust.nix
     ../cfg/ssh.nix
     ../cfg/vim.nix
