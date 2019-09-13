@@ -17,7 +17,7 @@
 
     localVariables = {
       KEYTIMEOUT = 1;
-      #PS1="%F{green}%~%f %# ";
+      PS1="%F{green}%~%f %# ";
       RPS1="";
     };
 
@@ -42,8 +42,6 @@
           ''${EDITOR:-vim} shell.nix
         fi
       }
-
-      eval "$(${pkgs.starship}/bin/starship init zsh)"
     '';
 
     plugins = [
