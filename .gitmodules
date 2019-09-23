@@ -16,3 +16,6 @@
 [submodule "nix-nlp"]
 	path = nix-nlp
 	url = git@github.com:danieldk/nix-nlp.git
+[submodule "sticker"]
+	path = sticker
+	url = git@github.com:stickeritis/nix-packages.git
