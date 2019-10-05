@@ -101,3 +101,5 @@
     "rl" '(reftex-label :which "add label")
     "rr" '(reftex-reference :which "refer label")
     "v"  '(TeX-view :which-key "view")))
+
+(use-package cython-mode)

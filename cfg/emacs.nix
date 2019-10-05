@@ -9,6 +9,7 @@ let
     epkgs.company
     epkgs.company-math
     epkgs.counsel
+    epkgs.cython-mode
     epkgs.diminish
     epkgs.direnv
     epkgs.evil
