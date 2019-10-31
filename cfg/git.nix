@@ -6,16 +6,10 @@
     enable = true;
     userName = "Daniël de Kok";
     userEmail = "me@danieldk.eu";
+    lfs.enable = true;
   };
 
   programs.git.extraConfig = {
-    "filter \"lfs\"" = {
-      clean = "${pkgs.git-lfs}/bin/git-lfs clean -- %f";
-      smudge = "${pkgs.git-lfs}/bin/git-lfs smudge --skip -- %f";
-      process = "${pkgs.git-lfs}/bin/git-lfs filter-process";
-      required = true;
-    };
-
     github = {
       user = "danieldk";
     };
@@ -27,6 +21,5 @@
 
   home.packages = with pkgs; [
     git-crypt
-    git-lfs
   ];
 }
