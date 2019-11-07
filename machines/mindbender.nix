@@ -6,6 +6,7 @@
     ../cfg/base-network.nix
     ../cfg/direnv.nix
     ../cfg/emacs.nix
+    ../cfg/fish.nix
     ../cfg/git.nix
     ../cfg/fzf.nix
     ../cfg/kitty.nix
