@@ -9,7 +9,7 @@
 	url = https://github.com/LnL7/nix-darwin.git
 [submodule "danieldk-nix-packages"]
 	path = danieldk-nix-packages
-	url = git@git.sr.ht:~danieldk/nix-packages
+	url = git@github.com:danieldk/nix-packages.git
 [submodule "sticker"]
 	path = sticker
 	url = git@github.com:stickeritis/nix-packages.git
