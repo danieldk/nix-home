@@ -13,3 +13,6 @@
 [submodule "sticker"]
 	path = sticker
 	url = git@github.com:stickeritis/nix-packages.git
+[submodule "finalfusion"]
+	path = finalfusion
+	url = git@github.com:finalfusion/nix-packages.git
