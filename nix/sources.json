@@ -34,5 +34,29 @@
         "type": "tarball",
         "url": "https://github.com/nmattia/niv/archive/6f03879b8a91fb0c33c7186da347b914deee3efc.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nixpkgs-unstable": {
+        "branch": "master",
+        "description": "Nix Packages collection",
+        "homepage": null,
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "4c142b085441b8e0228c528cde11aa9618b771c8",
+        "sha256": "1vnzccxnnq71a2sq4f4wvfr938iix155ny31695jvdj5aqm6j6jr",
+        "type": "tarball",
+        "url": "https://github.com/nixos/nixpkgs/archive/4c142b085441b8e0228c528cde11aa9618b771c8.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "rocm": {
+        "branch": "self",
+        "description": "NixOS support for the ROCm graphics stack (rocm.github.io)",
+        "homepage": null,
+        "owner": "danieldk",
+        "repo": "nixos-rocm",
+        "rev": "364368c23fe7928640cbb20e126ef44769d9f6ad",
+        "sha256": "1bjikaymbpjk8jh0yr6ca0kaycjps18ai69kc6xl0mkq84hbipb0",
+        "type": "tarball",
+        "url": "https://github.com/danieldk/nixos-rocm/archive/364368c23fe7928640cbb20e126ef44769d9f6ad.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
