@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
-{
+let
+  sources = import ../nix/sources.nix;
+in {
   home.packages = with pkgs; [
     # Basic utilities
     bat
@@ -27,6 +29,7 @@
 
   programs.home-manager = {
     enable = true;
+    path = toString sources.home-manager;
   };
 
   programs.starship = {

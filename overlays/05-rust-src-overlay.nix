@@ -1,1 +1,0 @@
-../nixpkgs-mozilla/rust-src-overlay.nix
