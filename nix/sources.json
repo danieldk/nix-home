@@ -1,4 +1,16 @@
 {
+    "finalfusion": {
+        "branch": "master",
+        "description": "Nix package set for finalfusion projects",
+        "homepage": null,
+        "owner": "finalfusion",
+        "repo": "nix-packages",
+        "rev": "27b532a4360a73331a00a3454e912b20b3ee4370",
+        "sha256": "1649z7b8s6n47b4frja277w9gf022gyk3aw05lzs5vr0vms0xfi7",
+        "type": "tarball",
+        "url": "https://github.com/finalfusion/nix-packages/archive/27b532a4360a73331a00a3454e912b20b3ee4370.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "home-manager": {
         "branch": "master",
         "description": "Manage a user environment using Nix",
@@ -57,6 +69,18 @@
         "sha256": "1bjikaymbpjk8jh0yr6ca0kaycjps18ai69kc6xl0mkq84hbipb0",
         "type": "tarball",
         "url": "https://github.com/nixos-rocm/nixos-rocm/archive/9cfc563d0826f08aa427a5889c5f5db53440f7bd.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "sticker": {
+        "branch": "master",
+        "description": "Nix package set for sticker, models, and bindings",
+        "homepage": null,
+        "owner": "stickeritis",
+        "repo": "nix-packages",
+        "rev": "531fe8dec6efa705286775e541e85c54de802b21",
+        "sha256": "0s82cd2wrppm0p1m4dn1pmghbk5i5k6w69b0n3nh5j0y4r36crxc",
+        "type": "tarball",
+        "url": "https://github.com/stickeritis/nix-packages/archive/531fe8dec6efa705286775e541e85c54de802b21.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

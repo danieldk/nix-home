@@ -9,7 +9,7 @@ in {
       inherit pkgs;
     });
 
-    finalfusion = pkgs.recurseIntoAttrs (import ./finalfusion/default.nix {
+    finalfusion = pkgs.recurseIntoAttrs (import sources.finalfusion {
       inherit pkgs;
     });
 
@@ -23,7 +23,7 @@ in {
       self = (import sources.rocm) (nixpkgs-unstable // self) nixpkgs-unstable;
     in self;
 
-    sticker = pkgs.recurseIntoAttrs (import ./sticker/default.nix {
+    sticker = pkgs.recurseIntoAttrs (import sources.sticker {
       inherit pkgs;
     });
   };

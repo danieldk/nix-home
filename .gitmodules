@@ -1,9 +1,3 @@
 [submodule "danieldk-nix-packages"]
 	path = danieldk-nix-packages
 	url = git@github.com:danieldk/nix-packages.git
-[submodule "sticker"]
-	path = sticker
-	url = git@github.com:stickeritis/nix-packages.git
-[submodule "finalfusion"]
-	path = finalfusion
-	url = git@github.com:finalfusion/nix-packages.git
