@@ -48,15 +48,15 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "rocm": {
-        "branch": "self",
+        "branch": "master",
         "description": "NixOS support for the ROCm graphics stack (rocm.github.io)",
         "homepage": null,
-        "owner": "danieldk",
+        "owner": "nixos-rocm",
         "repo": "nixos-rocm",
-        "rev": "364368c23fe7928640cbb20e126ef44769d9f6ad",
+        "rev": "9cfc563d0826f08aa427a5889c5f5db53440f7bd",
         "sha256": "1bjikaymbpjk8jh0yr6ca0kaycjps18ai69kc6xl0mkq84hbipb0",
         "type": "tarball",
-        "url": "https://github.com/danieldk/nixos-rocm/archive/364368c23fe7928640cbb20e126ef44769d9f6ad.tar.gz",
+        "url": "https://github.com/nixos-rocm/nixos-rocm/archive/9cfc563d0826f08aa427a5889c5f5db53440f7bd.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
