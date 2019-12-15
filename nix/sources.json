@@ -1,4 +1,16 @@
 {
+    "danieldk": {
+        "branch": "master",
+        "description": "My Nix package set",
+        "homepage": "",
+        "owner": "danieldk",
+        "repo": "nix-packages",
+        "rev": "95f2ca2c5e1e22be0ebf06a06dfcf2d5bf8bdf82",
+        "sha256": "0rj3gn6w9f2gc7bf6aym0i6rnnn3j8mcp344q5r0wzgjn6rj9f2w",
+        "type": "tarball",
+        "url": "https://github.com/danieldk/nix-packages/archive/95f2ca2c5e1e22be0ebf06a06dfcf2d5bf8bdf82.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "finalfusion": {
         "branch": "master",
         "description": "Nix package set for finalfusion projects",

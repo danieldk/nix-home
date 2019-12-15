@@ -1,3 +1,0 @@
-[submodule "danieldk-nix-packages"]
-	path = danieldk-nix-packages
-	url = git@github.com:danieldk/nix-packages.git

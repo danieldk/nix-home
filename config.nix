@@ -5,7 +5,7 @@ in {
   allowUnfree = true;
 
   packageOverrides = pkgs: {
-    danieldk = pkgs.recurseIntoAttrs (import ./danieldk-nix-packages/default.nix {
+    danieldk = pkgs.recurseIntoAttrs (import sources.danieldk {
       inherit pkgs;
     });
 
