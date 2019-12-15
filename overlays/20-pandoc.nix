@@ -4,12 +4,12 @@ self: super: {
   # https://github.com/NixOS/nixpkgs/issues/34376
   #
   # So, get a static pandoc build from upstream instead.
-  pandoc = with super; stdenv.mkDerivation {
+  pandoc = with super; stdenv.mkDerivation rec {
     pname = "pandoc";
-    version = "1.7.3";
+    version = "2.7.3";
 
     src = fetchTarball {
-      url = "https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-linux.tar.gz";
+      url = "https://github.com/jgm/pandoc/releases/download/${version}/pandoc-${version}-linux.tar.gz";
       sha256 = "192wxd7519zd6whka6bqbhlgmkzmwszi8fgd39hfr8cz78bc8whc";
     };
 
