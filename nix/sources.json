@@ -77,10 +77,10 @@
         "homepage": null,
         "owner": "nixos-rocm",
         "repo": "nixos-rocm",
-        "rev": "9cfc563d0826f08aa427a5889c5f5db53440f7bd",
-        "sha256": "1bjikaymbpjk8jh0yr6ca0kaycjps18ai69kc6xl0mkq84hbipb0",
+        "rev": "a5104f1d4b6540dc7d841b993d256b3c89297d06",
+        "sha256": "0csj0sm6a7ia4fx5spsv7098adif4avzmhqscrxxc9pvmfirwyl0",
         "type": "tarball",
-        "url": "https://github.com/nixos-rocm/nixos-rocm/archive/9cfc563d0826f08aa427a5889c5f5db53440f7bd.tar.gz",
+        "url": "https://github.com/nixos-rocm/nixos-rocm/archive/a5104f1d4b6540dc7d841b993d256b3c89297d06.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "sticker": {
