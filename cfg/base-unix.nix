@@ -3,6 +3,10 @@
 let
   sources = import ../nix/sources.nix;
 in {
+  imports = [
+    ./tmux.nix
+  ];
+
   home.packages = with pkgs; [
     # Basic utilities
     bat
