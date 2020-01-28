@@ -37,6 +37,8 @@
     html2text
     mpv
     nix-bundle
+    nixops
+    nixops-19_03
     pass-find-desktop
     signal-desktop
     skypeforlinux
