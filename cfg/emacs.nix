@@ -18,6 +18,7 @@ let
     epkgs.flycheck
     epkgs.forge
     epkgs.general
+    epkgs.go-mode
     epkgs.ivy
     epkgs.ivy-bibtex
     epkgs.leuven-theme

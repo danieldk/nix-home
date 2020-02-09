@@ -103,3 +103,5 @@
     "v"  '(TeX-view :which-key "view")))
 
 (use-package cython-mode)
+
+(use-package go-mode)
