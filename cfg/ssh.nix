@@ -10,6 +10,11 @@
 
     compression = true;
     matchBlocks = {
+      "aion" = {
+        hostname = "aion.sfs.uni-tuebingen.de";
+        user = "daniel";
+      };
+
       "hopper" = {
         hostname = "hopper.sfs.uni-tuebingen.de";
         user = "daniel";
