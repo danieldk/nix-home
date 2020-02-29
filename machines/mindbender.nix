@@ -28,6 +28,7 @@
     danieldk.dact
 
     binutils
+    brave
     drawio
     firefox-bin
     gdb
@@ -36,6 +37,7 @@
     handbrake
     html2text
     mpv
+    niv
     nix-bundle
     nixops
     nixops-19_03
