@@ -66,4 +66,18 @@
       Hidden=true
     '';
   };
+
+  programs.ssh = {
+    enable = true;
+    extraConfig = ''
+      PKCS11Provider ${pkgs.opensc}/lib/opensc-pkcs11.so
+    '';
+  };
+
+  services.gpg-agent = {
+    enable = true;
+    extraConfig = ''
+      pinentry-program ${pkgs.pinentry_gnome}/bin/pinentry-gnome3
+    '';
+  };
 }
