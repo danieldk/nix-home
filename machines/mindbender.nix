@@ -42,6 +42,7 @@
     nixops
     nixops-19_03
     pass-find-desktop
+    podman-fhs
     signal-desktop
     skypeforlinux
     spotify
