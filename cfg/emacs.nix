@@ -43,6 +43,9 @@ let
     epkgs.flycheck-rust
     epkgs.racer
     epkgs.rust-mode
+
+    # Protocol Buffers
+    epkgs.protobuf-mode
   ]);
 
   emacsBinary = if pkgs.stdenv.isDarwin then
