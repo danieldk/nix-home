@@ -3,49 +3,49 @@
 let
   package = if pkgs.stdenv.isDarwin then pkgs.emacsMacport else pkgs.emacs;
   emacsPackages = pkgs.emacsPackagesNgGen package;
-  emacsWithPackages = emacsPackages.emacsWithPackages (epkgs: [
-    epkgs.auctex
-    epkgs.avy
-    epkgs.company
-    epkgs.company-math
-    epkgs.counsel
-    epkgs.cython-mode
-    epkgs.diminish
-    epkgs.direnv
-    epkgs.evil
-    epkgs.evil-magit
-    epkgs.evil-mu4e
-    epkgs.flycheck
-    epkgs.forge
-    epkgs.general
-    epkgs.go-mode
-    epkgs.ivy
-    epkgs.ivy-bibtex
-    epkgs.leuven-theme
+  emacsWithPackages = emacsPackages.emacsWithPackages (epkgs: with epkgs; [
+    auctex
+    avy
+    company
+    company-math
+    counsel
+    cython-mode
+    diminish
+    direnv
+    evil
+    evil-magit
+    evil-mu4e
+    flycheck
+    forge
+    general
+    go-mode
+    ivy
+    ivy-bibtex
+    leuven-theme
     pkgs.mu
-    epkgs.nlinum-relative
-    epkgs.magit
-    epkgs.markdown-mode
-    epkgs.nix-mode
-    epkgs.nix-update
-    epkgs.projectile
-    epkgs.swiper
-    epkgs.use-package
-    epkgs.which-key
+    nlinum-relative
+    magit
+    markdown-mode
+    nix-mode
+    nix-update
+    projectile
+    swiper
+    use-package
+    which-key
 
     # org-mode
-    epkgs.org
-    epkgs.org-bullets
-    epkgs.evil-org
+    org
+    org-bullets
+    evil-org
 
     # Rust
-    epkgs.cargo
-    epkgs.flycheck-rust
-    epkgs.racer
-    epkgs.rust-mode
+    cargo
+    flycheck-rust
+    racer
+    rust-mode
 
     # Protocol Buffers
-    epkgs.protobuf-mode
+    protobuf-mode
   ]);
 
   emacsBinary = if pkgs.stdenv.isDarwin then
@@ -53,16 +53,16 @@ let
   else
     "${emacsWithPackages}/bin/emacs";
 
-  org = pkgs.writeScriptBin "org" ''
+  orgMacs = pkgs.writeScriptBin "org" ''
     #!/bin/sh
     ${emacsBinary} -q --load ~/.emacs-org $@
   '';
-  mue = pkgs.writeScriptBin "mue" ''
+  muMacs = pkgs.writeScriptBin "mue" ''
     #!/bin/sh
     ${emacsBinary} -q --load ~/.emacs-mu4e $@
   '';
 in {
-  home.packages = [ emacsWithPackages org mue ];
+  home.packages = [ emacsWithPackages orgMacs muMacs ];
 
   home.file =
     let
