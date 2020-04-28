@@ -35,6 +35,7 @@ let
     swiper
     use-package
     which-key
+    zenburn-theme
 
     # org-mode
     org

@@ -25,9 +25,9 @@
 	     blink-cursor-mode))
     (funcall mode 0)))
 
-(use-package leuven-theme
+(use-package zenburn-theme
   :config
-  (load-theme 'leuven t))
+  (load-theme 'zenburn t))
 
 (use-package evil
   :init
