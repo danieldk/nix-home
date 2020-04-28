@@ -22,6 +22,9 @@ let
     ivy
     ivy-bibtex
     leuven-theme
+    lsp-ivy
+    lsp-mode
+    lsp-ui
     pkgs.mu
     nlinum-relative
     magit
@@ -40,9 +43,6 @@ let
 
     # Rust
     cargo
-    flycheck-rust
-    racer
-    rust-mode
 
     # Protocol Buffers
     protobuf-mode
@@ -62,7 +62,7 @@ let
     ${emacsBinary} -q --load ~/.emacs-mu4e $@
   '';
 in {
-  home.packages = [ emacsWithPackages orgMacs muMacs ];
+  home.packages = [ pkgs.cargo pkgs.rust-analyzer pkgs.rustfmt emacsWithPackages orgMacs muMacs ];
 
   home.file =
     let
