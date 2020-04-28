@@ -141,15 +141,18 @@
 
 (use-package magit
   :config
-
+  :general
   (my-leader-def
    :keymaps 'normal
    "g"  '(:ignore t :which-key "Git")
-   "gs" 'magit-status)
+   "gs" 'magit-status))
 
-  (use-package evil-magit))
+(use-package evil-magit
+  :demand
+  :after magit)
 
 (use-package forge
+  :demand
   :after magit)
 
 (use-package projectile
