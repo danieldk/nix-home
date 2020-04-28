@@ -74,8 +74,6 @@ in {
     in {
     ".emacs".text = emacsFont + builtins.readFile ./emacs/base +
       builtins.readFile ./emacs/dev;
-    ".emacs-mu4e".text = emacsFont + builtins.readFile ./emacs/base +
-      builtins.readFile ./emacs/mu4e;
     ".emacs-org".text = emacsFont + builtins.readFile ./emacs/base +
       builtins.readFile ./emacs/org;
   };
