@@ -22,6 +22,9 @@ in {
     openssh
     pass
     pass-find
+
+    # Nix tools
+    niv
   ] ++ lib.optionals pkgs.stdenv.isDarwin [
     # Better userland for macOS
     coreutils
