@@ -24,7 +24,7 @@
 (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
 
 (use-package cargo
-  :config
+  :general
   (my-local-leader-def
    :states 'normal
    :keymaps 'rust-mode-map
@@ -81,6 +81,7 @@
 (use-package latex
   :config
   (add-hook 'LaTeX-mode-hook 'reftex-mode)
+  :general
   (my-local-leader-def
     :states 'normal
     :keymaps 'LaTeX-mode-map

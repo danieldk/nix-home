@@ -116,7 +116,7 @@
    ("C-c l"   . counsel-locate)    ; search for files or else using locate
    ("M-y"     . counsel-yank-pop))
 
-  :config
+  :general
   (my-leader-def
     :keymaps 'normal
     "SPC" '(counsel-M-x :which-key "M-x")
@@ -128,7 +128,7 @@
 (use-package swiper
   :bind*
   (("\C-s" . swiper))
-  :config
+  :general
   (my-leader-def
     :keymaps 'normal
     "ss" '(swiper :which-key "swiper")))
@@ -164,6 +164,7 @@
     (setq projectile-require-project-root nil)
     (setq projectile-completion-system 'ivy)
     (add-to-list 'projectile-globally-ignored-files ".DS_Store"))
+  :general
   (my-leader-def
    :keymaps 'normal
    :prefix "SPC"
