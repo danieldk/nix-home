@@ -32,6 +32,7 @@ in {
     gawk
     gnugrep
     gnused
+    gnutar
   ];
 
   programs.home-manager = {
