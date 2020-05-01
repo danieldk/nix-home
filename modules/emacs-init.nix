@@ -119,6 +119,15 @@ let
         '';
       };
 
+      bindStar = mkOption {
+        type = types.attrsOf types.str;
+        default = {};
+        example = { "M-<up>" = "drag-stuff-up"; "M-<down>" = "drag-stuff-down"; };
+        description = ''
+          The entries to use for <option>:bind*</option>.
+        '';
+      };
+
       bindKeyMap = mkOption {
         type = types.attrsOf types.str;
         default = {};
@@ -149,6 +158,14 @@ let
         default = "";
         description = ''
           Additional lines to place in the use-package configuration.
+        '';
+      };
+
+      general = mkOption {
+        type = types.lines;
+        default = "";
+        description = ''
+          Code to place in the <option>:general</option> section.
         '';
       };
 
@@ -192,6 +209,7 @@ let
           mkDiminish = vs: optional (vs != []) ":diminish (${toString vs})";
           mkMode = map (v: ":mode ${v}");
           mkBind = mkBindHelper "bind" "";
+          mkBindStar = mkBindHelper "bind*" "";
           mkBindLocal = bs:
             let
               mkMap = n: v: mkBindHelper "bind" ":map ${n}" v;
@@ -204,11 +222,13 @@ let
             if isBool v then optional v ":defer t"
             else [ ":defer ${toString v}" ];
           mkDemand = v: optional v ":demand t";
+          extraAfter = optional (config.general != "") "general";
         in
           concatStringsSep "\n  " (
             [ "(use-package ${name}" ]
-            ++ mkAfter config.after
+            ++ mkAfter (config.after ++ extraAfter)
             ++ mkBind config.bind
+            ++ mkBindStar config.bindStar
             ++ mkBindKeyMap config.bindKeyMap
             ++ mkBindLocal config.bindLocal
             ++ mkChords config.chords
@@ -220,6 +240,7 @@ let
             ++ mkMode config.mode
             ++ optionals (config.init != "") [ ":init" config.init ]
             ++ optionals (config.config != "") [ ":config" config.config ]
+            ++ optionals (config.general != "") [ ":general" config.general ]
             ++ optional (config.extraConfig != "") config.extraConfig
           ) + ")";
     };
@@ -278,10 +299,13 @@ let
   hasDiminish = any (p: p.diminish != []) (attrValues cfg.usePackage);
 
   # Whether the configuration makes use of `:bind`.
-  hasBind = any (p: p.bind != {}) (attrValues cfg.usePackage);
+  hasBind = any (p: p.bind != {} || p.bindStar != {}) (attrValues cfg.usePackage);
 
   # Whether the configuration makes use of `:chords`.
   hasChords = any ( p: p.chords != {}) (attrValues cfg.usePackage);
+
+  # Whether the configuration makes use of `:diminish`.
+  hasGeneral = any (p: p.general != "") (attrValues cfg.usePackage);
 
   usePackageSetup =
     ''
@@ -311,6 +335,12 @@ let
       ;; For :chords in (use-package).
       (use-package use-package-chords
         :config (key-chord-mode 1))
+    ''
+    + optionalString hasGeneral ''
+      ;; For :general in (use-package).
+      (use-package general
+        :config
+        (general-evil-setup))
     '';
 
   initFile = ''
@@ -418,7 +448,7 @@ in
           (builtins.attrValues cfg.usePackage);
       in
         [
-          (epkgs.trivialBuild {
+          ((epkgs.trivialBuild {
             pname = "hm-init";
             version = "0";
             src = pkgs.writeText "hm-init.el" initFile;
@@ -427,10 +457,16 @@ in
               ++ packages
               ++ optional hasBind epkgs.bind-key
               ++ optional hasDiminish epkgs.diminish
-              ++ optional hasChords epkgs.use-package-chords;
+              ++ optional hasChords epkgs.use-package-chords
+              ++ optional hasGeneral epkgs.general;
             preferLocalBuild = true;
             allowSubstitutes = false;
-          })
+          }).overrideAttrs (attr: {
+            buildPhase = ''
+              runHook preBuild
+              runHook postBuild
+            '';
+          }))
         ];
 
     home.file.".emacs.d/init.el".text = ''
