@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ../modules/emacs-init.nix
+
     ../cfg/base-unix.nix
     ../cfg/direnv.nix
     ../cfg/git.nix
