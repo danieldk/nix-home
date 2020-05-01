@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 {
-  home.packages = [ pkgs.cargo pkgs.rust-analyzer pkgs.rustfmt ];
-
   programs.emacs = {
     enable = true;
 
