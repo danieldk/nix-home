@@ -1,15 +1,43 @@
 { pkgs, ... }:
 
-let
-  rustStable = pkgs.mozilla.latest.rustChannels.stable.rust.override {
-    extensions = [ "rust-src" ];
-  };
-in {
+{
   home.packages = with pkgs; [
-    #latest.rustChannels.stable.rust
-    #latest.rustChannels.nightly.rust
-    rustracer
+    cargo
+    rust-analyzer
+    rustfmt
   ];
 
-  programs.zsh.initExtra = "export RUST_SRC_PATH=$(${rustStable}/bin/rustc --print sysroot)/lib/rustlib/src/rust/src";
+  programs.emacs.init.usePackage = {
+    cargo = {
+      enable = true;
+      general = ''
+        (general-nmap
+          :keymaps 'rust-mode-map
+          :prefix "SPC m"
+          "c." 'cargo-process-repeat
+          "cC" 'cargo-process-clean
+          "cX" 'cargo-process-run-example
+          "cc" 'cargo-process-build
+          "cd" 'cargo-process-doc
+          "ce" 'cargo-process-bench
+          "cf" 'cargo-process-current-test
+          "cf" 'cargo-process-fmt
+          "ci" 'cargo-process-init
+          "cn" 'cargo-process-new
+          "co" 'cargo-process-current-file-tests
+          "cs" 'cargo-process-search
+          "cu" 'cargo-process-update
+          "cx" 'cargo-process-run
+          "t"  'cargo-process-test)
+      '';
+    };
+
+    rust-mode = {
+      enable = true;
+      mode = [ ''"\\.rs\\'"'' ];
+      config = ''
+        (setq rust-format-on-save t)
+      '';
+    };
+  };
 }
