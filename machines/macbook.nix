@@ -45,15 +45,6 @@
 
   fonts.fontconfig.enable = true;
 
-  programs.zsh.initExtra = ''
-    unset SSH_AUTH_SOCK
-    test -r ~/.ssh-agent && eval "$(<~/.ssh-agent)" >/dev/null
-
-    ssh-add -l &>/dev/null
-    if [ "$?" -eq 2 ]; then
-      (umask 066; ssh-agent -P "${pkgs.opensc}/lib/*" > ~/.ssh-agent)
-      eval "$(<~/.ssh-agent)" >/dev/null
-    fi
   '';
 
   xdg = {
