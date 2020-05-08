@@ -99,10 +99,6 @@
           '';
         };
 
-        go-mode = {
-          enable = true;
-        };
-
         lsp-mode = {
           enable = true;
           command = [ "lsp" ];
