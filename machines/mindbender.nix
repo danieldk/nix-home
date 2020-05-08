@@ -10,6 +10,7 @@
     ../cfg/emacs.nix
     ../cfg/fish.nix
     ../cfg/git.nix
+    ../cfg/go.nix
     ../cfg/fzf.nix
     ../cfg/kitty.nix
     ../cfg/mail.nix

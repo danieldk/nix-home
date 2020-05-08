@@ -10,24 +10,23 @@
       recommendedGcSettings = true;
 
       prelude =
-        let fontSize = if pkgs.stdenv.isDarwin then "15" else "10";
-        emacsFont = ''
+        let
+          fontSize = if pkgs.stdenv.isDarwin then "15" else "10";
+        in ''
+          (require 'bind-key)
+  
+          (setq inhibit-startup-screen t)
+  
           (when window-system
-            (set-frame-font "Source Code Pro ${fontSize}"))
-        '';
-        in emacsFont + ''
-        (require 'bind-key)
-  
-        (setq inhibit-startup-screen t)
-  
-        (when window-system
-          (dolist (mode
-            '(tool-bar-mode
-              tooltip-mode
-              scroll-bar-mode
-              menu-bar-mode
-              blink-cursor-mode))
-            (funcall mode 0)))
+            (set-frame-font "Source Code Pro ${fontSize}")
+
+            (dolist (mode
+              '(tool-bar-mode
+                tooltip-mode
+                scroll-bar-mode
+                menu-bar-mode
+                blink-cursor-mode))
+              (funcall mode 0)))
       '';
 
       usePackageVerbose = true;
