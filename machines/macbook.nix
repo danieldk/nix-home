@@ -10,18 +10,17 @@
     ../cfg/emacs.nix
     ../cfg/fzf.nix
     ../cfg/git.nix
-    #../cfg/mupdf.nix
-    #../cfg/rust.nix
     ../cfg/go.nix
+    ../cfg/rust.nix
     ../cfg/ssh.nix
     ../cfg/vim.nix
     ../cfg/zsh.nix
   ];
 
   home.packages = with pkgs; [
-    rustup
-    texlive.combined.scheme-full
-    danieldk.dact
+    #rustup
+    #texlive.combined.scheme-full
+    #danieldk.dact
 
     # Environments
     #jupyterEnv
