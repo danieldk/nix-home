@@ -288,6 +288,14 @@
           '';
         };
 
+        yaml-mode = {
+          enable = true;
+          mode = [
+            ''("\\.yml\\'" . yaml-mode)''
+            ''("\\.yaml\\'" . yaml-mode)''
+          ];
+        };
+
         zenburn-theme = {
           enable = true;
           config = ''
