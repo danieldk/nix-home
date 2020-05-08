@@ -107,12 +107,8 @@
           enable = true;
           command = [ "lsp" ];
           hook = [
-            "(rust-mode . lsp)"
             "(lsp-mode . lsp-enable-which-key-integration)"
           ];
-          config = ''
-            (setq lsp-rust-server 'rust-analyzer)
-          '';
         };
 
         lsp-ui = {

@@ -32,6 +32,16 @@
       '';
     };
 
+    lsp-mode = {
+      hook = [
+        "(rust-mode . lsp)"
+      ];
+
+      config = ''
+        (setq lsp-rust-server 'rust-analyzer)
+      '';
+    };
+
     rust-mode = {
       enable = true;
       mode = [ ''"\\.rs\\'"'' ];
