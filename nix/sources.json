@@ -18,10 +18,10 @@
         "homepage": "",
         "owner": "danieldk",
         "repo": "nix-packages",
-        "rev": "af06ec7127d7c7e5b9fa9a6516570b13923ad720",
-        "sha256": "13q53ww2lm8g96c5hpc310vx90kgnpv7dfh2qf73fib8zsa4g6hz",
+        "rev": "efc407e2b95bd018f98a4369e6311389d851e74e",
+        "sha256": "0h3zc5c64axsq3g86r0v43zscwhsq89i2wd7s3c15mrq1kqfdldi",
         "type": "tarball",
-        "url": "https://github.com/danieldk/nix-packages/archive/af06ec7127d7c7e5b9fa9a6516570b13923ad720.tar.gz",
+        "url": "https://github.com/danieldk/nix-packages/archive/efc407e2b95bd018f98a4369e6311389d851e74e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "finalfusion": {
@@ -30,10 +30,10 @@
         "homepage": null,
         "owner": "finalfusion",
         "repo": "nix-packages",
-        "rev": "27b532a4360a73331a00a3454e912b20b3ee4370",
-        "sha256": "1649z7b8s6n47b4frja277w9gf022gyk3aw05lzs5vr0vms0xfi7",
+        "rev": "3297fa52d9f5bb1491ffaf3761082f093e412f00",
+        "sha256": "0zm8fnjmjx0kdqfwfn0vr9c4nvnwrbf7zh8gnjwv2f2vb073z370",
         "type": "tarball",
-        "url": "https://github.com/finalfusion/nix-packages/archive/27b532a4360a73331a00a3454e912b20b3ee4370.tar.gz",
+        "url": "https://github.com/finalfusion/nix-packages/archive/3297fa52d9f5bb1491ffaf3761082f093e412f00.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "home-manager": {
@@ -42,10 +42,10 @@
         "homepage": "",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "95c8007b8fe4433cd217db83ce26b8e29875ba06",
-        "sha256": "1f5fbpsaizz1hrsajprn2bcbjzgjs5jy72yir6gszg6360j61w5q",
+        "rev": "40b1c5c448a7d71f723ec2d686efa86a679c5fdb",
+        "sha256": "06ab9mavjlcx6ip58p8avc0p702ng0jlh953izbdymajfqklzbmd",
         "type": "tarball",
-        "url": "https://github.com/rycee/home-manager/archive/95c8007b8fe4433cd217db83ce26b8e29875ba06.tar.gz",
+        "url": "https://github.com/rycee/home-manager/archive/40b1c5c448a7d71f723ec2d686efa86a679c5fdb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "mozilla": {
@@ -54,10 +54,10 @@
         "homepage": null,
         "owner": "mozilla",
         "repo": "nixpkgs-mozilla",
-        "rev": "5300241b41243cb8962fad284f0004afad187dad",
-        "sha256": "1h3g3817anicwa9705npssvkwhi876zijyyvv4c86qiklrkn5j9w",
+        "rev": "e912ed483e980dfb4666ae0ed17845c4220e5e7c",
+        "sha256": "08fvzb8w80bkkabc1iyhzd15f4sm7ra10jn32kfch5klgl0gj3j3",
         "type": "tarball",
-        "url": "https://github.com/mozilla/nixpkgs-mozilla/archive/5300241b41243cb8962fad284f0004afad187dad.tar.gz",
+        "url": "https://github.com/mozilla/nixpkgs-mozilla/archive/e912ed483e980dfb4666ae0ed17845c4220e5e7c.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -66,10 +66,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "6f03879b8a91fb0c33c7186da347b914deee3efc",
-        "sha256": "04pl8b4gnbfakapjskm4030qlklwzjk0x45jn9gcnjpdl7s8ri33",
+        "rev": "f73bf8d584148677b01859677a63191c31911eae",
+        "sha256": "0jlmrx633jvqrqlyhlzpvdrnim128gc81q5psz2lpp2af8p8q9qs",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/6f03879b8a91fb0c33c7186da347b914deee3efc.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/f73bf8d584148677b01859677a63191c31911eae.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs-unstable": {
@@ -102,10 +102,10 @@
         "homepage": null,
         "owner": "stickeritis",
         "repo": "nix-packages",
-        "rev": "531fe8dec6efa705286775e541e85c54de802b21",
-        "sha256": "0s82cd2wrppm0p1m4dn1pmghbk5i5k6w69b0n3nh5j0y4r36crxc",
+        "rev": "e610f4787014fee51867328592c4e88903d89855",
+        "sha256": "1x114l4x6ldl4hl7rzc5dg54lvsfkmjksi6i4gp36zd4y1rljfkr",
         "type": "tarball",
-        "url": "https://github.com/stickeritis/nix-packages/archive/531fe8dec6efa705286775e541e85c54de802b21.tar.gz",
+        "url": "https://github.com/stickeritis/nix-packages/archive/e610f4787014fee51867328592c4e88903d89855.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
