@@ -32,6 +32,7 @@
 
     binutils
     brave
+    crate2nix
     drawio
     firefox-bin
     gdb
