@@ -40,6 +40,7 @@
     gnome-mpv
     handbrake
     html2text
+    morph
     mpv
     niv
     nix-bundle
@@ -47,6 +48,7 @@
     nixops-19_03
     pass-find-desktop
     podman-fhs
+    ripcord
     signal-desktop
     skypeforlinux
     spotify
