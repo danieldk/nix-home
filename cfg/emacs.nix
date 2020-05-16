@@ -296,6 +296,21 @@
           ];
         };
 
+        yasnippet = {
+          enable = true;
+          diminish = [ "yas-minor-mode" ];
+          hook = [ "(lsp-mode . yas-minor-mode)" ];
+          command = [ "yas-minor-mode" ];
+          config = ''
+            (yas-reload-all)
+          '';
+        };
+
+        yasnippet-snippets = {
+          enable = true;
+          after = [ "yasnippet" ];
+        };
+
         zenburn-theme = {
           enable = true;
           config = ''
