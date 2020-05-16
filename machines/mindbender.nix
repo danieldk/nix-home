@@ -15,7 +15,6 @@
     ../cfg/kitty.nix
     ../cfg/mail.nix
     ../cfg/mupdf.nix
-    ../cfg/openconnect.nix
     #../cfg/podman.nix
     ../cfg/publishing.nix
     ../cfg/resilio.nix
