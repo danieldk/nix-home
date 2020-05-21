@@ -13,7 +13,7 @@ buildGoModule {
 
   modRoot = "gopls";
 
-  modSha256 = "1p0g28i707xyxz1g6hb56qlc4km9ik7vjky0v80hw7n73vzs5mr9";
+  vendorSha256 = "1cji5lxcikg917jvgx6dgkkm20j7dqlyq2abhpf9q8r0ladsspyy";
 
   postInstall = ''
     find $out/bin -type f ! -name 'gopls' -delete
