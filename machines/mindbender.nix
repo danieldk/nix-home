@@ -52,6 +52,7 @@
     skypeforlinux
     slack
     spotify
+    steam
     tdesktop
     makemkv
     wrapit
