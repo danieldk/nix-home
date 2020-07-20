@@ -8,13 +8,11 @@
     ../cfg/base-network.nix
     ../cfg/direnv.nix
     ../cfg/emacs.nix
-    ../cfg/fish.nix
     ../cfg/git.nix
     ../cfg/go.nix
     ../cfg/fzf.nix
     ../cfg/kitty.nix
     ../cfg/mail.nix
-    ../cfg/mupdf.nix
     #../cfg/podman.nix
     ../cfg/publishing.nix
     ../cfg/resilio.nix
@@ -43,8 +41,6 @@
     mpv
     niv
     nix-bundle
-    nixops
-    nixops-19_03
     pass-find-desktop
     podman-fhs
     ripcord
