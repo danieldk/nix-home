@@ -44,6 +44,7 @@
     mpv
     niv
     nix-bundle
+    nix-review
     pass-find-desktop
     podman-fhs
     ripcord
