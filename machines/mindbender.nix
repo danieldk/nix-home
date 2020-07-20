@@ -50,6 +50,7 @@
     ripcord
     signal-desktop
     skypeforlinux
+    slack
     spotify
     tdesktop
     makemkv
