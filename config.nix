@@ -5,6 +5,8 @@ in {
   allowUnfree = true;
 
   packageOverrides = pkgs: {
+    crate2nix = import sources.crate2nix {};
+
     danieldk = pkgs.recurseIntoAttrs (import sources.danieldk {
       inherit pkgs;
     });
