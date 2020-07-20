@@ -15,6 +15,7 @@
     ../cfg/mail.nix
     #../cfg/podman.nix
     ../cfg/publishing.nix
+    ../cfg/latex.nix
     ../cfg/resilio.nix
     ../cfg/restic.nix
     ../cfg/rust.nix
