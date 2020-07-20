@@ -52,6 +52,7 @@
     spotify
     tdesktop
     makemkv
+    wrapit
   ];
 
   #programs.firefox = {
