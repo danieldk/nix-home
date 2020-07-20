@@ -25,4 +25,22 @@ self: super: rec {
     exec = "${pass-find}/bin/pass-find";
     terminal = "true";
   };
+  wrapit = with self; writeScriptBin "wrapit" ''
+    #!${bash}/bin/sh
+    ${bubblewrap}/bin/bwrap \
+      --ro-bind /nix /nix \
+      --dir /tmp \
+      --dir /var \
+      --dir /home/$(id -u) \
+      --symlink /tmp /var/tmp \
+      --proc /proc \
+      --dev /dev \
+      --ro-bind /etc/resolv.conf /etc/resolv.conf \
+      --unshare-all \
+      --die-with-parent \
+      --dir /run/user/$(id -u) \
+      --setenv XDG_RUNTIME_DIR "/run/user/$(id -un)" \
+      "$@"
+  '';
+
 }
