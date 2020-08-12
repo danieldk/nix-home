@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    (callPackage go/gopls {})
+    gopls
   ];
 
   programs.go.enable = true;
