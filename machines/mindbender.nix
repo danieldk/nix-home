@@ -14,7 +14,6 @@
     ../cfg/kitty.nix
     ../cfg/mail.nix
     #../cfg/podman.nix
-    ../cfg/publishing.nix
     ../cfg/latex.nix
     ../cfg/resilio.nix
     ../cfg/restic.nix
@@ -26,8 +25,9 @@
 
   home.packages = with pkgs; [
     danieldk.alpinocorpus
-    danieldk.dact
+    danieldk.conllu-utils
 
+    _1password-gui
     binutils
     brave
     crate2nix
@@ -47,7 +47,7 @@
     nix-bundle
     nix-review
     pass-find-desktop
-    podman-fhs
+    #podman-fhs
     ripcord
     signal-desktop
     skypeforlinux
