@@ -32,10 +32,12 @@
     brave
     crate2nix
     drawio
-    (wrapFirefox mozilla.latest.firefox-bin.unwrapped {
-      forceWayland = true;
-      browserName = "firefox";
-      pname = "firefox-bin-wayland"; })
+    #(wrapFirefox mozilla.latest.firefox-bin.unwrapped {
+    #  forceWayland = true;
+    #  browserName = "firefox";
+    #  pname = "firefox-bin-wayland"; })
+    #firefox-wayland
+    firefox
     gdb
     gitAndTools.hub
     gnome-mpv
