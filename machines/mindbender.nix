@@ -81,6 +81,10 @@
     '';
   };
 
+  home.sessionVariables = {
+    EDITOR = "emacs";
+  };
+
   programs.mpv = {
     enable = true;
     config = {
