@@ -13,15 +13,15 @@
         "version": "0.8.0"
     },
     "danieldk": {
-        "branch": "master",
+        "branch": "update-pythonpackages",
         "description": "My Nix package set",
         "homepage": "",
         "owner": "danieldk",
         "repo": "nix-packages",
-        "rev": "efc407e2b95bd018f98a4369e6311389d851e74e",
-        "sha256": "0h3zc5c64axsq3g86r0v43zscwhsq89i2wd7s3c15mrq1kqfdldi",
+        "rev": "17aef412ba6f27763817d3f42a17abe8a777185e",
+        "sha256": "12hy4q69b7w2dw3gj78wckw6cm075qn3s021a6x3hw1i0vgjkiqd",
         "type": "tarball",
-        "url": "https://github.com/danieldk/nix-packages/archive/efc407e2b95bd018f98a4369e6311389d851e74e.tar.gz",
+        "url": "https://github.com/danieldk/nix-packages/archive/17aef412ba6f27763817d3f42a17abe8a777185e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "finalfusion": {
