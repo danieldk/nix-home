@@ -37,6 +37,7 @@ self: super: rec {
       --dev /dev \
       --ro-bind /etc/resolv.conf /etc/resolv.conf \
       --unshare-all \
+      --unsetenv PATH \
       --die-with-parent \
       --dir /run/user/$(id -u) \
       --setenv XDG_RUNTIME_DIR "/run/user/$(id -un)" \
