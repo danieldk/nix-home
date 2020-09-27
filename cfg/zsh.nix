@@ -39,7 +39,7 @@
       ];
       }
       EOF
-          ''${EDITOR:-vim} shell.nix
+          ''${EDITOR:-emacs} shell.nix
         fi
       }
     '';
