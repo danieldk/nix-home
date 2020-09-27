@@ -49,10 +49,8 @@
     nix-review
     pass-find-desktop
     #podman-fhs
-    ripcord
     signal-desktop
     skypeforlinux
-    slack
     spotify
     steam
     tdesktop
