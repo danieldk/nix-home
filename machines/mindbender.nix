@@ -44,7 +44,6 @@
     handbrake
     html2text
     morph
-    mpv
     niv
     nix-bundle
     nix-review
@@ -80,6 +79,14 @@
     extraConfig = ''
       PKCS11Provider ${pkgs.opensc}/lib/opensc-pkcs11.so
     '';
+  };
+
+  programs.mpv = {
+    enable = true;
+    config = {
+      hwdec = "nvdec";
+      vo = "gpu";
+    };
   };
 
   services.gpg-agent = {
