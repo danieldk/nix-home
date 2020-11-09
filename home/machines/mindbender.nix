@@ -39,7 +39,6 @@
     #firefox-wayland
     firefox
     gdb
-    gitAndTools.hub
     gnome-mpv
     google-chrome
     handbrake
@@ -57,7 +56,9 @@
     tdesktop
     makemkv
     wrapit
-  ];
+  ] ++ (with gitAndTools; [
+    gh
+  ]);
 
   #programs.firefox = {
   #  enable = true;
