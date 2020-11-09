@@ -1,0 +1,105 @@
+{
+  "nodes": {
+    "crate2nix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1585431696,
+        "narHash": "sha256-pqg1BsEq3kGmUzt1zpQvXgdnRcIsiuIyvtUBi3VxtZ4=",
+        "owner": "kolloch",
+        "repo": "crate2nix",
+        "rev": "0fd65ca7def611ad9d0ee532be0954d4b0bbb4d4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kolloch",
+        "ref": "0.8.0",
+        "repo": "crate2nix",
+        "type": "github"
+      }
+    },
+    "danieldk": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1602260086,
+        "narHash": "sha256-9VT+Dk4XsVfqR1Eboo5FWvjnEQhyKKo7Iu//yRpIuN0=",
+        "owner": "danieldk",
+        "repo": "nix-packages",
+        "rev": "d0b5cc773634c401c92774cc6988d7fc636996d2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "danieldk",
+        "repo": "nix-packages",
+        "type": "github"
+      }
+    },
+    "dwarffs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1585848904,
+        "narHash": "sha256-sTX1/DU4lxaHYFapf1hvTir799effD9mUW7l2+3azqU=",
+        "owner": "edolstra",
+        "repo": "dwarffs",
+        "rev": "83c13981993fa54c4cac230f2eec7241ab8fd0a9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "dwarffs",
+        "rev": "83c13981993fa54c4cac230f2eec7241ab8fd0a9",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1604628022,
+        "narHash": "sha256-zCbTh91NBQdGRtO+GZxfKnmRjp+4rOQ2B8wtNpVcxgs=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "4cc1b77c3fc4f4b3bc61921dda72663eea962fa3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1604872615,
+        "narHash": "sha256-lM2Hni4nuHxSFRr9zQ8uDVGdcW5yzDRVso1ffcMa50I=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "197ddbced2ae72efbef0f5f8838a7ad3fbd986eb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable-small",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "crate2nix": "crate2nix",
+        "danieldk": "danieldk",
+        "dwarffs": "dwarffs",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

@@ -2,9 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    cargo
-    rust-analyzer
-    rustfmt
+    #cargo
+    #rust-analyzer
+    #rustfmt
+    rustup
   ];
 
   programs.emacs.init.usePackage = {
