@@ -59,6 +59,10 @@
     wrapit
   ] ++ (with gitAndTools; [
     gh
+  ]) ++ (with jetbrains; [
+    clion
+    idea-ultimate
+    pycharm-professional
   ]);
 
   #programs.firefox = {
