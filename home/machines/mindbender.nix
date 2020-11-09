@@ -41,6 +41,7 @@
     gdb
     gitAndTools.hub
     gnome-mpv
+    google-chrome
     handbrake
     html2text
     morph
