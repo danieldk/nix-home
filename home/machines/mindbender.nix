@@ -31,6 +31,7 @@
     binutils
     brave
     crate2nix
+    dogdns
     drawio
     #(wrapFirefox mozilla.latest.firefox-bin.unwrapped {
     #  forceWayland = true;
