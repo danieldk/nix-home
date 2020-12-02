@@ -8,7 +8,6 @@
       PKCS11Provider ${pkgs.opensc}/lib/opensc-pkcs11.so
     '';
 
-    compression = true;
     matchBlocks = {
       "aion" = {
         hostname = "aion.sfs.uni-tuebingen.de";
