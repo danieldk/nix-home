@@ -4,23 +4,16 @@ let
   pwhash = import mindbender/pwhash.nix;
 in {
   imports = [
+      ./mindbender-hwconf.nix
       ../cfg/desktop-gnome3.nix
     ];
 
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
 
-    initrd = {
-      availableKernelModules = [ "nvme" "ahci" "xhci_pci" "usbhid" "usb_storage" "sd_mod" ];
-
-      luks.devices."cryptRoot".device = "/dev/disk/by-uuid/8bc18122-0d82-47f3-b116-f47ae8f2a809";
-    };
-
     kernel.sysctl = {
       "kernel.perf_event_paranoid" = 0;
     };
-
-    kernelModules = [ "kvm-amd" ];
 
     kernelPackages = pkgs.linuxPackages_5_8;
 
@@ -50,33 +43,6 @@ in {
       })
     ];
   };
-
-  fileSystems."/" =
-    { device = "/dev/mapper/cryptRoot";
-      fsType = "btrfs";
-      options = [ "subvol=root" ];
-    };
-
-  fileSystems."/home" =
-    { device = "/dev/mapper/cryptRoot";
-      fsType = "btrfs";
-      options = [ "subvol=home" ];
-    };
-
-  fileSystems."/nix" =
-    { device = "/dev/mapper/cryptRoot";
-      fsType = "btrfs";
-      options = [ "subvol=nix" ];
-    };
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/90A9-9D72";
-      fsType = "vfat";
-    };
-
-  swapDevices = [
-    { device = "/dev/disk/by-uuid/2c19a6ca-d115-4851-b97c-7b9aeb909fc0"; }
-  ];
 
   hardware = {
     cpu.amd.updateMicrocode = true;
