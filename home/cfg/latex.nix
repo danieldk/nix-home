@@ -33,7 +33,7 @@
 
     tex-site = {
       enable = true;
-      package = epkgs: epkgs.auctex;
+      package = _: pkgs.auctex;
       mode = [
         ''("\\.tex\\'" . TeX-latex-mode)''
       ];
