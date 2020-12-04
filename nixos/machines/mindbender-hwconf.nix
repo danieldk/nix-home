@@ -19,7 +19,10 @@
       options = [ "subvol=root" "compress=lzo" ];
     };
 
-  boot.initrd.luks.devices."cryptRoot".device = "/dev/disk/by-uuid/02081196-11f4-444b-8ef2-fee6e2b4e1fc";
+  boot.initrd.luks.devices."cryptRoot" = {
+    device = "/dev/disk/by-uuid/02081196-11f4-444b-8ef2-fee6e2b4e1fc";
+    allowDiscards = true;
+  };
 
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/329a1020-365d-4907-b9dd-3d504c0f49dc";

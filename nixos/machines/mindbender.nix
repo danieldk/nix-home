@@ -134,6 +134,8 @@ in {
       nssmdns = true;
     };
 
+    fstrim.enable = true;
+
     fwupd.enable = true;
 
     interception-tools.enable = true;
