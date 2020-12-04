@@ -15,7 +15,7 @@ in {
       "kernel.perf_event_paranoid" = 0;
     };
 
-    kernelPackages = pkgs.linuxPackages_5_8;
+    kernelPackages = pkgs.linuxPackages_5_9;
 
     # Use the systemd-boot EFI boot loader.
     loader.systemd-boot.enable = true;
