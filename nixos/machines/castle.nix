@@ -103,17 +103,17 @@ in {
     };
 
     "dekok.dk" = {
-      extraDomains = { "www.dekok.dk" = null; };
+      extraDomainNames = [ "www.dekok.dk" ];
       email = "me@danieldk.eu";
     };
 
     "ljdekok.com" = {
-      extraDomains = { "www.ljdekok.com" = null; };
+      extraDomainNames = [ "www.ljdekok.com" ];
       email = "me@danieldk.eu";
     };
 
     "plantsulfur.org" = {
-      extraDomains = { "www.plantsulfur.org" = null; };
+      extraDomainNames = [ "www.plantsulfur.org" ];
       email = "me@danieldk.eu";
     };
   };
