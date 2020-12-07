@@ -1,5 +1,5 @@
-self: super: rec {
-  pass-find = with self; writeScriptBin "pass-find" ''
+final: prev: rec {
+  pass-find = with prev; writeScriptBin "pass-find" ''
     #! ${bash}/bin/sh
 
     shopt -s nullglob globstar
@@ -19,13 +19,13 @@ self: super: rec {
       nohup pass -c "''${ACCOUNT}" >/dev/null 2>&1
     fi
   '';
-  pass-find-desktop = super.makeDesktopItem {
+  pass-find-desktop = prev.makeDesktopItem {
     name = "pass-find";
     desktopName = "pass-find";
     exec = "${pass-find}/bin/pass-find";
     terminal = "true";
   };
-  wrapit = with self; writeScriptBin "wrapit" ''
+  wrapit = with prev; writeScriptBin "wrapit" ''
     #!${bash}/bin/sh
     ${bubblewrap}/bin/bwrap \
       --ro-bind /nix /nix \

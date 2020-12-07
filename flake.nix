@@ -33,9 +33,9 @@
           home-manager.useUserPackages = true;
           home-manager.users.daniel = import home/machines/mindbender.nix;
           nixpkgs.overlays = [
-            (self: super: {
-              danieldk = super.callPackage danieldk {};
-              crate2nix = super.callPackage crate2nix {};
+            (final: prev: {
+              danieldk = final.callPackage danieldk {};
+              crate2nix = final.callPackage crate2nix {};
             })
             self.overlays.scripts
           ];
