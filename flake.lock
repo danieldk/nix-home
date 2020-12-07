@@ -1,5 +1,48 @@
 {
   "nodes": {
+    "alpinocorpus": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": "utils"
+      },
+      "locked": {
+        "lastModified": 1607078101,
+        "narHash": "sha256-u0thf7vDAkWKpbQo/QfiU72FW6qWWzXkYj4q4QCovpQ=",
+        "owner": "rug-compling",
+        "repo": "alpinocorpus",
+        "rev": "3d0a02a274a970e5a075e25f9cfacd3592f07eff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rug-compling",
+        "repo": "alpinocorpus",
+        "type": "github"
+      }
+    },
+    "conllu-utils": {
+      "inputs": {
+        "naersk": "naersk",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": "utils_2"
+      },
+      "locked": {
+        "lastModified": 1607323977,
+        "narHash": "sha256-eweSZ7CkTUR1fXMCdU9wUJaPWQA3TOxEcrqjymgmrlE=",
+        "owner": "danieldk",
+        "repo": "conllu-utils",
+        "rev": "9e3d070eae34d7c7fedfd086cd95e7014e40e207",
+        "type": "github"
+      },
+      "original": {
+        "owner": "danieldk",
+        "repo": "conllu-utils",
+        "type": "github"
+      }
+    },
     "crate2nix": {
       "flake": false,
       "locked": {
@@ -14,22 +57,6 @@
         "owner": "kolloch",
         "ref": "0.8.0",
         "repo": "crate2nix",
-        "type": "github"
-      }
-    },
-    "danieldk": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1602260086,
-        "narHash": "sha256-9VT+Dk4XsVfqR1Eboo5FWvjnEQhyKKo7Iu//yRpIuN0=",
-        "owner": "danieldk",
-        "repo": "nix-packages",
-        "rev": "d0b5cc773634c401c92774cc6988d7fc636996d2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "danieldk",
-        "repo": "nix-packages",
         "type": "github"
       }
     },
@@ -74,13 +101,34 @@
         "type": "github"
       }
     },
+    "naersk": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1606830243,
+        "narHash": "sha256-XuHaoQNTZ+aUvM6GjsGr8bax51Vvif+kuq4il6d4ZSU=",
+        "owner": "nmattia",
+        "repo": "naersk",
+        "rev": "a76924cbbb17c387e5ae4998a4721d88a3ac95c0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nmattia",
+        "ref": "master",
+        "repo": "naersk",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1606844590,
-        "narHash": "sha256-6NdZUx9sSGm4FBhGSDMZb7arAiTZZ3jegoWS1bkzDxw=",
+        "lastModified": 1606972775,
+        "narHash": "sha256-0j0PVkRFSjrGsHZ3RyVtwxYj8aMlE3avNk/t9ICxQis=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d7a5482a9d99b6dfb57465e6703b700c6a459c4b",
+        "rev": "3a2e9d2ac7e826eacc1dd99f07f9b06242b04e14",
         "type": "github"
       },
       "original": {
@@ -92,11 +140,42 @@
     },
     "root": {
       "inputs": {
+        "alpinocorpus": "alpinocorpus",
+        "conllu-utils": "conllu-utils",
         "crate2nix": "crate2nix",
-        "danieldk": "danieldk",
         "dwarffs": "dwarffs",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
+      }
+    },
+    "utils": {
+      "locked": {
+        "lastModified": 1605370193,
+        "narHash": "sha256-YyMTf3URDL/otKdKgtoMChu4vfVL3vCMkRqpGifhUn0=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5021eac20303a61fafe17224c087f5519baed54d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "utils_2": {
+      "locked": {
+        "lastModified": 1605370193,
+        "narHash": "sha256-YyMTf3URDL/otKdKgtoMChu4vfVL3vCMkRqpGifhUn0=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5021eac20303a61fafe17224c087f5519baed54d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
       }
     }
   },

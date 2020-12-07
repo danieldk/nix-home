@@ -24,8 +24,8 @@
   ];
 
   home.packages = with pkgs; [
-    danieldk.alpinocorpus
-    danieldk.conllu-utils
+    alpinocorpus
+    conllu-utils
 
     _1password-gui
     binutils
