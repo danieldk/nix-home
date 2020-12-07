@@ -1,7 +1,7 @@
 let
   pkgs = import (builtins.fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz";
-  }) {};
+    url = "https://github.com/NixOS/nixpkgs/archive/20.09.tar.gz";
+  }) { config = { allowUnfree = true; }; };
   addDeployment = machineConfig: deploy: args@{ config, lib, pkgs, ... }:
     machineConfig args // { deployment = deploy; };
 in {
