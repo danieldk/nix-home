@@ -6,6 +6,7 @@
 
     ../cfg/base-unix.nix
     ../cfg/base-network.nix
+    ../cfg/desktop.nix
     ../cfg/direnv.nix
     ../cfg/emacs.nix
     ../cfg/git.nix
