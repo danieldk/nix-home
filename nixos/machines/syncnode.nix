@@ -144,7 +144,7 @@
 
         extraConfig = ''
           ignore_invalid_headers off;
-          client_max_body_size 200m;
+          client_max_body_size 2048m;
           proxy_buffering off;
         '';
 
