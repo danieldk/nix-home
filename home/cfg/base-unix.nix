@@ -10,7 +10,10 @@ in {
   home.packages = with pkgs; [
     # Basic utilities
     bat
+    binutils
     fd
+    gdb
+    gitAndTools.gh
     htop
     ncdu
     ripgrep
@@ -34,6 +37,10 @@ in {
     gnused
     gnutar
   ];
+
+  home.sessionVariables = {
+    EDITOR = "emacs";
+  };
 
   programs.home-manager = {
     enable = true;

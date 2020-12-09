@@ -2,8 +2,33 @@
 
 { config, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    manpages
-    unzip
-  ];
+  environment = {
+    shells = [
+      pkgs.bashInteractive
+      pkgs.zsh
+    ];
+
+    systemPackages = with pkgs; [
+      git
+      git-crypt
+      manpages
+      unzip
+    ];
+  };
+
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
+  time.timeZone = "Europe/Amsterdam";
+
+  programs = {
+    bash.enableCompletion = true;
+    vim.defaultEditor = true;
+    zsh.enable = true;
+    zsh.enableCompletion = true;
+  };
+
 }

@@ -9,12 +9,6 @@ in {
     ];
 
   boot = {
-    binfmt.emulatedSystems = [ "aarch64-linux" ];
-
-    kernel.sysctl = {
-      "kernel.perf_event_paranoid" = 0;
-    };
-
     kernelPackages = pkgs.linuxPackages_5_9;
 
     # Use the systemd-boot EFI boot loader.
@@ -25,22 +19,14 @@ in {
   #console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
 
   environment = {
-    shells = [
-      pkgs.bashInteractive
-      pkgs.zsh
-    ];
-
     systemPackages = with pkgs; [
-      git
-      git-crypt
-      linuxPackages.perf
-      (softmaker-office.override {
-        officeVersion = {
-          edition = "2018";
-          version = "978";
-          sha256 = "14qnlbczq1zcz24vwy2yprdvhyn6bxv1nc1w6vjyq8w5jlwqsgbr";
-        };
-      })
+      #(softmaker-office.override {
+      #  officeVersion = {
+      #    edition = "2018";
+      #    version = "978";
+      #    sha256 = "14qnlbczq1zcz24vwy2yprdvhyn6bxv1nc1w6vjyq8w5jlwqsgbr";
+      #  };
+      #})
     ];
   };
 
@@ -62,21 +48,10 @@ in {
       extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
     };
 
-    #nvidia.modesetting.enable = true;
-
-    pulseaudio = {
-      enable = true;
-      support32Bit = true;
-    };
-
     sane = {
       enable = true;
       extraBackends = [ pkgs.hplipWithPlugin ];
     };
-  };
-
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
   };
 
   networking = {
@@ -89,7 +64,7 @@ in {
       logRefusedConnections = false;
     };
 
-    hostId = "353884b8";
+    #hostId = "353884b8";
     hostName = "mindbender";
     networkmanager.enable = true;
     useDHCP = false;
@@ -116,36 +91,16 @@ in {
     };
   };
 
-  time.timeZone = "Europe/Amsterdam";
-
   powerManagement.cpuFreqGovernor = "ondemand";
 
-  programs = {
-    bash.enableCompletion = true;
-    gnupg.agent = { enable = true; enableSSHSupport = true; };
-    vim.defaultEditor = true;
-    zsh.enable = true;
-    zsh.enableCompletion = true;
-  };
 
   services = {
-    avahi = {
-      enable = true;
-      nssmdns = true;
-    };
-
     fstrim.enable = true;
-
-    fwupd.enable = true;
-
-    interception-tools.enable = true;
 
     openssh = {
       enable = true;
       forwardX11 = true;
     };
-
-    pcscd.enable = true;
 
     printing = {
       enable = true;
@@ -173,8 +128,6 @@ in {
       videoDrivers = [ "nvidia" ];
     };
   };
-
-  systemd.services.display-manager.restartIfChanged = false;
 
   systemd.tmpfiles.rules = [
     "L /etc/ipsec.secrets - - - - /etc/ipsec.d/ipsec.nm-l2tp.secrets"
