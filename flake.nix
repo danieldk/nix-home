@@ -43,8 +43,7 @@
           commonModule
           dwarffs.nixosModules.dwarffs
           nixos/machines/mindbender.nix
-          home-manager.nixosModules.home-manager
-          {
+          home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.daniel = import home/machines/mindbender.nix;
