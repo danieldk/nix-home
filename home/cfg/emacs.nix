@@ -85,8 +85,10 @@
 
         evil = {
           enable = true;
+          after = [ "undo-tree" ];
           init = ''
             (setq evil-want-C-i-jump nil)
+            (setq evil-undo-system 'undo-tree)
           '';
           config = ''
             (evil-mode 1)
@@ -280,6 +282,13 @@
             (general-nmap
               :prefix "SPC"
               "ss" '(swiper :which-key "swiper"))
+          '';
+        };
+
+        undo-tree = {
+          enable = true;
+          config = ''
+            (global-undo-tree-mode)
           '';
         };
 
