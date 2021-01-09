@@ -43,23 +43,6 @@
         "type": "github"
       }
     },
-    "crate2nix": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1585431696,
-        "narHash": "sha256-pqg1BsEq3kGmUzt1zpQvXgdnRcIsiuIyvtUBi3VxtZ4=",
-        "owner": "kolloch",
-        "repo": "crate2nix",
-        "rev": "0fd65ca7def611ad9d0ee532be0954d4b0bbb4d4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "kolloch",
-        "ref": "0.8.0",
-        "repo": "crate2nix",
-        "type": "github"
-      }
-    },
     "dwarffs": {
       "inputs": {
         "nixpkgs": [
@@ -142,7 +125,6 @@
       "inputs": {
         "alpinocorpus": "alpinocorpus",
         "conllu-utils": "conllu-utils",
-        "crate2nix": "crate2nix",
         "dwarffs": "dwarffs",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
