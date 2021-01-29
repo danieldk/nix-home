@@ -76,6 +76,18 @@
           '';
         };
 
+        doom-themes = {
+          enable = true;
+          after = [ "solaire-mode" ];
+          config = ''
+            (setq doom-themes-enable-bold t
+                  doom-themes-enable-italic t)
+            (load-theme 'doom-one t)
+            (doom-themes-visual-bell-config)
+            (doom-themes-org-config)
+          '';
+        };
+
         editorconfig = {
           enable = true;
           config = ''
@@ -271,6 +283,13 @@
           enable = true;
         };
 
+        # Visually distinguish file-visiting windows from other types of
+        # windows when using the Doom themes.
+        solaire-mode = {
+          enable = true;
+          hook = [ "(after-init . solaire-global-mode)" ];
+        };
+
         swiper = {
           enable = true;
 
@@ -325,13 +344,6 @@
         yasnippet-snippets = {
           enable = true;
           after = [ "yasnippet" ];
-        };
-
-        zenburn-theme = {
-          enable = true;
-          config = ''
-            (load-theme 'zenburn t)
-          '';
         };
       };
     };
