@@ -9,7 +9,7 @@ in {
     ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_5_9;
+    kernelPackages = pkgs.linuxPackages_5_10;
 
     # Use the systemd-boot EFI boot loader.
     loader.systemd-boot.enable = true;
