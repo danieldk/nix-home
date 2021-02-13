@@ -123,7 +123,10 @@ in {
     xserver = {
       libinput = {
         enable = true;
-        scrollButton = 8;
+
+        touchpad = {
+          scrollButton = 8;
+        };
       };
       videoDrivers = [ "nvidia" ];
     };
