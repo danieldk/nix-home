@@ -101,15 +101,19 @@
           init = ''
             (setq evil-want-C-i-jump nil)
             (setq evil-undo-system 'undo-tree)
+            (setq evil-want-keybinding nil)
           '';
           config = ''
             (evil-mode 1)
           '';
         };
 
-        evil-magit = {
+        evil-collection = {
           enable = true;
-          after = [ "magit" ];
+          after = [ "evil" ];
+          config = ''
+            (evil-collection-init)
+          '';
         };
 
         flycheck = {
