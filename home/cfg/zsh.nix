@@ -22,8 +22,6 @@
     };
 
     initExtra = ''
-      bindkey '^R' history-incremental-pattern-search-backward
-
       nixify() {
         if [ ! -e ./.envrc ]; then
           echo "use nix -s shell.nix" > .envrc
