@@ -40,7 +40,6 @@
     handbrake
     html2text
     morph
-    niv
     nix-bundle
     nix-review
     #podman-fhs
