@@ -129,7 +129,7 @@
       };
     };
   };
-  services.zfs.autoScrub.enable = true;
+  services.zfs.autoScrub.enable = false;
 
   networking.firewall = {
     enable = true;
