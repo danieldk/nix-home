@@ -6,4 +6,8 @@
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+r7HmBsjkg1aRgQN4Q8exg+3jQQi2vLrt5xDeBKzuuW4RdwZetQPxq/CbQo5f8Z+S9OxT0cqNBn8iC6am2WVgVMDY1hA3FX+pbQ9UqN1jkqwADf76+GbBWwcJlmJiF+vVyMFEwOudWw+yRwesOicDmtHfNcKw9cVjy4xQZwuNhiRoqx7hfrUicsouUn9H26mtnRjDZV2Y512tqRtbeVh6928aGKQMkx2raUTqhcJ5ElMOiuEwrVPdgRavm6D0doyt72iuMb0xuJOXAMG4dDNi1si5qYmVmIXgzjaItpO4NKLy+EhSfcvsnt4jA3ZF9+ldUYnwmlxKw9d2YucofF4f"
       # YubiKey 5 FIDO2
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIDA1t6QKNTYwEScT1pLkk0QItRe33nRJizpsA/hd2LI7AAAABHNzaDo= me@danieldk.eu"
+      # YubiKey 5
+      "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIBuV5m0qobDslRXc6+kGDjfOhjeYVw+PpwuPtg5/bbORAAAABHNzaDo= ssh:"
+      # YubiKey Nano
+      "sk-ecdsa-sha2-nistp256@openssh.com AAAAInNrLWVjZHNhLXNoYTItbmlzdHAyNTZAb3BlbnNzaC5jb20AAAAIbmlzdHAyNTYAAABBBKcf9NOaDt/BojJlCvcXu6NvEJhjZHSh6ZPYjObQiqkaedf7ff56Gl4DIX/+5sHlBCnXSRODIS5YYL0nBCdUDeoAAAAEc3NoOg=="
 ]
