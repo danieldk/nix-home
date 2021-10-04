@@ -10,4 +10,6 @@
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIBuV5m0qobDslRXc6+kGDjfOhjeYVw+PpwuPtg5/bbORAAAABHNzaDo= ssh:"
       # YubiKey Nano
       "sk-ecdsa-sha2-nistp256@openssh.com AAAAInNrLWVjZHNhLXNoYTItbmlzdHAyNTZAb3BlbnNzaC5jb20AAAAIbmlzdHAyNTYAAABBBKcf9NOaDt/BojJlCvcXu6NvEJhjZHSh6ZPYjObQiqkaedf7ff56Gl4DIX/+5sHlBCnXSRODIS5YYL0nBCdUDeoAAAAEc3NoOg=="
+      # MacBook
+      "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFavNudmPOMnA7fHnXctbx46L1bMjHMgBsI9PS1DXIXqtzD92NvAfo81GbZYpOomRHo9B8skbBsObiUu83UVgoQ= General@secretive.Daniël’s-MacBook-Air.local"
 ]
