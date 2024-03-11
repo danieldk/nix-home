@@ -1,17 +1,17 @@
 {
   inputs = {
-    alpinocorpus = {
-      url = "github:rug-compling/alpinocorpus";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    conllu-utils = {
-      url = "github:danieldk/conllu-utils";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    dwarffs = {
-      url = "github:edolstra/dwarffs/83c13981993fa54c4cac230f2eec7241ab8fd0a9";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #alpinocorpus = {
+    #  url = "github:rug-compling/alpinocorpus";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+    #conllu-utils = {
+    #  url = "github:danieldk/conllu-utils";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+    #dwarffs = {
+    #  url = "github:edolstra/dwarffs/83c13981993fa54c4cac230f2eec7241ab8fd0a9";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,8 +19,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
   };
 
-  outputs = { self, alpinocorpus, conllu-utils, dwarffs, home-manager, nixpkgs }: {
-    overlays.scripts = import overlays/20-scripts.nix;
+  outputs = { self, home-manager, nixpkgs }: {
+    #overlays.scripts = import overlays/20-scripts.nix;
 
     nixosConfigurations = let
       commonModule = {
@@ -37,19 +37,11 @@
 
         modules = [
           commonModule
-          dwarffs.nixosModules.dwarffs
           nixos/machines/mindbender.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.daniel = import home/machines/mindbender.nix;
-            nixpkgs.overlays = [
-              (final: prev: {
-                alpinocorpus = alpinocorpus.defaultPackage.${system};
-                conllu-utils = conllu-utils.defaultPackage.${system};
-              })
-              self.overlays.scripts
-            ];
           }
         ];
       };

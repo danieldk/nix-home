@@ -21,10 +21,7 @@ in {
     zstd
 
     # Encryption
-    gnupg
     openssh
-    pass
-    pass-find
   ] ++ lib.optionals pkgs.stdenv.isDarwin [
     # Better userland for macOS
     coreutils
