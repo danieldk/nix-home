@@ -3,6 +3,7 @@
 {
   imports = [
       ./mindbender-hwconf.nix
+      ../cfg/base-nixos.nix
     ];
 
   boot = {
