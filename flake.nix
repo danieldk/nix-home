@@ -17,9 +17,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
-  outputs = { self, home-manager, nixpkgs }: {
+  outputs = { self, home-manager, nixpkgs, vscode-server }: {
     #overlays.scripts = import overlays/20-scripts.nix;
 
     nixosConfigurations = let
@@ -42,6 +43,9 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.daniel = import home/machines/mindbender.nix;
+            home-manager.extraSpecialArgs = {
+              inherit vscode-server;
+            };
           }
         ];
       };

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, specialArgs, ... }:
 
 {
   imports = [
@@ -10,12 +10,15 @@
     ../cfg/ssh.nix
     ../cfg/vim.nix
     ../cfg/zsh.nix
+    specialArgs.vscode-server.homeModules.default
   ];
 
   home.packages = with pkgs; [
     nix-bundle
     nixpkgs-review
   ];
+
+  services.vscode-server.enable = true;
 
   home.stateVersion = "24.05";
 }
