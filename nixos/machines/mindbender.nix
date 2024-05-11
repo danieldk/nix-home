@@ -50,7 +50,6 @@
   };
 
   nix = {
-    package = pkgs.nixUnstable;
     settings.max-jobs = 8;
     settings.cores = 16;
     settings.sandbox = true;
