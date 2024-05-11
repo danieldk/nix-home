@@ -77,6 +77,9 @@
 
     openssh = {
       enable = true;
+      extraConfig = ''
+        AcceptEnv COLORTERM
+      '';
     };
 
     xserver.videoDrivers = [ "nvidia" ];
