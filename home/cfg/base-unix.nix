@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
-let
-  sources = import ../nix/sources.nix;
-in {
+{
   imports = [
     ./tmux.nix
   ];
@@ -38,7 +36,6 @@ in {
 
   programs.home-manager = {
     enable = true;
-    path = toString sources.home-manager;
   };
 
   programs.starship = {
