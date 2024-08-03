@@ -11,7 +11,7 @@
     systemPackages = with pkgs; [
       git
       git-crypt
-      manpages
+      man-pages
       unzip
     ];
   };
