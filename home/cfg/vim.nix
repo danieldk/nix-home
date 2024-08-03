@@ -1,20 +1,26 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
-  programs.vim = {
-    enable = true;
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 
-    #settings = {
-    #  relativenumber = true;
-    #  number = true;
-    #};
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      colors-solarized
-      ctrlp
-      fugitive
+      LazyVim
     ];
 
-    extraConfig = builtins.readFile vim/vimrc;
+    extraLuaConfig = ''
+      -- bootstrap lazy.nvim, LazyVim and your plugins
+      require("config.lazy");
+    '';
+
+    extraPackages = with pkgs; [ zig ];
+
   };
 }
