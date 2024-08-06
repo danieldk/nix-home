@@ -30,12 +30,16 @@
     gnutar
   ];
 
-  home.sessionVariables = {
-    EDITOR = "emacs";
-  };
-
   programs.home-manager = {
     enable = true;
+  };
+
+  programs.zellij = {
+    enable = true;
+    settings = {
+      pane_frames = false;
+      theme = "gruvbox-dark";
+    };
   };
 
   programs.starship = {
