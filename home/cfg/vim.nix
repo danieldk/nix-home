@@ -20,7 +20,12 @@
       require("config.lazy");
     '';
 
-    extraPackages = with pkgs; [ zig ];
-
+    extraPackages = with pkgs; [
+      fd
+      nodePackages.prettier
+      pyright
+      ripgrep
+      zig
+    ];
   };
 }
