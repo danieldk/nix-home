@@ -9,11 +9,13 @@
     # Basic utilities
     bat
     binutils
+    cachix
     fd
     gdb
     gitAndTools.gh
     htop
     ncdu
+    nix-output-monitor
     ripgrep
     unzip
     zstd

@@ -23,9 +23,11 @@
 
     extraPackages = with pkgs; [
       fd
+      git
       nodePackages.prettier
       pyright
       ripgrep
+      ruff
       zig
     ];
   };
