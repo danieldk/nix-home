@@ -1,6 +1,8 @@
 { pkgs, config, ... }:
 
 {
+  home.file.".config/nvim/lua".source = ./nvim/lua;
+
   home.sessionVariables = {
     EDITOR = "nvim";
   };
@@ -24,11 +26,16 @@
     extraPackages = with pkgs; [
       fd
       git
+      gcc
+      gnutar
       nodePackages.prettier
       pyright
       ripgrep
       ruff
       zig
     ];
+
+    withNodeJs = true;
+    withPython3 = true;
   };
 }
