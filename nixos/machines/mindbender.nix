@@ -28,9 +28,7 @@
       open = false;
     };
 
-    opengl = {
-      enable = true;
-    };
+    graphics.enable = true;
   };
 
   networking = {

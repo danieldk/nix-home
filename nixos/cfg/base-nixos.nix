@@ -25,8 +25,7 @@
   time.timeZone = "Europe/Amsterdam";
 
   programs = {
-    bash.enableCompletion = true;
-    vim.defaultEditor = true;
+    bash.completion.enable = true;
     zsh.enable = true;
     zsh.enableCompletion = true;
   };
