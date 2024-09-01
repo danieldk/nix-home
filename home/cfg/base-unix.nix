@@ -7,6 +7,7 @@
 
   home.packages = with pkgs; [
     # Basic utilities
+    asciinema
     bat
     binutils
     cachix
