@@ -49,14 +49,14 @@
           }
         ];
       };
-      daniel-tgi-dev = let
+      builder = let
         system = "x86_64-linux";
       in nixpkgs.lib.nixosSystem {
         inherit system;
 
         modules = [
           commonModule
-          nixos/machines/daniel-tgi-dev.nix
+          nixos/machines/builder.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
