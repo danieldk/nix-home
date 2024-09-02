@@ -64,6 +64,21 @@
           }
         ];
       };
+      tgi-dev = let
+        system = "x86_64-linux";
+      in nixpkgs.lib.nixosSystem {
+        inherit system;
+
+        modules = [
+          commonModule
+          nixos/machines/tgi-dev.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.daniel = import home/machines/daniel-tgi-dev.nix;
+          }
+        ];
+      };
     };
   };
 }
