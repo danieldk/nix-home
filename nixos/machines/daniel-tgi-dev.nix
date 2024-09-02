@@ -1,5 +1,13 @@
 { lib, modulesPath, pkgs, ... }: {
   imports = [ "${modulesPath}/virtualisation/amazon-image.nix" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    #package = pkgs.kernelPackages.nvidiaPackages.stable;
+  };
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
   
   networking = {
     firewall = {
@@ -19,7 +27,7 @@
 
   nix = {
     settings.max-jobs = 8;
-    settings.cores = 16;
+    settings.cores = 32;
     settings.sandbox = true;
     settings.trusted-users = [ "daniel" ];
     extraOptions = ''
@@ -45,9 +53,16 @@
         shell = pkgs.zsh;
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA6l265QPVJjOMTXZGjKYX7lIlpn3rPWWUoN01MHvOdl"
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH57+P0J6+ZZOM4G6ArHE5R5I3uEfrV8sAT1x+ltyDEu"
         ];
       };
     };
   };
+
+  virtualisation = {
+    docker.enable = true;
+  };
+
+  hardware.nvidia-container-toolkit.enable = true;
   
 }
