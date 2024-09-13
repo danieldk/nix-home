@@ -29,9 +29,9 @@
       gcc
       gnutar
       nodePackages.prettier
-      pyright
+      #pyright
       ripgrep
-      ruff
+      #ruff
       zig
     ];
 
