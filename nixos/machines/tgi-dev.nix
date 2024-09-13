@@ -48,6 +48,12 @@
 
   programs.zsh.enable = true;
 
+  services.openssh.settings.PermitRootLogin = lib.mkForce "no";
+
+  systemd.tmpfiles.rules = [
+    "d /scratch 0750 root root -"
+  ];
+
   users = {
     users = {
       daniel = {
