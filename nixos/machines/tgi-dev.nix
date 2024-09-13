@@ -6,7 +6,10 @@
     open = false;
     #package = pkgs.kernelPackages.nvidiaPackages.stable;
   };
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
   services.xserver.videoDrivers = [ "nvidia" ];
   
   networking = {
@@ -57,5 +60,10 @@
         ];
       };
     };
+  };
+
+  virtualisation.docker = {
+    enable = true;
+    enableNvidia = true;
   };
 }
