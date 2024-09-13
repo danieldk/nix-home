@@ -17,4 +17,8 @@
   };
 
   home.stateVersion = "24.05";
+
+  programs.git.extraConfig = {
+    credential.helper = "store";
+  };
 }
