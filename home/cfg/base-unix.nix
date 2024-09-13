@@ -10,13 +10,16 @@
     asciinema
     bat
     binutils
+    btop
     cachix
     fd
     gdb
     gitAndTools.gh
+    gpustat
     htop
     ncdu
     nix-output-monitor
+    nvitop
     ripgrep
     unzip
     zstd
