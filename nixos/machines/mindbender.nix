@@ -53,7 +53,7 @@
     settings.sandbox = true;
     settings.trusted-users = [ "daniel" ];
     extraOptions = ''
-      experimental-features = nix-command flakes
+      experimental-features = nix-command flakes repl-flake
     '';
   };
 
