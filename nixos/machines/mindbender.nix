@@ -23,10 +23,10 @@
       firmwareLinuxNonfree
     ];
 
-    nvidia = {
-      modesetting.enable = true;
-      open = false;
-    };
+    #nvidia = {
+    #  modesetting.enable = true;
+    #  open = false;
+    #};
 
     graphics.enable = true;
   };
@@ -79,7 +79,7 @@
       '';
     };
 
-    xserver.videoDrivers = [ "nvidia" ];
+    #xserver.videoDrivers = [ "nvidia" ];
   };
 
   users = {
