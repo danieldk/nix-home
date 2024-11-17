@@ -43,6 +43,7 @@
   programs.zellij = {
     enable = true;
     settings = {
+      mouse_mode = false;
       pane_frames = false;
       theme = "gruvbox-dark";
     };
