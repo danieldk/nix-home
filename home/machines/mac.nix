@@ -7,12 +7,11 @@
     ../cfg/base-unix.nix
     ../cfg/base-network.nix
     ../cfg/direnv.nix
-    ../cfg/emacs.nix
     ../cfg/fzf.nix
     ../cfg/git.nix
     ../cfg/go.nix
     ../cfg/rust.nix
-    ../cfg/ssh.nix
+    #../cfg/ssh.nix
     ../cfg/vim.nix
     ../cfg/zsh.nix
   ];
@@ -45,9 +44,13 @@
 
   fonts.fontconfig.enable = true;
 
-  '';
-
   xdg = {
     enable = true;
+  };
+
+  home = {
+    homeDirectory = "/Users/daniel";
+    username = "daniel";
+    stateVersion = "24.11";
   };
 }

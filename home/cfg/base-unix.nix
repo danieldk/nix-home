@@ -13,13 +13,10 @@
     btop
     cachix
     fd
-    gdb
     gitAndTools.gh
-    gpustat
     htop
     ncdu
     nix-output-monitor
-    nvitop
     ripgrep
     unzip
     zstd
@@ -34,6 +31,10 @@
     gnugrep
     gnused
     gnutar
+  ] ++ lib.optionals (!pkgs.stdenv.isDarwin) [
+    gdb
+    gpustat
+    nvitop
   ];
 
   programs.home-manager = {

@@ -21,7 +21,15 @@
   };
 
   outputs = { self, home-manager, nixpkgs, vscode-server }: {
-    #overlays.scripts = import overlays/20-scripts.nix;
+    homeConfigurations.mac =
+      let system = "aarch64-darwin";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+    home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+
+      modules = [ home/machines/mac.nix ];
+    };
 
     nixosConfigurations = let
       commonModule = {
