@@ -10,6 +10,7 @@
     ../cfg/fzf.nix
     ../cfg/git.nix
     ../cfg/go.nix
+    ../cfg/kitty.nix
     ../cfg/rust.nix
     ../cfg/ssh.nix
     ../cfg/vim.nix
@@ -49,25 +50,6 @@
   };
 
   fonts.fontconfig.enable = true;
-
-  programs.kitty = {
-    enable = true;
-    themeFile = "Doom_Vibrant";
-    font = {
-      name = "IntoneMono Nerd Font Mono";
-      package = pkgs.nerd-fonts.intone-mono;
-      size = 17;
-    };
-    keybindings = {
-      "cmd+enter" = "toggle_fullscreen";
-    };
-    settings = {
-      cursor_trail = 1;
-      remember_window_size = false;
-      initial_window_width = 1024;
-      initial_window_height = 768;
-    };
-  };
 
   xdg = {
     enable = true;
