@@ -63,6 +63,7 @@
     };
     settings = {
       cursor_trail = 1;
+      remember_window_size = false;
       initial_window_width = 1024;
       initial_window_height = 768;
     };
