@@ -5,13 +5,17 @@
     enable = true;
 
     matchBlocks = {
-      "castle" = {
-        hostname = "castle.danieldk.eu";
+      "tgi-dev" = {
+        hostname = "10.90.16.19";
         user = "daniel";
       };
 
-      "syncnode" = {
-        hostname = "syncnode.dekok.dk";
+      "tgi-dev-ubuntu" = {
+        hostname = "10.90.6.238";
+        user = "daniel";
+      };
+      "builder" = {
+        hostname = " 10.90.6.85";
         user = "daniel";
       };
     };
