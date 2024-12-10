@@ -44,6 +44,12 @@
   programs.zellij = {
     enable = true;
     settings = {
+      keybinds = {
+        tab = {
+          "bind \"Shift Left\"" = { MoveTab = "Left"; };
+          "bind \"Shift Right\"" = { MoveTab = "Right"; };
+        };
+      };
       mouse_mode = false;
       pane_frames = false;
       theme = "gruvbox-dark";
