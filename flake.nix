@@ -16,11 +16,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-apple-silicon.url = "github:tpwrules/nixos-apple-silicon";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
-  outputs = { self, home-manager, nixpkgs, vscode-server }: {
+  outputs = { self, home-manager, nixos-apple-silicon, nixpkgs, vscode-server }: {
     homeConfigurations.mac =
       let system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -57,6 +58,23 @@
           }
         ];
       };
+      nonagon = let
+        system = "aarch64-linux";
+      in nixpkgs.lib.nixosSystem {
+        inherit system;
+
+        modules = [
+          commonModule
+          nixos-apple-silicon.nixosModules.apple-silicon-support
+          nixos/machines/nonagon.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.daniel = import home/machines/nonagon.nix;
+          }
+        ];
+      };
+
       builder = let
         system = "x86_64-linux";
       in nixpkgs.lib.nixosSystem {
