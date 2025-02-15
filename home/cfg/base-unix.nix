@@ -43,6 +43,7 @@
 
   programs.zellij = {
     enable = true;
+    enableZshIntegration = false;
     settings = {
       keybinds = {
         tab = {
