@@ -12,6 +12,7 @@
     open = false;
     #package = pkgs.kernelPackages.nvidiaPackages.stable;
   };
+  hardware.nvidia-container-toolkit.enable = true;
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -79,6 +80,6 @@
 
   virtualisation.docker = {
     enable = true;
-    enableNvidia = true;
+    #enableNvidia = true;
   };
 }
