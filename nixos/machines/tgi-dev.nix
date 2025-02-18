@@ -47,8 +47,8 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-
-      packageOverrides = pkgs: { };
+      cudaSupport = true;
+      packageOverrides = pkgs: {};
     };
   };
 
