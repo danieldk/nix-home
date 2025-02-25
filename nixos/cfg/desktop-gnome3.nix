@@ -5,6 +5,11 @@
     ./base-desktop.nix
   ];
 
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "daniel" ];
+  };
+
   services.pipewire.enable = true;
 
   services.xserver = {
