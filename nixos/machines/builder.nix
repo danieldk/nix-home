@@ -20,7 +20,7 @@
     };
 
     #hostId = "353884b8";
-    hostName = "daniel-tgi-dev";
+    hostName = "builder";
     networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
   };
