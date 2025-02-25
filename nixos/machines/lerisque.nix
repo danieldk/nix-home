@@ -6,11 +6,10 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
       ./lerisque-hwconf.nix
       ../cfg/base-nixos.nix
-      #../cfg/desktop-gnome3.nix
-      ../cfg/desktop-plasma5.nix
+      ../cfg/desktop-gnome3.nix
     ];
 
   # Bootloader.
