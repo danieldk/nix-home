@@ -18,7 +18,6 @@
 
   networking.hostName = "lerisque";
 
-  # Enable networking
   networking.networkmanager.enable = true;
 
   # Set your time zone.
@@ -34,6 +33,8 @@
       driver = pkgs.libfprint-2-tod1-goodix;
     };
   };
+
+  services.kolide-launcher.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;

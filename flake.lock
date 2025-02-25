@@ -53,6 +53,27 @@
         "type": "github"
       }
     },
+    "kolide-launcher": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1733156752,
+        "narHash": "sha256-zTQNU0u0eF+B7HeYAIQI3KQj8Jwd6dZ0AG1KsjEOXkA=",
+        "owner": "kolide",
+        "repo": "nix-agent",
+        "rev": "d154b67a88e9cf8a6c10fd589afd51b299f7faca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kolide",
+        "ref": "main",
+        "repo": "nix-agent",
+        "type": "github"
+      }
+    },
     "nixos-apple-silicon": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -122,6 +143,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "kolide-launcher": "kolide-launcher",
         "nixos-apple-silicon": "nixos-apple-silicon",
         "nixpkgs": "nixpkgs_2",
         "vscode-server": "vscode-server"

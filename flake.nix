@@ -16,12 +16,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    kolide-launcher = {
+      url = "github:/kolide/nix-agent/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-apple-silicon.url = "github:tpwrules/nixos-apple-silicon";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
-  outputs = { self, home-manager, nixos-apple-silicon, nixpkgs, vscode-server }: {
+  outputs = { self, home-manager, nixos-apple-silicon, kolide-launcher, nixpkgs, vscode-server }: {
     homeConfigurations.mac =
       let system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -47,6 +51,7 @@
 
         modules = [
           commonModule
+          kolide-launcher.nixosModules.kolide-launcher
           nixos/machines/lerisque.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
