@@ -26,7 +26,7 @@
   xdg.portal.enable = true;
 
   environment = {
-    sessionVariables.NIXOS_OZONE_WL = "1";
+    #sessionVariables.NIXOS_OZONE_WL = "1";
     systemPackages = with pkgs; with gnomeExtensions; [
       appindicator
       #dash-to-dock
