@@ -40,6 +40,21 @@
         nix.nixPath = [ "nixpkgs=${nixpkgs}" ];
       };
     in {
+      lerisque = let
+        system = "x86_64-linux";
+      in nixpkgs.lib.nixosSystem {
+        inherit system;
+
+        modules = [
+          commonModule
+          nixos/machines/lerisque.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.daniel = import home/machines/lerisque.nix;
+          }
+        ];
+      };
       mindbender = let
         system = "x86_64-linux";
       in nixpkgs.lib.nixosSystem {

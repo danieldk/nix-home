@@ -10,7 +10,7 @@
   services.xserver = {
     enable = true;
     desktopManager = {
-      gnome3.enable = true;
+      gnome.enable = true;
     };
     displayManager = {
       gdm.enable = true;
@@ -20,13 +20,16 @@
 
   xdg.portal.enable = true;
 
-  environment.systemPackages = with pkgs; with gnomeExtensions; [
-    appindicator
-    dash-to-dock
-    workspace-matrix
-    libappindicator-gtk2
-    libappindicator-gtk3
-    (callPackage ./gnome3/switcher {})
-    gnome3.gnome-tweaks
-  ];
+  environment = {
+    sessionVariables.NIXOS_OZONE_WL = "1";
+    systemPackages = with pkgs; with gnomeExtensions; [
+      appindicator
+      #dash-to-dock
+      #workspace-matrix
+      libappindicator-gtk2
+      libappindicator-gtk3
+      #(callPackage ./gnome3/switcher {})
+      gnome-tweaks
+    ];
+  };
 }

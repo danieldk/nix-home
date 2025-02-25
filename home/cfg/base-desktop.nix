@@ -3,36 +3,45 @@
 {
   home.packages = with pkgs; [
     firefox
-    gnome-mpv
+    #gnome-mpv
     google-chrome
-    pass-find-desktop
+    #pass-find-desktop
+    _1password-gui
     signal-desktop
-    skypeforlinux
-    spotify
-    tdesktop
+    slack
+    #vivaldi
   ];
 
-  home.file = {
-    ".config/autostart/gnome-keyring-ssh.desktop".text = ''
-      [Desktop Entry]
-      Type=Application
-      Name=SSH Key Agent
-      Hidden=true
-    '';
-  };
-
-  programs.mpv = {
+  programs.ghostty = {
     enable = true;
-    config = {
-      hwdec = "nvdec";
-      vo = "gpu";
+    enableZshIntegration = true;
+    installVimSyntax = true;
+    settings = {
+      font-size = 14;
     };
   };
 
-  services.gpg-agent = {
-    enable = true;
-    extraConfig = ''
-      pinentry-program ${pkgs.pinentry_gnome}/bin/pinentry-gnome3
-    '';
-  };
+  #home.file = {
+  #  ".config/autostart/gnome-keyring-ssh.desktop".text = ''
+  #    [Desktop Entry]
+  #    Type=Application
+  #    Name=SSH Key Agent
+  #    Hidden=true
+  #  '';
+  #};
+
+  #programs.mpv = {
+  #  enable = true;
+  #  config = {
+      #hwdec = "nvdec";
+      #vo = "gpu";
+  #  };
+  #};
+
+  #services.gpg-agent = {
+  #  enable = true;
+  #  extraConfig = ''
+  #    pinentry-program ${pkgs.pinentry_gnome}/bin/pinentry-gnome3
+  #  '';
+  #};
 }
