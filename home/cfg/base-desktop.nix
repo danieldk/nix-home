@@ -6,7 +6,6 @@
     #gnome-mpv
     google-chrome
     #pass-find-desktop
-    _1password-gui
     signal-desktop
     slack
     #vivaldi
