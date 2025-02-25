@@ -69,6 +69,7 @@
 
   services = {
     fstrim.enable = true;
+    tailscale.enable = true;
   };
 
 
