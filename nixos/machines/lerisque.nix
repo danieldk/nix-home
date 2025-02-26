@@ -20,6 +20,18 @@
 
   networking.networkmanager.enable = true;
 
+  nix = {
+    settings.max-jobs = 4;
+    settings.cores = 16;
+    settings.sandbox = true;
+    settings.trusted-users = [ "daniel" ];
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
@@ -54,8 +66,6 @@
     ];
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
   ];
