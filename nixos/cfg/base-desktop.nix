@@ -27,8 +27,8 @@
   ];
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -50,7 +50,7 @@
   services = {
     avahi = {
       enable = true;
-      nssmdns = true;
+      nssmdns4 = true;
     };
 
     fwupd.enable = true;

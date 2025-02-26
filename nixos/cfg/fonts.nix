@@ -6,7 +6,7 @@
   fonts = {
     fontDir.enable = true;
 
-    fonts = with pkgs; [
+    packages = with pkgs; [
       corefonts
       fira-code
       google-fonts
