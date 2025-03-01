@@ -6,9 +6,9 @@
     #gnome-mpv
     google-chrome
     #pass-find-desktop
+    #vivaldi
     signal-desktop
     slack
-    #vivaldi
   ];
 
   programs.ghostty = {

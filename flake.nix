@@ -20,12 +20,16 @@
       url = "github:/kolide/nix-agent/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-bwrapper = {
+      url = "path:/home/daniel/git/nix-bwrapper";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-apple-silicon.url = "github:tpwrules/nixos-apple-silicon";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
-  outputs = { self, home-manager, nixos-apple-silicon, kolide-launcher, nixpkgs, vscode-server }: {
+  outputs = { self, home-manager, nixos-apple-silicon, kolide-launcher, nix-bwrapper, nixpkgs, vscode-server }: {
     homeConfigurations.mac =
       let system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -37,11 +41,15 @@
     };
 
     nixosConfigurations = let
+      overlays = [
+        nix-bwrapper.overlays.default
+        (import overlays/sandboxing.nix)
+      ];
       commonModule = {
         # Use the pinned nixpkgs version for flake commands.
         nix.registry.nixpkgs.flake = nixpkgs;
-
         nix.nixPath = [ "nixpkgs=${nixpkgs}" ];
+        nixpkgs.overlays = overlays;
       };
     in {
       lerisque = let
