@@ -19,6 +19,12 @@
   # Enable plymouth and also show it for LUKS (needs systemd in initrd).
   boot.plymouth.enable = true;
   boot.initrd.systemd.enable = true;
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
   networking.hostName = "lerisque";
 
   networking.networkmanager.enable = true;
