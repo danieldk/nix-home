@@ -5,12 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ 
-      ./lerisque-hwconf.nix
-      ../cfg/base-nixos.nix
-      ../cfg/desktop-gnome3.nix
-    ];
+  imports = [
+    ./lerisque-hwconf.nix
+    ../cfg/base-nixos.nix
+    ../cfg/desktop-gnome3.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -69,12 +68,14 @@
   users.users.daniel = {
     isNormalUser = true;
     description = "Daniel de Kok";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
     packages = with pkgs; [
     ];
   };
-
 
   environment.systemPackages = with pkgs; [
   ];
@@ -93,7 +94,6 @@
     fstrim.enable = true;
     tailscale.enable = true;
   };
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

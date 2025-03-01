@@ -2,14 +2,19 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./nonagon-hwconf.nix
-      ../cfg/base-nixos.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./nonagon-hwconf.nix
+    ../cfg/base-nixos.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -40,9 +45,6 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-
-  
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -63,12 +65,17 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.daniel = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "docker" "libvirtd" "video" ];
-     shell = pkgs.zsh;
-     openssh.authorizedKeys.keys = [
-         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH57+P0J6+ZZOM4G6ArHE5R5I3uEfrV8sAT1x+ltyDEu"
-     ];
+    isNormalUser = true;
+    extraGroups = [
+      "wheel"
+      "docker"
+      "libvirtd"
+      "video"
+    ];
+    shell = pkgs.zsh;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH57+P0J6+ZZOM4G6ArHE5R5I3uEfrV8sAT1x+ltyDEu"
+    ];
   };
 
   # programs.firefox.enable = true;
@@ -76,9 +83,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     git
-   ];
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    git
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -124,4 +131,3 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
 }
-

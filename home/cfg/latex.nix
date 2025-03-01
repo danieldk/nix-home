@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -28,7 +28,7 @@
           "rl" '(reftex-label :which "add label")
           "rr" '(reftex-reference :which "refer label")
           "v"  '(TeX-view :which-key "view"))
-        ''; 
+      '';
     };
 
     tex-site = {
@@ -39,9 +39,9 @@
       ];
 
       config = ''
-        (setq TeX-parse-self t
-	            TeX-auto-save t
-              reftex-plug-into-AUCTeX t)
+                (setq TeX-parse-self t
+        	            TeX-auto-save t
+                      reftex-plug-into-AUCTeX t)
       '';
     };
   };

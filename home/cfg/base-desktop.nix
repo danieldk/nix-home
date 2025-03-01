@@ -32,8 +32,8 @@
   #programs.mpv = {
   #  enable = true;
   #  config = {
-      #hwdec = "nvdec";
-      #vo = "gpu";
+  #hwdec = "nvdec";
+  #vo = "gpu";
   #  };
   #};
 

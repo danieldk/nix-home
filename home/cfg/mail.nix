@@ -26,7 +26,10 @@
       create = "maildir";
       expunge = "both";
       flatten = ".";
-      patterns = [ "*" "!.*" ];
+      patterns = [
+        "*"
+        "!.*"
+      ];
 
       extraConfig.local = {
         Subfolders = "Verbatim";

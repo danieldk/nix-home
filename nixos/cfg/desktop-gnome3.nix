@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -27,14 +32,17 @@
 
   environment = {
     #sessionVariables.NIXOS_OZONE_WL = "1";
-    systemPackages = with pkgs; with gnomeExtensions; [
-      appindicator
-      #dash-to-dock
-      #workspace-matrix
-      libappindicator-gtk2
-      libappindicator-gtk3
-      #(callPackage ./gnome3/switcher {})
-      gnome-tweaks
-    ];
+    systemPackages =
+      with pkgs;
+      with gnomeExtensions;
+      [
+        appindicator
+        #dash-to-dock
+        #workspace-matrix
+        libappindicator-gtk2
+        libappindicator-gtk3
+        #(callPackage ./gnome3/switcher {})
+        gnome-tweaks
+      ];
   };
 }

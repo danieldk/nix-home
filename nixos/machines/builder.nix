@@ -1,4 +1,10 @@
-{ lib, modulesPath, pkgs, ... }: {
+{
+  lib,
+  modulesPath,
+  pkgs,
+  ...
+}:
+{
   imports = [ "${modulesPath}/virtualisation/amazon-image.nix" ];
 
   hardware.nvidia = {
@@ -8,14 +14,14 @@
   };
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  
+
   networking = {
     firewall = {
       enable = true;
       checkReversePath = false;
       allowedTCPPorts = [ 22 ];
-      allowedUDPPorts = [];
-      allowedUDPPortRanges = [];
+      allowedUDPPorts = [ ];
+      allowedUDPPortRanges = [ ];
       logRefusedConnections = false;
     };
 
@@ -39,7 +45,7 @@
     config = {
       allowUnfree = true;
 
-      packageOverrides = pkgs: {};
+      packageOverrides = pkgs: { };
     };
   };
 
@@ -49,7 +55,12 @@
     users = {
       daniel = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "docker" "libvirtd" "video" ];
+        extraGroups = [
+          "wheel"
+          "docker"
+          "libvirtd"
+          "video"
+        ];
         shell = pkgs.zsh;
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA6l265QPVJjOMTXZGjKYX7lIlpn3rPWWUoN01MHvOdl"
@@ -64,5 +75,5 @@
   };
 
   hardware.nvidia-container-toolkit.enable = true;
-  
+
 }

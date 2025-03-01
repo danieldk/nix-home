@@ -3,7 +3,7 @@ self: super:
 {
   rocm = super.rocm // {
     hip = super.rocm.hip.overrideAttrs (attrs: rec {
-      patches = attrs.patches or [] ++ [
+      patches = attrs.patches or [ ] ++ [
         # Fixes race condition in hipEventRecord, remove with ROCM 3.0.
         # https://github.com/ROCm-Developer-Tools/HIP/pull/1620
         (super.fetchpatch {

@@ -17,7 +17,7 @@
     ../cfg/zsh.nix
   ];
 
-  home.activation.kitty = lib.hm.dag.entryAfter ["writeBoundry"] ''
+  home.activation.kitty = lib.hm.dag.entryAfter [ "writeBoundry" ] ''
     $DRY_RUN_CMD [ ! -d ~/Applications ] && mkdir ~/Applications
     $DRY_RUN_CMD [ -f ~/Applications/kitty.app ] && rm -rf ~/Applications/kitty.app
     $DRY_RUN_CMD cp -r ${pkgs.kitty}/Applications/kitty.app/ ~/Applications/

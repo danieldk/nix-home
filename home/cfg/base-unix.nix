@@ -5,37 +5,41 @@
     ./tmux.nix
   ];
 
-  home.packages = with pkgs; [
-    # Basic utilities
-    asciinema
-    bat
-    binutils
-    btop
-    cachix
-    fd
-    gitAndTools.gh
-    htop
-    ncdu
-    nix-output-monitor
-    ripgrep
-    unzip
-    zstd
+  home.packages =
+    with pkgs;
+    [
+      # Basic utilities
+      asciinema
+      bat
+      binutils
+      btop
+      cachix
+      fd
+      gitAndTools.gh
+      htop
+      ncdu
+      nix-output-monitor
+      ripgrep
+      unzip
+      zstd
 
-    # Encryption
-    openssh
-  ] ++ lib.optionals pkgs.stdenv.isDarwin [
-    # Better userland for macOS
-    coreutils
-    findutils
-    gawk
-    gnugrep
-    gnused
-    gnutar
-  ] ++ lib.optionals (!pkgs.stdenv.isDarwin) [
-    gdb
-    gpustat
-    nvitop
-  ];
+      # Encryption
+      openssh
+    ]
+    ++ lib.optionals pkgs.stdenv.isDarwin [
+      # Better userland for macOS
+      coreutils
+      findutils
+      gawk
+      gnugrep
+      gnused
+      gnutar
+    ]
+    ++ lib.optionals (!pkgs.stdenv.isDarwin) [
+      gdb
+      gpustat
+      nvitop
+    ];
 
   programs.home-manager = {
     enable = true;
@@ -47,8 +51,12 @@
     settings = {
       keybinds = {
         tab = {
-          "bind \"Shift Left\"" = { MoveTab = "Left"; };
-          "bind \"Shift Right\"" = { MoveTab = "Right"; };
+          "bind \"Shift Left\"" = {
+            MoveTab = "Left";
+          };
+          "bind \"Shift Right\"" = {
+            MoveTab = "Right";
+          };
         };
       };
       mouse_mode = false;

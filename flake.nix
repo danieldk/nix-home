@@ -29,110 +29,138 @@
     vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
-  outputs = { self, home-manager, nixos-apple-silicon, kolide-launcher, nix-bwrapper, nixpkgs, vscode-server }: {
-    homeConfigurations.mac =
-      let system = "aarch64-darwin";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+  outputs =
+    {
+      self,
+      home-manager,
+      nixos-apple-silicon,
+      kolide-launcher,
+      nix-bwrapper,
+      nixpkgs,
+      vscode-server,
+    }:
+    {
+      homeConfigurations.mac =
+        let
+          system = "aarch64-darwin";
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
 
-      modules = [ home/machines/mac.nix ];
-    };
+          modules = [ home/machines/mac.nix ];
+        };
 
-    nixosConfigurations = let
-      overlays = [
-        nix-bwrapper.overlays.default
-        (import overlays/sandboxing.nix)
-      ];
-      commonModule = {
-        # Use the pinned nixpkgs version for flake commands.
-        nix.registry.nixpkgs.flake = nixpkgs;
-        nix.nixPath = [ "nixpkgs=${nixpkgs}" ];
-        nixpkgs.overlays = overlays;
-      };
-    in {
-      lerisque = let
-        system = "x86_64-linux";
-      in nixpkgs.lib.nixosSystem {
-        inherit system;
+      nixosConfigurations =
+        let
+          overlays = [
+            nix-bwrapper.overlays.default
+            (import overlays/sandboxing.nix)
+          ];
+          commonModule = {
+            # Use the pinned nixpkgs version for flake commands.
+            nix.registry.nixpkgs.flake = nixpkgs;
+            nix.nixPath = [ "nixpkgs=${nixpkgs}" ];
+            nixpkgs.overlays = overlays;
+          };
+        in
+        {
+          lerisque =
+            let
+              system = "x86_64-linux";
+            in
+            nixpkgs.lib.nixosSystem {
+              inherit system;
 
-        modules = [
-          commonModule
-          kolide-launcher.nixosModules.kolide-launcher
-          nixos/machines/lerisque.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.daniel = import home/machines/lerisque.nix;
-          }
-        ];
-      };
-      mindbender = let
-        system = "x86_64-linux";
-      in nixpkgs.lib.nixosSystem {
-        inherit system;
-
-        modules = [
-          commonModule
-          nixos/machines/mindbender.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.daniel = import home/machines/mindbender.nix;
-            home-manager.extraSpecialArgs = {
-              inherit vscode-server;
+              modules = [
+                commonModule
+                kolide-launcher.nixosModules.kolide-launcher
+                nixos/machines/lerisque.nix
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager.useGlobalPkgs = true;
+                  home-manager.useUserPackages = true;
+                  home-manager.users.daniel = import home/machines/lerisque.nix;
+                }
+              ];
             };
-          }
-        ];
-      };
-      nonagon = let
-        system = "aarch64-linux";
-      in nixpkgs.lib.nixosSystem {
-        inherit system;
+          mindbender =
+            let
+              system = "x86_64-linux";
+            in
+            nixpkgs.lib.nixosSystem {
+              inherit system;
 
-        modules = [
-          commonModule
-          nixos-apple-silicon.nixosModules.apple-silicon-support
-          nixos/machines/nonagon.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.daniel = import home/machines/nonagon.nix;
-          }
-        ];
-      };
+              modules = [
+                commonModule
+                nixos/machines/mindbender.nix
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager.useGlobalPkgs = true;
+                  home-manager.useUserPackages = true;
+                  home-manager.users.daniel = import home/machines/mindbender.nix;
+                  home-manager.extraSpecialArgs = {
+                    inherit vscode-server;
+                  };
+                }
+              ];
+            };
+          nonagon =
+            let
+              system = "aarch64-linux";
+            in
+            nixpkgs.lib.nixosSystem {
+              inherit system;
 
-      builder = let
-        system = "x86_64-linux";
-      in nixpkgs.lib.nixosSystem {
-        inherit system;
+              modules = [
+                commonModule
+                nixos-apple-silicon.nixosModules.apple-silicon-support
+                nixos/machines/nonagon.nix
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager.useGlobalPkgs = true;
+                  home-manager.useUserPackages = true;
+                  home-manager.users.daniel = import home/machines/nonagon.nix;
+                }
+              ];
+            };
 
-        modules = [
-          commonModule
-          nixos/machines/builder.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.daniel = import home/machines/daniel-tgi-dev.nix;
-          }
-        ];
-      };
-      tgi-dev = let
-        system = "x86_64-linux";
-      in nixpkgs.lib.nixosSystem {
-        inherit system;
+          builder =
+            let
+              system = "x86_64-linux";
+            in
+            nixpkgs.lib.nixosSystem {
+              inherit system;
 
-        modules = [
-          commonModule
-          nixos/machines/tgi-dev.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.daniel = import home/machines/daniel-tgi-dev.nix;
-          }
-        ];
-      };
+              modules = [
+                commonModule
+                nixos/machines/builder.nix
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager.useGlobalPkgs = true;
+                  home-manager.useUserPackages = true;
+                  home-manager.users.daniel = import home/machines/daniel-tgi-dev.nix;
+                }
+              ];
+            };
+          tgi-dev =
+            let
+              system = "x86_64-linux";
+            in
+            nixpkgs.lib.nixosSystem {
+              inherit system;
+
+              modules = [
+                commonModule
+                nixos/machines/tgi-dev.nix
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager.useGlobalPkgs = true;
+                  home-manager.useUserPackages = true;
+                  home-manager.users.daniel = import home/machines/daniel-tgi-dev.nix;
+                }
+              ];
+            };
+        };
     };
-  };
 }

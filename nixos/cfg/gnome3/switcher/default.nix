@@ -1,4 +1,8 @@
-{ stdenv, fetchFromGitHub, glib }:
+{
+  stdenv,
+  fetchFromGitHub,
+  glib,
+}:
 
 stdenv.mkDerivation rec {
   pname = "gnome-shell-switcher";
@@ -21,7 +25,6 @@ stdenv.mkDerivation rec {
     mkdir -p $out/share/gnome-shell/extensions/${uuid}
     cp -r * $out/share/gnome-shell/extensions/${uuid}/
   '';
-
 
   meta = with stdenv.lib; {
     description = "A Gnome Shell extension for quickly switching windows by typing";

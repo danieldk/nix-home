@@ -1,10 +1,15 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
-      ./mindbender-hwconf.nix
-      ../cfg/base-nixos.nix
-    ];
+    ./mindbender-hwconf.nix
+    ../cfg/base-nixos.nix
+  ];
 
   boot = {
     # Use the systemd-boot EFI boot loader.
@@ -13,7 +18,7 @@
   };
 
   environment = {
-    systemPackages = with pkgs; [];
+    systemPackages = with pkgs; [ ];
   };
 
   hardware = {
@@ -36,8 +41,8 @@
       enable = true;
       checkReversePath = false;
       allowedTCPPorts = [ 22 ];
-      allowedUDPPorts = [];
-      allowedUDPPortRanges = [];
+      allowedUDPPorts = [ ];
+      allowedUDPPortRanges = [ ];
       logRefusedConnections = false;
     };
 
@@ -61,13 +66,12 @@
     config = {
       allowUnfree = true;
 
-      packageOverrides = pkgs: {};
+      packageOverrides = pkgs: { };
     };
   };
 
   #powerManagement.cpuFreqGovernor = "ondemand";
   programs.zsh.enable = true;
-
 
   services = {
     fstrim.enable = true;
@@ -86,7 +90,12 @@
     users = {
       daniel = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "docker" "libvirtd" "video" ];
+        extraGroups = [
+          "wheel"
+          "docker"
+          "libvirtd"
+          "video"
+        ];
         shell = pkgs.zsh;
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH57+P0J6+ZZOM4G6ArHE5R5I3uEfrV8sAT1x+ltyDEu"
@@ -102,4 +111,3 @@
 
   system.stateVersion = "24.05";
 }
-

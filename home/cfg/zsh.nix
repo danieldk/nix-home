@@ -17,8 +17,8 @@
 
     localVariables = {
       KEYTIMEOUT = 1;
-      PS1="%F{green}%~%f %# ";
-      RPS1="";
+      PS1 = "%F{green}%~%f %# ";
+      RPS1 = "";
     };
 
     initExtra = ''

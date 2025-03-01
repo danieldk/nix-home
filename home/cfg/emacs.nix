@@ -12,11 +12,12 @@
       prelude =
         let
           fontSize = if pkgs.stdenv.isDarwin then "15" else "10";
-        in ''
+        in
+        ''
           (require 'bind-key)
-  
+
           (setq inhibit-startup-screen t)
-  
+
           (when window-system
             (set-frame-font "Source Code Pro ${fontSize}")
 
@@ -27,7 +28,7 @@
                 menu-bar-mode
                 blink-cursor-mode))
               (funcall mode 0)))
-      '';
+        '';
 
       usePackageVerbose = true;
 
@@ -44,14 +45,14 @@
           enable = true;
 
           bindStar = {
-            "M-x"     = "counsel-M-x";
+            "M-x" = "counsel-M-x";
             "C-x C-f" = "counsel-find-file";
             "C-x C-r" = "counsel-recentf";
-            "C-c f"   = "counsel-git";
-            "C-c s"   = "counsel-git-grep";
-            "C-c /"   = "counsel-rg";
-            "C-c l"   = "counsel-locate";
-            "M-y"     = "counsel-yank-pop";
+            "C-c f" = "counsel-git";
+            "C-c s" = "counsel-git-grep";
+            "C-c /" = "counsel-rg";
+            "C-c l" = "counsel-locate";
+            "M-y" = "counsel-yank-pop";
           };
 
           general = ''
@@ -140,7 +141,10 @@
 
         lsp-ivy = {
           enable = true;
-          after = [ "lsp" "ivy" ];
+          after = [
+            "lsp"
+            "ivy"
+          ];
           command = [ "lsp-ivy-workspace-symbol" ];
         };
 
@@ -156,7 +160,10 @@
 
         general = {
           enable = true;
-          after = [ "evil" "which-key" ];
+          after = [
+            "evil"
+            "which-key"
+          ];
           config = ''
             (general-evil-setup)
 
@@ -228,7 +235,10 @@
 
         markdown-mode = {
           enable = true;
-          command = [ "markdown-mode" "gfm-mode" ];
+          command = [
+            "markdown-mode"
+            "gfm-mode"
+          ];
           mode = [
             ''("README\\.md\\'" . gfm-mode)''
             ''("\\.md\\'" . markdown-mode)''
