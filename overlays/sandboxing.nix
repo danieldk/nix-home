@@ -1,4 +1,17 @@
 self: super: {
+  protonmail-desktop = self.bwrapper {
+    pkg = super.protonmail-desktop;
+    runScript = "proton-mail";
+    privateTmp = false;
+    additionalFolderPathsReadWrite = [
+      "$HOME/Downloads"
+    ];
+    dbusTalks = [
+      "org.freedesktop.secrets"
+    ];
+    overwriteExec = true;
+  };
+
   signal-desktop = self.bwrapper {
     pkg = super.signal-desktop;
     runScript = "signal-desktop";

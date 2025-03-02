@@ -7,6 +7,7 @@
     google-chrome
     #pass-find-desktop
     #vivaldi
+    protonmail-desktop
     signal-desktop
     slack
   ];
