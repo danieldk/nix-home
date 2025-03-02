@@ -24,6 +24,10 @@
       url = "github:danieldk/nix-bwrapper/mutter-xauth";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpak = {
+      url = "github:nixpak/nixpak/94deaa9e812a0e206f01bff124c2df4d8efcda7d";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-apple-silicon.url = "github:tpwrules/nixos-apple-silicon";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
@@ -36,6 +40,7 @@
       nixos-apple-silicon,
       kolide-launcher,
       nix-bwrapper,
+      nixpak,
       nixpkgs,
       vscode-server,
     }:
@@ -65,6 +70,12 @@
       nixosConfigurations =
         let
           overlays = [
+            (self: super: {
+              mkNixPak = nixpak.lib.nixpak {
+                inherit (self) lib;
+                pkgs = self;
+              };
+            })
             nix-bwrapper.overlays.default
             (import overlays/fonts.nix)
             (import overlays/sandboxing.nix)

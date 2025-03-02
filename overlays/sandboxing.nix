@@ -1,4 +1,46 @@
-self: super: {
+self: super:
+let
+  xdgDirs = sloth: pname: [
+    [
+      (sloth.mkdir (sloth.concat' sloth.homeDir "/.local/state/nixpak/${pname}/cache"))
+      (sloth.concat' sloth.homeDir "/.cache")
+    ]
+    [
+      (sloth.mkdir (sloth.concat' sloth.homeDir "/.local/state/nixpak/${pname}/config"))
+      (sloth.concat' sloth.homeDir "/.config")
+    ]
+    [
+      (sloth.mkdir (sloth.concat' sloth.homeDir "/.local/state/nixpak/${pname}/local"))
+      (sloth.concat' sloth.homeDir "/.local")
+    ]
+  ];
+in
+{
+  obsidian =
+    (self.mkNixPak {
+      config =
+        { sloth, ... }:
+        rec {
+          app.package = super.obsidian;
+          flatpak.appId = "md.obsidian.Obsidian";
+          dbus.enable = true;
+          dbus.policies = {
+            "org.freedesktop.DBus" = "talk";
+          };
+          gpu.enable = true;
+          bubblewrap = {
+            sockets.x11 = true;
+            bind.rw = [
+              (sloth.concat' sloth.homeDir "/git/quartz/content")
+            ] ++ xdgDirs sloth app.package.pname;
+            bind.ro = [
+              "/run/current-system"
+            ];
+          };
+          fonts.enable = true;
+        };
+    }).config.env;
+
   protonmail-desktop = self.bwrapper {
     pkg = super.protonmail-desktop;
     runScript = "proton-mail";
