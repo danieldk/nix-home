@@ -66,6 +66,7 @@
         let
           overlays = [
             nix-bwrapper.overlays.default
+            (import overlays/fonts.nix)
             (import overlays/sandboxing.nix)
           ];
           commonModule = {

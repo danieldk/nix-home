@@ -17,6 +17,7 @@
     enableZshIntegration = true;
     installVimSyntax = true;
     settings = {
+      font-family = "MonoLisa";
       font-size = 14;
     };
   };
