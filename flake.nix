@@ -17,11 +17,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     kolide-launcher = {
-      url = "github:/kolide/nix-agent/main";
+      url = "github:kolide/nix-agent/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-bwrapper = {
-      url = "path:/home/daniel/git/nix-bwrapper";
+      url = "github:danieldk/nix-bwrapper/mutter-xauth";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-apple-silicon.url = "github:tpwrules/nixos-apple-silicon";
