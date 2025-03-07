@@ -19,7 +19,6 @@
     "xhci_pci"
     "thunderbolt"
     "usb_storage"
-    "usbhid"
     "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
@@ -27,16 +26,16 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/6e0625cb-34ab-419b-87d5-6f512086ab2e";
+    device = "/dev/disk/by-uuid/72f20b14-2844-4378-9a84-2547942794fd";
     fsType = "btrfs";
     options = [ "subvol=@" ];
   };
 
-  boot.initrd.luks.devices."luks-fc17069b-6cd5-4d0b-84c9-790f34ca5a3e".device =
-    "/dev/disk/by-uuid/fc17069b-6cd5-4d0b-84c9-790f34ca5a3e";
+  boot.initrd.luks.devices."luks-56b91171-aba3-496e-990a-2f0494f055a9".device =
+    "/dev/disk/by-uuid/56b91171-aba3-496e-990a-2f0494f055a9";
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/FA74-C52E";
+    device = "/dev/disk/by-uuid/00A0-1730";
     fsType = "vfat";
     options = [
       "fmask=0077"
