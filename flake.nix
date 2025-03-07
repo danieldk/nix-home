@@ -20,10 +20,6 @@
       url = "github:kolide/nix-agent/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-bwrapper = {
-      url = "github:danieldk/nix-bwrapper/mutter-xauth";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixpak = {
       url = "github:nixpak/nixpak/94deaa9e812a0e206f01bff124c2df4d8efcda7d";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,7 +35,6 @@
       home-manager,
       nixos-apple-silicon,
       kolide-launcher,
-      nix-bwrapper,
       nixpak,
       nixpkgs,
       vscode-server,
@@ -76,7 +71,6 @@
                 pkgs = self;
               };
             })
-            nix-bwrapper.overlays.default
             (import overlays/fonts.nix)
             (import overlays/sandboxing.nix)
           ];
