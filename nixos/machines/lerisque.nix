@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
@@ -9,6 +5,7 @@
     ./lerisque-hwconf.nix
     ../cfg/base-nixos.nix
     ../cfg/desktop-gnome3.nix
+    ../cfg/clamav.nix
   ];
 
   # Bootloader.
@@ -92,118 +89,9 @@
 
   services = {
     fstrim.enable = true;
-    clamav = {
-      daemon.enable = true;
-      scanner.enable = true;
-      updater.enable = true;
-    };
     tailscale = {
       enable = true;
       extraSetFlags = [ "--operator=daniel" ];
-    };
-  };
-
-  systemd.services = {
-    clamav-daemon.serviceConfig =
-      let
-        package = config.services.clamav.package;
-      in
-      {
-        ConfigurationDirectory = "clamav";
-        CacheDirectory = "clamav";
-        LogsDirectory = "clamav";
-        NoNewPrivileges = "yes";
-        ProtectSystem = "strict";
-        ProtectHome = "read-only";
-        #ReadWritePaths = "/var/local/quarantine";
-        TemporaryFileSystem = [ "/run/clamav" ];
-        NoExecPaths = [ "/" ];
-        ExecPaths = [ "${builtins.storeDir}" ];
-        ProtectClock = "yes";
-        ProtectHostname = "yes";
-        ProtectKernelTunables = "yes";
-        ProtectKernelModules = "yes";
-        ProtectKernelLogs = "yes";
-        ProtectControlGroups = "yes";
-        RestrictSUIDSGID = "yes";
-        SystemCallArchitectures = "native";
-        LockPersonality = "yes";
-        MemoryDenyWriteExecute = "yes";
-        RestrictRealtime = "yes";
-        IPAddressDeny = "any";
-        RestrictAddressFamilies = [ "AF_UNIX" ];
-        ProtectProc = "invisible";
-        ProcSubset = "pid";
-        CapabilityBoundingSet = [
-          "CAP_CHOWN"
-          "CAP_SETGID"
-          "CAP_SETUID"
-          "CAP_DAC_OVERRIDE"
-          "CAP_MKNOD"
-        ];
-        RestrictNamespaces = "yes";
-        SystemCallFilter = [
-          "~@clock"
-          "~@cpu-emulation"
-          "~@debug"
-          "~@module"
-          "~@mount"
-          "~@obsolete"
-          "~@raw-io"
-          "~@reboot"
-          "~@resources"
-          "~@swap"
-        ];
-      };
-    clamav-freshclam.serviceConfig = {
-      LogsDirectory = "clamav";
-      ConfigurationDirectory = "clamav";
-      RuntimeDirectory = "clamav";
-      NoNewPrivileges = "yes";
-      ProtectSystem = "full";
-      ProtectHome = "tmpfs";
-      PrivateTmp = "yes";
-      PrivateDevices = "yes";
-      NoExecPaths = [ "/" ];
-      ExecPaths = [ "${builtins.storeDir}" ];
-      ProtectClock = "yes";
-      ProtectKernelTunables = "yes";
-      ProtectKernelModules = "yes";
-      ProtectKernelLogs = "yes";
-      ProtectControlGroups = "yes";
-      RestrictSUIDSGID = "yes";
-      SystemCallArchitectures = "native";
-      LockPersonality = "yes";
-      MemoryDenyWriteExecute = "yes";
-      RestrictRealtime = "yes";
-      PrivateNetwork = "no";
-      IPAddressAllow = "any";
-      RestrictAddressFamilies = [
-        "AF_INET"
-        "AF_INET6"
-      ];
-      ProtectProc = "noaccess";
-      ProcSubset = "pid";
-      CapabilityBoundingSet = [
-        "CAP_CHOWN"
-        "CAP_SETGID"
-        "CAP_SETUID"
-        "CAP_DAC_OVERRIDE"
-        "CAP_MKNOD"
-      ];
-      RestrictNamespaces = "yes";
-      SystemCallFilter = [
-        "~@clock"
-        "~@cpu-emulation"
-        "~@debug"
-        "~@module"
-        "~@mount"
-        "~@obsolete"
-        "~@raw-io"
-        "~@reboot"
-        "~@resources"
-        "~@swap"
-      ];
     };
   };
 
