@@ -12,6 +12,7 @@
       git
       git-crypt
       man-pages
+      man-pages-posix
       unzip
     ];
   };
