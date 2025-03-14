@@ -15,6 +15,8 @@
     polkitPolicyOwners = [ "daniel" ];
   };
 
+  services.flatpak.enable = true;
+
   services.pipewire.enable = true;
 
   services.xserver = {

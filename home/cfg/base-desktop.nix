@@ -1,15 +1,29 @@
-{ pkgs, ... }:
+{ pkgs, nix-flatpak, ... }:
 
 {
+  # I prefer to use native Nix applications with sandboxing through
+  # nixpak (see overlays/sandboxing). But since a recent upgrade,
+  # portals require that the dynamic parts of .flatpak-info are
+  # generated as well (e.g. instance-id). Use flatpaks until this
+  # is fixed in nixpak.
+  imports = [ nix-flatpak.homeManagerModules.nix-flatpak ];
+
+  # Installing these through flatpak because I want them sandboxed.
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "md.obsidian.Obsidian"
+      "me.proton.Mail"
+      "org.signal.Signal"
+    ];
+  };
+
   home.packages = with pkgs; [
-    firefox
+    #firefox
     #gnome-mpv
     google-chrome
     #pass-find-desktop
     #vivaldi
-    obsidian
-    protonmail-desktop
-    signal-desktop
     slack
   ];
 

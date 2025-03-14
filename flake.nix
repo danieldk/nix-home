@@ -20,6 +20,7 @@
       url = "github:kolide/nix-agent/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
     nixpak = {
       url = "github:nixpak/nixpak/94deaa9e812a0e206f01bff124c2df4d8efcda7d";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,6 +36,7 @@
       home-manager,
       nixos-apple-silicon,
       kolide-launcher,
+      nix-flatpak,
       nixpak,
       nixpkgs,
       vscode-server,
@@ -99,6 +101,7 @@
                   home-manager.useGlobalPkgs = true;
                   home-manager.useUserPackages = true;
                   home-manager.users.daniel = import home/machines/lerisque.nix;
+                  home-manager.extraSpecialArgs.nix-flatpak = nix-flatpak;
                 }
               ];
             };
