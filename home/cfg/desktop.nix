@@ -81,7 +81,10 @@
       };
 
       "org/gnome/shell" = {
-        enabled-extensions = [ "appindicatorsupport@rgcjonas.gmail.com" ];
+        enabled-extensions = [
+          "appindicatorsupport@rgcjonas.gmail.com"
+          "switcher@landau.fi"
+        ];
       };
 
       "org/gnome/shell/keybindings" = {
