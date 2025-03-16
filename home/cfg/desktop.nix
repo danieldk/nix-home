@@ -29,6 +29,8 @@
       "org/gnome/desktop/wm/keybindings" = {
         move-to-workspace-left = [ "<Shift><Super>Left" ];
         move-to-workspace-right = [ "<Shift><Super>Right" ];
+        switch-input-source = [ ];
+        switch-input-source-backward = [ ];
       };
 
       "org/gnome/desktop/wm/preferences" = {
