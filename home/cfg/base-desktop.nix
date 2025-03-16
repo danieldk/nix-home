@@ -46,13 +46,13 @@
   #  '';
   #};
 
-  #programs.mpv = {
-  #  enable = true;
-  #  config = {
-  #hwdec = "nvdec";
-  #vo = "gpu";
-  #  };
-  #};
+  programs.mpv = {
+    enable = true;
+    config = {
+      hwdec = "vaapi";
+      vo = "gpu";
+    };
+  };
 
   #services.gpg-agent = {
   #  enable = true;
