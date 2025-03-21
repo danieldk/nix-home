@@ -22,7 +22,7 @@
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
     nixpak = {
-      url = "github:nixpak/nixpak/94deaa9e812a0e206f01bff124c2df4d8efcda7d";
+      url = "github:nixpak/nixpak/960898f79e83aa68c75876794450019ddfdb9157";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-apple-silicon.url = "github:tpwrules/nixos-apple-silicon";
