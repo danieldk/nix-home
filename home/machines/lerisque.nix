@@ -18,5 +18,9 @@
     scaleft
   ];
 
+  services = {
+    dropbox.enable = true;
+  };
+
   home.stateVersion = "25.05";
 }
