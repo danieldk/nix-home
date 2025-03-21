@@ -15,6 +15,7 @@
   ];
 
   home.packages = with pkgs; [
+    scaleft
   ];
 
   home.stateVersion = "25.05";
