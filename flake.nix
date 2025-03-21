@@ -51,7 +51,7 @@
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
     in
     {
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
 
       homeConfigurations.mac =
         let
