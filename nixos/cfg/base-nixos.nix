@@ -14,6 +14,9 @@
       man-pages
       man-pages-posix
       unzip
+
+      ghostty.terminfo
+      kitty.terminfo
     ];
   };
 
