@@ -34,6 +34,7 @@
     enableZshIntegration = true;
     installVimSyntax = true;
     settings = {
+      clipboard-read = "deny";
       font-family = "MonoLisa";
       font-size = 14;
     };
