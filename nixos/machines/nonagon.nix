@@ -20,7 +20,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
 
-  hardware.asahi.extractPeripheralFirmware = false;
+  hardware.asahi = {
+    extractPeripheralFirmware = false;
+    useExperimentalGPUDriver = true;
+  };
+  hardware.graphics.enable = true;
 
   nix = {
     settings.max-jobs = 8;
