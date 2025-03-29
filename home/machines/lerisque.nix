@@ -16,6 +16,7 @@
 
   home.packages = with pkgs; [
     scaleft
+    kopia-ui
   ];
 
   services = {

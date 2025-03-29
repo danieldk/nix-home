@@ -76,6 +76,7 @@
             (import overlays/fonts.nix)
             (import overlays/sandboxing.nix)
             (import overlays/fixup.nix)
+            (import overlays/kopia-ui.nix)
           ];
           commonModule = {
             # Use the pinned nixpkgs version for flake commands.
