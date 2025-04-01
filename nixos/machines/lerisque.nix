@@ -95,6 +95,16 @@
     };
   };
 
+  networking.modemmanager = {
+    enable = true;
+    fccUnlockScripts = [
+      {
+        id = "2c7c:6008";
+        path = "${pkgs.modemmanager}/share/ModemManager/fcc-unlock.available.d/2c7c";
+      }
+    ];
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
