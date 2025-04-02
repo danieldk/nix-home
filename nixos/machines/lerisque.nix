@@ -71,6 +71,7 @@
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
+      asdbctl
     ];
   };
 
@@ -93,6 +94,7 @@
       enable = true;
       extraSetFlags = [ "--operator=daniel" ];
     };
+    udev.packages = [ pkgs.asdbctl ];
   };
 
   networking.modemmanager = {

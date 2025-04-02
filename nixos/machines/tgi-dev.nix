@@ -49,7 +49,7 @@
     config = {
       allowUnfree = true;
       cudaSupport = true;
-      packageOverrides = pkgs: {};
+      packageOverrides = pkgs: { };
     };
   };
 
@@ -65,7 +65,11 @@
     users = {
       daniel = {
         isNormalUser = true;
-        extraGroups = [ "wheel" "video" "docker" ];
+        extraGroups = [
+          "wheel"
+          "video"
+          "docker"
+        ];
         shell = pkgs.zsh;
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA6l265QPVJjOMTXZGjKYX7lIlpn3rPWWUoN01MHvOdl"
