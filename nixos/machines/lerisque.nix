@@ -64,7 +64,7 @@
 
   users.users.daniel = {
     isNormalUser = true;
-    description = "Daniel de Kok";
+    description = "Daniël de Kok";
     extraGroups = [
       "networkmanager"
       "wheel"
