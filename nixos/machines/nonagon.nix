@@ -14,6 +14,7 @@
     # Include the results of the hardware scan.
     ./nonagon-hwconf.nix
     ../cfg/base-nixos.nix
+    ../cfg/danieldk-keys.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

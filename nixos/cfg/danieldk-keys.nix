@@ -1,15 +1,16 @@
-[
-  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICjEndjSNA5r4F5fdM9ZL9v1xY5+vGXYGHBUAQGAt5h3"
-  "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxQ5dl7Md+wbS5IzCjTV4MN3fyo+/aeVJFA6ITCq43lWMMmFluooGi078S8huWFZwjuphJota5g/M3Q/U3G7KiCfDZN4HwucPGT8NQFHntRKQ9DdjJfeD+zE3ZTdKYsXe3N5wI5KSIgZIWk6WA4viZLtVVFHrttDirC30g4H9Cx/OdoIzANDtWAOxkYNeTz/lFnawuzbUasVJsCxYJ7AI6BKhaYqR6Fr12ceHEtmXG5nsZ/r6rHqdZHCknvSx1lSbp/cLReWFvlxtipmbvFHAbaVoc1TsRwExvOw26eSOgjqNFKumriVeOTpIlaZXpzGy+tEHeymmN63fF1UmsHUHBw=="
-  "ecdsa-sha2-nistp384 AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzODQAAABhBAoXZgX/lGFjrNsLvHOgplhU9KWi2xBAgcg0EjQwRa9TpA51Zjwp7bnljroaK0LqWeaQdBrMtXqgT+9PqsP/AtbXEXhMUS16rvPg/91hGB8A39JWgZqiR9nuBJ4odMYW2A=="
-  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC7twJqYpSUfAeFWgIB6TKxyQdDFycUjrvdIbUOrXYL/Gi3CpOtIpRHvZJgVvzC/6wrNhzxFzN11eDLKrD0MUvHQGS3/Tu9Y55Qmy84E0fiPaiNXWSA8wxpkgAF50f/3yKtQwvN5wuV/GovOlfgeK474ETbwOrHU56hq+5XeidFkLdVN5fQ3uNJZJ/F96p07wM+KlCwg00I2Iro+MfVnHE6D0rIRRPSgjQzkqe2c3kGDE9kGXKQ8tu64GjQdEWi5oEztq3+y76rbW9QWl3nJPUjhUu1N+OXzTCrn3fcGe5Io+gHaScIPj3L7BMPK1h+ds0qweu/+2fd1wyTzbj1+rcfmEe/W11gaJn6FPiM1iln1KsLSNNU7utkfKSYjyq1O5nbIiMCaixfoGV9nA1gX2iOtwubpBe3mmKVI8PF/dOzXpnPWEDp2ohHIgzVbA5mf+NilAwdwLF0MeLfbZK+K0uMAc8SiWjefmqJp/ms2MJtEezhQmKa7NCT6TWNZG9NH7T/u0I4blQu8hk5bNYpsI90VL2HkAt1rg2QVRvjr1xPB7+k7BUiT7upAiLSKlSWTQhI1G+stvTOHzAFJpOYozGWUJyD+Ut4+3JUfYjpRE1oOh47fsHJ8taO/aUmSLav2LJNxuGSaSpY4q/DoYvhJhshkVmWfrEFaTFQ9+uwcfTAmQ=="
-  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+r7HmBsjkg1aRgQN4Q8exg+3jQQi2vLrt5xDeBKzuuW4RdwZetQPxq/CbQo5f8Z+S9OxT0cqNBn8iC6am2WVgVMDY1hA3FX+pbQ9UqN1jkqwADf76+GbBWwcJlmJiF+vVyMFEwOudWw+yRwesOicDmtHfNcKw9cVjy4xQZwuNhiRoqx7hfrUicsouUn9H26mtnRjDZV2Y512tqRtbeVh6928aGKQMkx2raUTqhcJ5ElMOiuEwrVPdgRavm6D0doyt72iuMb0xuJOXAMG4dDNi1si5qYmVmIXgzjaItpO4NKLy+EhSfcvsnt4jA3ZF9+ldUYnwmlxKw9d2YucofF4f"
-  # YubiKey 5 FIDO2
-  "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIDA1t6QKNTYwEScT1pLkk0QItRe33nRJizpsA/hd2LI7AAAABHNzaDo= me@danieldk.eu"
-  # YubiKey 5
-  "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIBuV5m0qobDslRXc6+kGDjfOhjeYVw+PpwuPtg5/bbORAAAABHNzaDo= ssh:"
-  # YubiKey Nano
-  "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIFmm3Wq0H+ch6Tt6d8vNo00jti+NjcEkJbyFh+SX4/aCAAAABHNzaDo= YubiKey Nano"
-  # MacBook
-  "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFavNudmPOMnA7fHnXctbx46L1bMjHMgBsI9PS1DXIXqtzD92NvAfo81GbZYpOomRHo9B8skbBsObiUu83UVgoQ= General@secretive.Daniël’s-MacBook-Air.local"
-]
+{ ... }:
+
+{
+
+  users.users.daniel.openssh.authorizedKeys.keys = [
+    # YubiKey 5 FIDO2
+    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIDA1t6QKNTYwEScT1pLkk0QItRe33nRJizpsA/hd2LI7AAAABHNzaDo= me@danieldk.eu"
+    # YubiKey 5
+    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIBuV5m0qobDslRXc6+kGDjfOhjeYVw+PpwuPtg5/bbORAAAABHNzaDo= ssh:"
+    # YubiKey Nano
+    "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIFmm3Wq0H+ch6Tt6d8vNo00jti+NjcEkJbyFh+SX4/aCAAAABHNzaDo= YubiKey Nano"
+    # 1Password
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA6l265QPVJjOMTXZGjKYX7lIlpn3rPWWUoN01MHvOdl"
+  ];
+
+}
