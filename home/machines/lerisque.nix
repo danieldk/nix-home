@@ -17,6 +17,7 @@
   home.packages = with pkgs; [
     scaleft
     kopia-ui
+    prusa-slicer
   ];
 
   services = {
