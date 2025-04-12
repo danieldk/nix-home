@@ -19,6 +19,7 @@
     "xhci_pci"
     "thunderbolt"
     "usb_storage"
+    "usbhid"
     "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
@@ -26,16 +27,16 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/72f20b14-2844-4378-9a84-2547942794fd";
+    device = "/dev/disk/by-uuid/ac56bb82-82d3-4a2d-868a-0d813b36a1fc";
     fsType = "btrfs";
     options = [ "subvol=@" ];
   };
 
-  boot.initrd.luks.devices."luks-56b91171-aba3-496e-990a-2f0494f055a9".device =
-    "/dev/disk/by-uuid/56b91171-aba3-496e-990a-2f0494f055a9";
+  boot.initrd.luks.devices."luks-a890b077-ab2d-4c22-8a22-a563a1cafafe".device =
+    "/dev/disk/by-uuid/a890b077-ab2d-4c22-8a22-a563a1cafafe";
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/00A0-1730";
+    device = "/dev/disk/by-uuid/DA46-A6CC";
     fsType = "vfat";
     options = [
       "fmask=0077"
@@ -52,6 +53,7 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp1s0f0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wwp196s0f3u4.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
