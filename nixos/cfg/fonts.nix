@@ -7,7 +7,6 @@
     fontDir.enable = true;
 
     packages = with pkgs; [
-      corefonts
       fira-code
       google-fonts
       jetbrains-mono
