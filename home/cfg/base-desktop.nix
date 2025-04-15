@@ -25,7 +25,7 @@
     #pass-find-desktop
     #vivaldi
     obsidian
-    signal-desktop
+    signal-desktop-bin
     slack
   ];
 

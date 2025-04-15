@@ -27,7 +27,7 @@ self: super: {
         };
     }).config.env;
 
-  signal-desktop =
+  signal-desktop-bin =
     (self.mkNixPak {
       config =
         { sloth, ... }:
@@ -36,7 +36,7 @@ self: super: {
             ./sandboxing-modules/gui-base.nix
             ./sandboxing-modules/network.nix
           ];
-          app.package = super.signal-desktop;
+          app.package = super.signal-desktop-bin;
           flatpak.appId = "org.signal.Signal";
           # Electron IPC
           bubblewrap.bind.rw = [ "/tmp" ];
