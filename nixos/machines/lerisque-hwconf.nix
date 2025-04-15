@@ -32,8 +32,10 @@
     options = [ "subvol=@" ];
   };
 
-  boot.initrd.luks.devices."luks-a890b077-ab2d-4c22-8a22-a563a1cafafe".device =
-    "/dev/disk/by-uuid/a890b077-ab2d-4c22-8a22-a563a1cafafe";
+  boot.initrd.luks.devices."luks-a890b077-ab2d-4c22-8a22-a563a1cafafe" = {
+    device = "/dev/disk/by-uuid/a890b077-ab2d-4c22-8a22-a563a1cafafe";
+    allowDiscards = true;
+  };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/DA46-A6CC";
