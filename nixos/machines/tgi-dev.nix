@@ -5,7 +5,10 @@
   ...
 }:
 {
-  imports = [ "${modulesPath}/virtualisation/amazon-image.nix" ];
+  imports = [
+    "${modulesPath}/virtualisation/amazon-image.nix"
+    ../cfg/fhs-compat.nix
+  ];
 
   hardware.nvidia = {
     modesetting.enable = true;

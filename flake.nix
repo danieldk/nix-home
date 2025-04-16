@@ -21,6 +21,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
+    nix-ld.url = "github:Mic92/nix-ld";
+    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
     nixpak = {
       url = "github:nixpak/nixpak/960898f79e83aa68c75876794450019ddfdb9157";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,6 +39,7 @@
       nixos-apple-silicon,
       kolide-launcher,
       nix-flatpak,
+      nix-ld,
       nixpak,
       nixpkgs,
       vscode-server,
@@ -98,6 +101,7 @@
               modules = [
                 commonModule
                 kolide-launcher.nixosModules.kolide-launcher
+                nix-ld.nixosModules.nix-ld
                 nixos/machines/lerisque.nix
                 home-manager.nixosModules.home-manager
                 {

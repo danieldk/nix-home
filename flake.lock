@@ -17,10 +17,7 @@
     },
     "flake-parts": {
       "inputs": {
-        "nixpkgs-lib": [
-          "nixpak",
-          "nixpkgs"
-        ]
+        "nixpkgs-lib": ["nixpak", "nixpkgs"]
       },
       "locked": {
         "lastModified": 1741352980,
@@ -56,14 +53,8 @@
     },
     "hercules-ci-effects": {
       "inputs": {
-        "flake-parts": [
-          "nixpak",
-          "flake-parts"
-        ],
-        "nixpkgs": [
-          "nixpak",
-          "nixpkgs"
-        ]
+        "flake-parts": ["nixpak", "flake-parts"],
+        "nixpkgs": ["nixpak", "nixpkgs"]
       },
       "locked": {
         "lastModified": 1739595404,
@@ -81,16 +72,14 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": ["nixpkgs"]
       },
       "locked": {
-        "lastModified": 1744380363,
-        "narHash": "sha256-cXjAUuAfQDPSLSsckZuTioQ986iqSPTzx8D7dLAcC+Q=",
+        "lastModified": 1744735751,
+        "narHash": "sha256-OPpfgL3qUIbQdbmp1/ZwnlsuTLooHN4or0EABnZTFRY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e43c6bcb101ba3301522439c459288c4a248f624",
+        "rev": "db7738e67a101ad945abbcb447e1310147afaf1b",
         "type": "github"
       },
       "original": {
@@ -101,9 +90,7 @@
     },
     "kolide-launcher": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": ["nixpkgs"]
       },
       "locked": {
         "lastModified": 1742581852,
@@ -136,6 +123,24 @@
         "type": "github"
       }
     },
+    "nix-ld": {
+      "inputs": {
+        "nixpkgs": ["nixpkgs"]
+      },
+      "locked": {
+        "lastModified": 1744621833,
+        "narHash": "sha256-II6a32kRc+KbLhU/jS8EbuXYt1PNCvsRvuBw2becgQM=",
+        "owner": "Mic92",
+        "repo": "nix-ld",
+        "rev": "9a3812797e25def1d4aed62b517606b7b93989dc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "nix-ld",
+        "type": "github"
+      }
+    },
     "nixos-apple-silicon": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -160,9 +165,7 @@
       "inputs": {
         "flake-parts": "flake-parts",
         "hercules-ci-effects": "hercules-ci-effects",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": ["nixpkgs"]
       },
       "locked": {
         "lastModified": 1742224159,
@@ -197,11 +200,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1744371553,
-        "narHash": "sha256-KjvhD+DkQsOAggIFyuxSAZIs84UahDb/O9ojpvyFNe0=",
+        "lastModified": 1744777043,
+        "narHash": "sha256-O6jgTxz9BKUiaJl03JsVHvSjtCOC8gHfDvC2UCfcLMc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "6f061f35682410185d9a1582601e9241bfa6ad96",
+        "rev": "7a6f7f4c1c69eee05641beaa40e7f85da8e69fb0",
         "type": "github"
       },
       "original": {
@@ -230,6 +233,7 @@
         "home-manager": "home-manager",
         "kolide-launcher": "kolide-launcher",
         "nix-flatpak": "nix-flatpak",
+        "nix-ld": "nix-ld",
         "nixos-apple-silicon": "nixos-apple-silicon",
         "nixpak": "nixpak",
         "nixpkgs": "nixpkgs_2",
