@@ -59,6 +59,7 @@
           };
         };
       };
+      show_startup_tips = false;
       mouse_mode = false;
       pane_frames = false;
       theme = "gruvbox-dark";
