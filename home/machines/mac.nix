@@ -52,6 +52,12 @@
 
   fonts.fontconfig.enable = true;
 
+  programs.ssh.extraConfig = ''
+    Match exec "/usr/local/bin/sft resolve -q  %h"
+      ProxyCommand "/usr/local/bin/sft" proxycommand  %h
+      UserKnownHostsFile "/Users/daniel/Library/Application Support/ScaleFT/proxycommand_known_hosts"
+  '';
+
   xdg = {
     enable = true;
   };
