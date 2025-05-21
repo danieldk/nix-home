@@ -38,7 +38,7 @@
         };
       });
 
-    extraConfig = ''
+    extraConfig = lib.optionalString pkgs.stdenv.isLinux ''
       Match exec "${pkgs.scaleft}/bin/sft resolve -q  %h"
         ProxyCommand "${pkgs.scaleft}/bin/sft" proxycommand  %h
         UserKnownHostsFile "~/.local/share/ScaleFT/proxycommand_known_hosts"
