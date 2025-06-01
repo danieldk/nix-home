@@ -7,6 +7,6 @@
   };
 
   programs.zsh = {
-    initExtra = builtins.readFile fzf/zshrc;
+    initContent = builtins.readFile fzf/zshrc;
   };
 }

@@ -21,7 +21,7 @@
       RPS1 = "";
     };
 
-    initExtra = ''
+    initContent = ''
       nixify() {
         if [ ! -e ./.envrc ]; then
           echo "use nix -s shell.nix" > .envrc
