@@ -8,6 +8,7 @@
     ../cfg/base-network.nix
     ../cfg/direnv.nix
     ../cfg/fzf.nix
+    ../cfg/ghostty.nix
     ../cfg/git.nix
     ../cfg/go.nix
     ../cfg/kitty.nix
