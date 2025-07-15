@@ -6,17 +6,18 @@
   # portals require that the dynamic parts of .flatpak-info are
   # generated as well (e.g. instance-id). Use flatpaks until this
   # is fixed in nixpak.
-  #imports = [ nix-flatpak.homeManagerModules.nix-flatpak ];
+  imports = [ nix-flatpak.homeManagerModules.nix-flatpak ];
 
   # Installing these through flatpak because I want them sandboxed.
-  #services.flatpak = {
+  services.flatpak = {
   #  enable = true;
-  #  packages = [
-  #    "md.obsidian.Obsidian"
+    packages = [
+      "md.obsidian.Obsidian"
   #    "me.proton.Mail"
-  #    "org.signal.Signal"
-  #  ];
-  #};
+      "org.signal.Signal"
+      #"com.slack.Slack"
+    ];
+  };
 
   home.packages = with pkgs; [
     #firefox
@@ -24,8 +25,8 @@
     google-chrome
     #pass-find-desktop
     #vivaldi
-    obsidian
-    signal-desktop-bin
+    #obsidian
+    #signal-desktop-bin
     slack
   ];
 

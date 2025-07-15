@@ -1,14 +1,14 @@
 self: super: {
-  obsidian =
-    (self.mkNixPak {
-      config =
-        { sloth, ... }:
-        rec {
-          imports = [ ./sandboxing-modules/gui-base.nix ];
-          app.package = super.obsidian;
-          flatpak.appId = "md.obsidian.Obsidian";
-        };
-    }).config.env;
+  #obsidian =
+  #  (self.mkNixPak {
+  #    config =
+  #      { sloth, ... }:
+  #      rec {
+  #        imports = [ ./sandboxing-modules/gui-base.nix ];
+  #        app.package = super.obsidian;
+  #        flatpak.appId = "md.obsidian.Obsidian";
+  #      };
+  #  }).config.env;
 
   protonmail-desktop =
     (self.mkNixPak {
