@@ -9,15 +9,19 @@
     ../cfg/git.nix
     ../cfg/go.nix
     ../cfg/fzf.nix
+    ../cfg/kitty.nix
     ../cfg/ssh.nix
     ../cfg/vim.nix
     ../cfg/zsh.nix
   ];
 
   home.packages = with pkgs; [
+    gnome-boxes
     scaleft
     kopia-ui
-    prusa-slicer
+    #prusa-slicer
+    vscode
+    zed-editor
   ];
 
   services = {
