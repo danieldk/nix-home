@@ -20,6 +20,10 @@
       url = "github:kolide/nix-agent/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
@@ -38,6 +42,7 @@
       home-manager,
       nixos-apple-silicon,
       kolide-launcher,
+      lanzaboote,
       nix-flatpak,
       nix-ld,
       nixpak,
@@ -100,6 +105,7 @@
 
               modules = [
                 commonModule
+                lanzaboote.nixosModules.lanzaboote 
                 kolide-launcher.nixosModules.kolide-launcher
                 nix-ld.nixosModules.nix-ld
                 nixos/machines/lerisque.nix

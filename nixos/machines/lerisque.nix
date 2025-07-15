@@ -9,8 +9,12 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
+  };
 
   # Enable plymouth and also show it for LUKS (needs systemd in initrd).
   boot.plymouth.enable = true;
@@ -76,6 +80,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    sbctl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
