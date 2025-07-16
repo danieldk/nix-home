@@ -118,7 +118,7 @@
                 }
               ];
             };
-          mindbender =
+          nonagon =
             let
               system = "x86_64-linux";
             in
@@ -127,28 +127,6 @@
 
               modules = [
                 commonModule
-                nixos/machines/mindbender.nix
-                home-manager.nixosModules.home-manager
-                {
-                  home-manager.useGlobalPkgs = true;
-                  home-manager.useUserPackages = true;
-                  home-manager.users.daniel = import home/machines/mindbender.nix;
-                  home-manager.extraSpecialArgs = {
-                    inherit vscode-server;
-                  };
-                }
-              ];
-            };
-          nonagon =
-            let
-              system = "aarch64-linux";
-            in
-            nixpkgs.lib.nixosSystem {
-              inherit system;
-
-              modules = [
-                commonModule
-                nixos-apple-silicon.nixosModules.apple-silicon-support
                 nixos/machines/nonagon.nix
                 home-manager.nixosModules.home-manager
                 {
@@ -158,7 +136,6 @@
                 }
               ];
             };
-
           builder =
             let
               system = "x86_64-linux";

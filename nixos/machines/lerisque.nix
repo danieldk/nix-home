@@ -55,6 +55,8 @@
     #};
   };
 
+  services.fwupd.enable = true;
+
   services.kolide-launcher.enable = true;
 
   # Enable the X11 windowing system.

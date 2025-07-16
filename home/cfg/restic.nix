@@ -13,7 +13,7 @@ let
           --run "export B2_ACCOUNT_ID=\"\$(pass show Storage/Backblaze/AppKey | grep AccountID: | cut -d ' ' -f 2)\"" \
           --run "export B2_ACCOUNT_KEY=\"\$(pass Storage/Backblaze/AppKey | head -n1)\"" \
           --add-flags "--password-command='pass Storage/Restic'" \
-          --add-flags "-r b2:restic-mindbender"
+          --add-flags "-r b2:restic-nonagon"
       '';
   restic-mindfuzz =
     pkgs.runCommand "restic-mindfuzz"

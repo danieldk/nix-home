@@ -53,8 +53,6 @@
       nssmdns4 = true;
     };
 
-    fwupd.enable = true;
-
     interception-tools.enable = true;
 
     pcscd.enable = true;
