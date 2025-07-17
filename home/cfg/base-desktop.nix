@@ -10,10 +10,10 @@
 
   # Installing these through flatpak because I want them sandboxed.
   services.flatpak = {
-  #  enable = true;
+    #  enable = true;
     packages = [
       "md.obsidian.Obsidian"
-  #    "me.proton.Mail"
+      #    "me.proton.Mail"
       "org.signal.Signal"
       #"com.slack.Slack"
     ];

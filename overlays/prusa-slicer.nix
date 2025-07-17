@@ -1,3 +1,3 @@
 final: prev: {
-  prusa-slicer = final.callPackage ./prusa-slicer {};
+  prusa-slicer = final.callPackage ./prusa-slicer { };
 }

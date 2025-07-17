@@ -105,7 +105,7 @@
 
               modules = [
                 commonModule
-                lanzaboote.nixosModules.lanzaboote 
+                lanzaboote.nixosModules.lanzaboote
                 kolide-launcher.nixosModules.kolide-launcher
                 nix-ld.nixosModules.nix-ld
                 nixos/machines/lerisque.nix
