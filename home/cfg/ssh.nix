@@ -23,13 +23,6 @@
           user = "daniel";
         };
       }
-      // (lib.optionalAttrs pkgs.stdenv.isLinux {
-        "*" = {
-          extraOptions = {
-            IdentityAgent = "~/.1password/agent.sock";
-          };
-        };
-      })
       // (lib.optionalAttrs pkgs.stdenv.isDarwin {
         "*" = {
           extraOptions = {

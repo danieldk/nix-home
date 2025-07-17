@@ -28,5 +28,13 @@
     dropbox.enable = true;
   };
 
+  matchBlocks = {
+    "*" = {
+      extraOptions = {
+        IdentityAgent = "~/.1password/agent.sock";
+      };
+    };
+  };
+
   home.stateVersion = "25.05";
 }
