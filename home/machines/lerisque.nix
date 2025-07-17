@@ -16,6 +16,7 @@
   ];
 
   home.packages = with pkgs; [
+    code-cursor
     gnome-boxes
     scaleft
     kopia-ui
