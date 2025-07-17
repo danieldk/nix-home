@@ -7,7 +7,7 @@
     font = {
       name = "MonoLisa";
       #package = pkgs.nerd-fonts.intone-mono;
-      size = 18;
+      size = 14;
     };
     keybindings = {
       "cmd+enter" = "toggle_fullscreen";
