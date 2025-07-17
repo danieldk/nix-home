@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -122,8 +127,18 @@
 
   powerManagement = {
     enable = true;
-    powertop.enable = true;
+    powertop = {
+      enable = true;
+      postStart = ''
+        ${lib.getExe' config.systemd.package "udevadm"} trigger \
+          -c bind -s usb -a bInterfaceClass=03
+      '';
+    };
   };
+
+  services.udev.extraRules = ''
+    ACTION=="bind", SUBSYSTEM=="usb", ATTRS{bInterfaceClass}=="03", ATTRS{bInterfaceSubClass}=="01", ATTRS{bInterfaceProtocol}=="01|02", ATTR{../power/control}="on"
+  '';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
