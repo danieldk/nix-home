@@ -29,7 +29,7 @@
     dropbox.enable = true;
   };
 
-  matchBlocks = {
+  programs.ssh.matchBlocks = {
     "*" = {
       extraOptions = {
         IdentityAgent = "~/.1password/agent.sock";
