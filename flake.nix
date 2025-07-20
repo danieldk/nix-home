@@ -86,7 +86,6 @@
             (import overlays/sandboxing.nix)
             (import overlays/fixup.nix)
             (import overlays/kopia-ui.nix)
-            (import overlays/prusa-slicer.nix)
           ];
           commonModule = {
             # Use the pinned nixpkgs version for flake commands.
