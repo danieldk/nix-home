@@ -20,7 +20,7 @@
     gnome-boxes
     scaleft
     kopia-ui
-    #prusa-slicer
+    prusa-slicer
     vscode
     zed-editor
   ];
