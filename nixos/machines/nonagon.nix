@@ -112,13 +112,9 @@
     libvirtd.enable = true;
   };
 
-  system.activationScripts.set-max-perf-pct = {
-    text = ''
-      if [ -f /sys/devices/system/cpu/intel_pstate/max_perf_pct ]; then
-        echo "90" > /sys/devices/system/cpu/intel_pstate/max_perf_pct
-      fi
-    '';
-  };
+  systemd.tmpfiles.rules = [
+    "w /sys/devices/system/cpu/intel_pstate/max_perf_pct - - - - 90"
+  ];
 
   system.stateVersion = "25.11";
 }
