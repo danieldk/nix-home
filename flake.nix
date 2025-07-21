@@ -31,23 +31,19 @@
       url = "github:nixpak/nixpak/960898f79e83aa68c75876794450019ddfdb9157";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-apple-silicon.url = "github:tpwrules/nixos-apple-silicon";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
-    vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
   outputs =
     {
       self,
       home-manager,
-      nixos-apple-silicon,
       kolide-launcher,
       lanzaboote,
       nix-flatpak,
       nix-ld,
       nixpak,
       nixpkgs,
-      vscode-server,
     }:
     let
       supportedSystems = [
