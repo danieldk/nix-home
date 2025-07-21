@@ -15,19 +15,15 @@
     polkitPolicyOwners = [ "daniel" ];
   };
 
+  services.desktopManager.gnome.enable = true;
+
   services.flatpak.enable = true;
 
   services.pipewire.enable = true;
 
-  services.xserver = {
+  services.displayManager.gdm = {
     enable = true;
-    desktopManager = {
-      gnome.enable = true;
-    };
-    displayManager = {
-      gdm.enable = true;
-      gdm.wayland = true;
-    };
+    wayland = true;
   };
 
   xdg.portal.enable = true;
