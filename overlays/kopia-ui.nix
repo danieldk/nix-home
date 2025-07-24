@@ -4,10 +4,10 @@ self: super: {
     let
       inherit (self) fetchurl appimageTools;
       pname = "kopia-ui";
-      version = "0.19.0";
+      version = "0.21.1";
       src = fetchurl {
         url = "https://github.com/kopia/kopia/releases/download/v${version}/KopiaUI-${version}.AppImage";
-        hash = "sha256-ja1a5VoWCqnYtUZUzMSk5pMweguOnXPFvvFRKuMKCKw=";
+        hash = "sha256-Q0mVBAmDUiNEqAT5DHo3oQTnjVMaPhi9tJSo3ejBOhQ=";
       };
       appimageContents = appimageTools.extractType2 { inherit pname version src; };
     in
