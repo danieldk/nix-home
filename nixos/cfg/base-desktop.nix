@@ -22,6 +22,15 @@
 
   documentation.dev.enable = true;
 
+  environment.etc = {
+    "1password/custom_allowed_browsers" = {
+      text = ''
+        vivaldi-bin
+      '';
+      mode = "0755";
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     linuxPackages.perf
   ];
@@ -53,7 +62,7 @@
       nssmdns4 = true;
     };
 
-    interception-tools.enable = true;
+    #interception-tools.enable = true;
 
     pcscd.enable = true;
   };
