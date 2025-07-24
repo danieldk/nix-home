@@ -25,8 +25,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
-    nix-ld.url = "github:Mic92/nix-ld";
-    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
     nixpak = {
       url = "github:nixpak/nixpak/960898f79e83aa68c75876794450019ddfdb9157";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,7 +39,6 @@
       kolide-launcher,
       lanzaboote,
       nix-flatpak,
-      nix-ld,
       nixpak,
       nixpkgs,
     }:
@@ -157,7 +154,6 @@
 
               modules = [
                 commonModule
-                nix-ld.nixosModules.nix-ld
                 nixos/machines/tgi-dev.nix
                 home-manager.nixosModules.home-manager
                 {
