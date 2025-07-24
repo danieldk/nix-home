@@ -14,10 +14,8 @@ self: super: {
     mesonFlags = prevAttrs.mesonFlags ++ [
       "-Dudev_rules_dir=${placeholder "out"}/lib/udev/rules.d"
     ];
-    postPatch =
-      prevAttrs.postPatch
-      + ''
-        patchShebangs ./libfprint/tod/tests/*.sh
-      '';
+    postPatch = prevAttrs.postPatch + ''
+      patchShebangs ./libfprint/tod/tests/*.sh
+    '';
   });
 }

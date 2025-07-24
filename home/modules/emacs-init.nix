@@ -285,14 +285,13 @@ let
       type = types.bool;
       default = false;
       example = true;
-      description =
-        ''
-          Whether to enable recommended ${type} settings.
-        ''
-        + optionalString (extraDescription != "") ''
-          </para><para>
-          ${extraDescription}
-        '';
+      description = ''
+        Whether to enable recommended ${type} settings.
+      ''
+      + optionalString (extraDescription != "") ''
+        </para><para>
+        ${extraDescription}
+      '';
     };
 
   # Recommended GC settings.
@@ -339,82 +338,80 @@ let
   # Whether the configuration makes use of `:diminish`.
   hasGeneral = any (p: p.general != "") (attrValues cfg.usePackage);
 
-  usePackageSetup =
-    ''
-      (eval-when-compile
-        (require 'package)
+  usePackageSetup = ''
+    (eval-when-compile
+      (require 'package)
 
-        (setq package-archives nil
-              package-enable-at-startup nil
-              package--init-file-ensured t)
+      (setq package-archives nil
+            package-enable-at-startup nil
+            package--init-file-ensured t)
 
-        (require 'use-package)
+      (require 'use-package)
 
-        ;; To help fixing issues during startup.
-        (setq use-package-verbose ${if cfg.usePackageVerbose then "t" else "nil"}))
-    ''
-    + optionalString hasDiminish ''
-      ;; For :diminish in (use-package).
-      (require 'diminish)
-    ''
-    + optionalString hasBind ''
-      ;; For :bind in (use-package).
-      (require 'bind-key)
-    ''
-    + optionalString hasChords ''
-      ;; For :chords in (use-package).
-      (use-package use-package-chords
-        :config (key-chord-mode 1))
-    ''
-    + optionalString hasGeneral ''
-      ;; For :general in (use-package).
-      (use-package general
-        :config
-        (general-evil-setup))
-    '';
+      ;; To help fixing issues during startup.
+      (setq use-package-verbose ${if cfg.usePackageVerbose then "t" else "nil"}))
+  ''
+  + optionalString hasDiminish ''
+    ;; For :diminish in (use-package).
+    (require 'diminish)
+  ''
+  + optionalString hasBind ''
+    ;; For :bind in (use-package).
+    (require 'bind-key)
+  ''
+  + optionalString hasChords ''
+    ;; For :chords in (use-package).
+    (use-package use-package-chords
+      :config (key-chord-mode 1))
+  ''
+  + optionalString hasGeneral ''
+    ;; For :general in (use-package).
+    (use-package general
+      :config
+      (general-evil-setup))
+  '';
 
-  initFile =
-    ''
-      ;;; hm-init.el --- Emacs configuration à la Home Manager.
-      ;;
-      ;; -*- lexical-binding: t; -*-
-      ;;
-      ;;; Commentary:
-      ;;
-      ;; A configuration generated from a Nix based configuration by
-      ;; Home Manager.
-      ;;
-      ;;; Code:
+  initFile = ''
+    ;;; hm-init.el --- Emacs configuration à la Home Manager.
+    ;;
+    ;; -*- lexical-binding: t; -*-
+    ;;
+    ;;; Commentary:
+    ;;
+    ;; A configuration generated from a Nix based configuration by
+    ;; Home Manager.
+    ;;
+    ;;; Code:
 
-      ${optionalString cfg.startupTimer ''
-        ;; Remember when configuration started. See bottom for rest of this.
-        ;; Idea taken from http://writequit.org/org/settings.html.
-        (defconst emacs-start-time (current-time))
-      ''}
+    ${optionalString cfg.startupTimer ''
+      ;; Remember when configuration started. See bottom for rest of this.
+      ;; Idea taken from http://writequit.org/org/settings.html.
+      (defconst emacs-start-time (current-time))
+    ''}
 
-      ${optionalString cfg.recommendedGcSettings gcSettings}
+    ${optionalString cfg.recommendedGcSettings gcSettings}
 
-      ${cfg.prelude}
+    ${cfg.prelude}
 
-      ${usePackageSetup}
-    ''
-    + concatStringsSep "\n\n" (
-      map (getAttr "assembly") (filter (getAttr "enable") (attrValues cfg.usePackage))
-    )
-    + ''
+    ${usePackageSetup}
+  ''
+  + concatStringsSep "\n\n" (
+    map (getAttr "assembly") (filter (getAttr "enable") (attrValues cfg.usePackage))
+  )
+  + ''
 
-      ${cfg.postlude}
+    ${cfg.postlude}
 
-      ${optionalString cfg.startupTimer ''
-        ;; Make a note of how long the configuration part of the start took.
-        (let ((elapsed (float-time (time-subtract (current-time)
-                                                  emacs-start-time))))
-          (message "Loading settings...done (%.3fs)" elapsed))
-      ''}
+    ${optionalString cfg.startupTimer ''
+      ;; Make a note of how long the configuration part of the start took.
+      (let ((elapsed (float-time (time-subtract (current-time)
+                                                emacs-start-time))))
+        (message "Loading settings...done (%.3fs)" elapsed))
+    ''}
 
-      (provide 'hm-init)
-      ;; hm-init.el ends here
-    '';
+    (provide 'hm-init)
+    ;; hm-init.el ends here
+  '';
 
 in
 
@@ -480,13 +477,14 @@ in
             pname = "hm-init";
             version = "0";
             src = pkgs.writeText "hm-init.el" initFile;
-            packageRequires =
-              [ epkgs.use-package ]
-              ++ packages
-              ++ optional hasBind epkgs.bind-key
-              ++ optional hasDiminish epkgs.diminish
-              ++ optional hasChords epkgs.use-package-chords
-              ++ optional hasGeneral epkgs.general;
+            packageRequires = [
+              epkgs.use-package
+            ]
+            ++ packages
+            ++ optional hasBind epkgs.bind-key
+            ++ optional hasDiminish epkgs.diminish
+            ++ optional hasChords epkgs.use-package-chords
+            ++ optional hasGeneral epkgs.general;
             preferLocalBuild = true;
             allowSubstitutes = false;
           }).overrideAttrs
