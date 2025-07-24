@@ -102,7 +102,6 @@
                 commonModule
                 lanzaboote.nixosModules.lanzaboote
                 kolide-launcher.nixosModules.kolide-launcher
-                nix-ld.nixosModules.nix-ld
                 nixos/machines/lerisque.nix
                 home-manager.nixosModules.home-manager
                 {
@@ -158,6 +157,7 @@
 
               modules = [
                 commonModule
+                nix-ld.nixosModules.nix-ld
                 nixos/machines/tgi-dev.nix
                 home-manager.nixosModules.home-manager
                 {
