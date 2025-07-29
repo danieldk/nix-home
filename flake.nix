@@ -74,7 +74,6 @@
                 pkgs = self;
               };
             })
-            (import overlays/asdbctl.nix)
             (import overlays/fonts.nix)
             (import overlays/sandboxing.nix)
             (import overlays/fixup.nix)
