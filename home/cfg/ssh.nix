@@ -17,6 +17,10 @@
         hostname = "10.90.6.85";
         user = "daniel";
       };
+      "builder2" = {
+        hostname = "10.90.2.217";
+        user = "daniel";
+      };
       "builder-aarch64" = {
         hostname = "10.90.0.188";
         user = "daniel";
