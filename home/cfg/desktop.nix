@@ -11,14 +11,10 @@
         sources = [
           (mkTuple [
             "xkb"
-            "us+mac"
-          ])
-          (mkTuple [
-            "xkb"
             "us"
           ])
         ];
-        xkb-options = [ "terminate:ctrl_alt_bksp" ];
+        xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" "compose:menu" ];
       };
 
       "org/gnome/desktop/peripherals/mouse" = {
