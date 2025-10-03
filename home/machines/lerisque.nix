@@ -17,12 +17,13 @@
 
   home.packages = with pkgs; [
     code-cursor
-    gnome-boxes
+    #gnome-boxes
     scaleft
     kopia-ui
     prusa-slicer
+    tidal-hifi
     vscode
-    zed-editor
+    #zed-editor
   ];
 
   services = {
