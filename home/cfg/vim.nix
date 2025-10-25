@@ -37,8 +37,10 @@
       git
       gcc
       gnutar
+      lua51Packages.luarocks
       nodePackages.prettier
       ripgrep
+      tree-sitter
       zig
     ];
 

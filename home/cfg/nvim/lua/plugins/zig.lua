@@ -17,7 +17,7 @@ return {
     end,
   },
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     optional = true,
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
