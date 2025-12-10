@@ -2,7 +2,7 @@
 
 {
   programs.git = {
-    package = pkgs.gitAndTools.gitFull;
+    package = pkgs.gitFull;
     enable = true;
     userName = "Daniël de Kok";
     userEmail = "me@danieldk.eu";

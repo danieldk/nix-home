@@ -15,7 +15,7 @@
       btop
       cachix
       fd
-      gitAndTools.gh
+      gh
       htop
       ncdu
       nix-output-monitor
