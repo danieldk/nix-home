@@ -48,8 +48,7 @@
             rev = "e76dd38fa4c55c190e22c3415b468d483ffe950d";
             hash = "sha256-Byuj3pRav6+yJifR6OP8DO30ccZaxVf/ome6rwHfD8s=";
           };
-        })
-        )
+        }))
       ];
   };
 }

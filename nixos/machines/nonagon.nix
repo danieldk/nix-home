@@ -25,7 +25,7 @@
     enableRedistributableFirmware = true;
 
     firmware = with pkgs; [
-      firmwareLinuxNonfree
+      linux-firmware
     ];
 
     #nvidia = {

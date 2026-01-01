@@ -14,7 +14,11 @@
             "us"
           ])
         ];
-        xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" "compose:menu" ];
+        xkb-options = [
+          "terminate:ctrl_alt_bksp"
+          "lv3:ralt_switch"
+          "compose:menu"
+        ];
       };
 
       "org/gnome/desktop/peripherals/mouse" = {

@@ -4,7 +4,24 @@
   programs.ssh = {
     enable = true;
 
+    # Will be removed in the future, see:
+    # https://home-manager-options.extranix.com/?query=programs.ssh&release=master
+    enableDefaultConfig = false;
+
     matchBlocks = {
+      "*" = {
+        forwardAgent = false;
+        addKeysToAgent = "no";
+        compression = false;
+        serverAliveInterval = 0;
+        serverAliveCountMax = 3;
+        hashKnownHosts = false;
+        userKnownHostsFile = "~/.ssh/known_hosts";
+        controlMaster = "no";
+        controlPath = "~/.ssh/master-%r@%n:%p";
+        controlPersist = "no";
+      };
+
       "tgi-dev" = {
         hostname = "10.90.16.19";
         user = "daniel";

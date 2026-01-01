@@ -4,19 +4,14 @@
   programs.git = {
     package = pkgs.gitFull;
     enable = true;
-    userName = "Daniël de Kok";
-    userEmail = "me@danieldk.eu";
+    settings = {
+      github.user = "danieldk";
+      user = {
+        email = "me@danieldk.eu";
+        name = "Daniël de Kok";
+      };
+    };
     lfs.enable = true;
-  };
-
-  programs.git.extraConfig = {
-    github = {
-      user = "danieldk";
-    };
-
-    "protocol \"keybase\"" = {
-      allow = "always";
-    };
   };
 
   home.packages = with pkgs; [
