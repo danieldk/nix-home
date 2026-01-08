@@ -19,7 +19,7 @@
     code-cursor
     #gnome-boxes
     scaleft
-    kopia-ui
+    #kopia-ui
     prusa-slicer
     tidal-hifi
     vscode
