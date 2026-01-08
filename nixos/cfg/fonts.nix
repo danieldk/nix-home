@@ -12,7 +12,7 @@
       jetbrains-mono
       mono-lisa
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       source-code-pro
     ];
   };
