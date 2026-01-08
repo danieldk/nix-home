@@ -26,10 +26,6 @@
     #zed-editor
   ];
 
-  services = {
-    dropbox.enable = true;
-  };
-
   programs.ssh.matchBlocks = {
     "*" = {
       extraOptions = {
