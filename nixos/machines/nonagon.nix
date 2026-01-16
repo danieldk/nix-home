@@ -103,7 +103,7 @@
         isNormalUser = true;
         extraGroups = [
           "wheel"
-          "docker"
+          #"docker"
           "libvirtd"
           "video"
         ];
@@ -123,8 +123,8 @@
   };
 
   virtualisation = {
-    docker.enable = true;
-    libvirtd.enable = true;
+    #docker.enable = true;
+    #libvirtd.enable = true;
   };
 
   systemd.tmpfiles.rules = [
