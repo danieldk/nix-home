@@ -40,6 +40,14 @@
     ];
   };
 
+  fileSystems."/backup" = {
+    device = "/dev/disk/by-uuid/51dcee6e-666a-4623-b40e-bfbb506074d9";
+    fsType = "btrfs";
+    options = [ "subvol=@backup" ];
+  };
+
+
+
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
