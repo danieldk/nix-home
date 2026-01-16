@@ -85,6 +85,13 @@
       extraConfig = ''
         AcceptEnv COLORTERM
       '';
+      settings.Macs = [
+        "hmac-sha2-512-etm@openssh.com"
+        "hmac-sha2-256-etm@openssh.com"
+        "umac-128-etm@openssh.com"
+        # Arq 7
+        "hmac-sha2-512"
+      ];
     };
 
     #xserver.videoDrivers = [ "nvidia" ];
@@ -104,6 +111,12 @@
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA6l265QPVJjOMTXZGjKYX7lIlpn3rPWWUoN01MHvOdl"
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH57+P0J6+ZZOM4G6ArHE5R5I3uEfrV8sAT1x+ltyDEu"
+        ];
+      };
+      daniel-backup = {
+        isNormalUser = true;
+        openssh.authorizedKeys.keys = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMRWi/3jiCVhyabG1qzqgWvpvQC6y/bKpVyE7Zt0uaeT"
         ];
       };
     };
