@@ -82,9 +82,7 @@
 
     openssh = {
       enable = true;
-      extraConfig = ''
-        AcceptEnv COLORTERM
-      '';
+
       settings.Macs = [
         "hmac-sha2-512-etm@openssh.com"
         "hmac-sha2-256-etm@openssh.com"
@@ -92,6 +90,20 @@
         # Arq 7
         "hmac-sha2-512"
       ];
+
+      extraConfig = ''
+        AcceptEnv COLORTERM
+
+        Match User ha-backup
+          ChrootDirectory = /backup/ha
+          ForceCommand internal-sftp
+          AllowTcpForwarding no
+
+        Match User daniel-backup
+          ChrootDirectory = /backup/daniel
+          ForceCommand internal-sftp
+          AllowTcpForwarding no
+      '';
     };
 
     #xserver.videoDrivers = [ "nvidia" ];
@@ -117,6 +129,12 @@
         isNormalUser = true;
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMRWi/3jiCVhyabG1qzqgWvpvQC6y/bKpVyE7Zt0uaeT"
+        ];
+      };
+      ha-backup = {
+        isNormalUser = true;
+        openssh.authorizedKeys.keys = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEOoG5yfXUsjeEzfRdaLPPK4PuJu8poYWZ+Exf8qNcU3"
         ];
       };
     };
