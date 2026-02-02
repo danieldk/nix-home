@@ -13,9 +13,9 @@
     #  enable = true;
     packages = [
       "md.obsidian.Obsidian"
-      #    "me.proton.Mail"
+      "me.proton.Mail"
       "org.signal.Signal"
-      #"com.slack.Slack"
+      "com.slack.Slack"
     ];
   };
 
@@ -27,7 +27,7 @@
     #vivaldi
     #obsidian
     #signal-desktop-bin
-    slack
+    #slack
     vivaldi
   ];
 
