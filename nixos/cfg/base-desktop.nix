@@ -32,7 +32,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    linuxPackages.perf
+    perf
   ];
 
   programs._1password-gui = {
