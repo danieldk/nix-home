@@ -35,6 +35,13 @@
     linuxPackages.perf
   ];
 
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "daniel" ];
+  };
+
+  services.flatpak.enable = true;
+
   # Enable sound with pipewire.
   security.rtkit.enable = true;
   services.pulseaudio.enable = false;
@@ -68,4 +75,6 @@
   };
 
   systemd.services.display-manager.restartIfChanged = false;
+
+  xdg.portal.enable = true;
 }

@@ -10,14 +10,7 @@
     ./base-desktop.nix
   ];
 
-  programs._1password-gui = {
-    enable = true;
-    polkitPolicyOwners = [ "daniel" ];
-  };
-
   services.desktopManager.gnome.enable = true;
-
-  services.flatpak.enable = true;
 
   services.pipewire.enable = true;
 
@@ -25,8 +18,6 @@
     enable = true;
     wayland = true;
   };
-
-  xdg.portal.enable = true;
 
   environment = {
     #sessionVariables.NIXOS_OZONE_WL = "1";
