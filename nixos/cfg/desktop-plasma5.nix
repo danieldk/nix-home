@@ -10,6 +10,12 @@
     ./base-desktop.nix
   ];
 
+  hardware.bluetooth = {
+    enable = true;
+  };
+
+  security.pam.services.login.fprintAuth = false;
+
   services.desktopManager.plasma6 = {
     enable = true;
   };
@@ -23,8 +29,5 @@
   };
 
   environment.systemPackages = with pkgs; [
-    gwenview
-    korganizer
-    okular
   ];
 }
