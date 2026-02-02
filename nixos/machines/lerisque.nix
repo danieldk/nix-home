@@ -25,6 +25,8 @@
   boot.plymouth.enable = true;
   boot.initrd.systemd.enable = true;
 
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
