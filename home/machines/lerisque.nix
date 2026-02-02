@@ -16,14 +16,14 @@
   ];
 
   home.packages = with pkgs; [
-    code-cursor
+    #code-cursor
     #gnome-boxes
     scaleft
     #kopia-ui
     prusa-slicer
     tidal-hifi
-    vscode
-    #zed-editor
+    #vscode
+    zed-editor
   ];
 
   programs.ssh.matchBlocks = {
