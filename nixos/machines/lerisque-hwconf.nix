@@ -8,27 +8,27 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/mapper/luks-b2881b69-9319-43ba-b987-95ad29da5ed5";
+    { device = "/dev/mapper/luks-ee84a166-3f75-4efd-9607-563f9f4cf5f4";
       fsType = "btrfs";
       options = [ "subvol=@" ];
     };
 
-  boot.initrd.luks.devices."luks-b2881b69-9319-43ba-b987-95ad29da5ed5".device = "/dev/disk/by-uuid/b2881b69-9319-43ba-b987-95ad29da5ed5";
+  boot.initrd.luks.devices."luks-ee84a166-3f75-4efd-9607-563f9f4cf5f4".device = "/dev/disk/by-uuid/ee84a166-3f75-4efd-9607-563f9f4cf5f4";
 
   fileSystems."/home" =
-    { device = "/dev/mapper/luks-b2881b69-9319-43ba-b987-95ad29da5ed5";
+    { device = "/dev/mapper/luks-ee84a166-3f75-4efd-9607-563f9f4cf5f4";
       fsType = "btrfs";
       options = [ "subvol=@home" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C055-C99F";
+    { device = "/dev/disk/by-uuid/5A59-5061";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
