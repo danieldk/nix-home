@@ -3,9 +3,9 @@ self: super: {
     name = "mono-lisa";
 
     src = self.requireFile {
-      name = "MonoLisa-Plus-2.015-written-script.zip";
+      name = "MonoLisa-Plus-2.017-written-script.zip";
       url = "https://www.monolisa.dev/";
-      hash = "sha256-St/EoPyDshol8zT2JQNKEeXL1VvBnRE7ZzdJOE0ONUE=";
+      hash = "sha256-d2EBNWfp4Rh4KTzq92js6SZ4BBMZvbSAJE2vapvuKck=";
     };
 
     dontConfigure = true;
