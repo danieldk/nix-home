@@ -2,8 +2,7 @@
 
 {
   imports = [
-    ../cfg/base-desktop.nix
-    ../cfg/desktop.nix
+    ../cfg/plasma-desktop.nix
     ../cfg/base-unix.nix
     ../cfg/direnv.nix
     ../cfg/git.nix
