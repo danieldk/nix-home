@@ -9,7 +9,7 @@
   imports = [
     ./lerisque-hwconf.nix
     ../cfg/base-nixos.nix
-    ../cfg/desktop-plasma5.nix
+    ../cfg/desktop-plasma.nix
     ../cfg/clamav.nix
   ];
 
