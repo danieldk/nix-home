@@ -16,6 +16,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
     kolide-launcher = {
       url = "github:kolide/nix-agent/main";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,6 +46,7 @@
       nix-flatpak,
       nixpak,
       nixpkgs,
+      plasma-manager,
     }:
     let
       supportedSystems = [
@@ -105,6 +111,7 @@
                   home-manager.useUserPackages = true;
                   home-manager.users.daniel = import home/machines/lerisque.nix;
                   home-manager.extraSpecialArgs.nix-flatpak = nix-flatpak;
+                  home-manager.sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 }
               ];
             };
