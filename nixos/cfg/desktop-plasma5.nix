@@ -28,6 +28,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs.kdePackages; [
+    plasma-thunderbolt
   ];
 }
