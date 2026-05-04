@@ -6,6 +6,8 @@
     ../cfg/direnv.nix
     ../cfg/git.nix
     ../cfg/fzf.nix
+    ../cfg/node.nix
+    ../cfg/python.nix
     ../cfg/vim.nix
     ../cfg/zsh.nix
   ];
