@@ -27,45 +27,45 @@
         libuuid
         nspr
         nss
-        stdenv.cc.cc
+        stdenv.cc.cc.lib
         util-linux
         zlib
         zstd
       ]
       ++ lib.optionals (config.hardware.graphics.enable) [
-        pipewire
-        cups
-        libxkbcommon
-        pango
-        mesa
-        libdrm
-        libglvnd
-        libpulseaudio
-        atk
-        cairo
         alsa-lib
         at-spi2-atk
         at-spi2-core
+        atk
+        cairo
+        cups
         gdk-pixbuf
         glib
         gtk3
         libGL
         libappindicator-gtk3
+        libdrm
+        libglvnd
+        libpulseaudio
+        libx11
+        libxcb
+        libxcomposite
+        libxcursor
+        libxdamage
+        libxext
+        libxfixes
+        libxi
+        libxkbcommon
+        libxkbfile
+        libxrandr
+        libxrender
+        libxscrnsaver
+        libxshmfence
+        libxtst
+        mesa
+        pango
+        pipewire
         vulkan-loader
-        xorg.libX11
-        xorg.libXScrnSaver
-        xorg.libXcomposite
-        xorg.libXcursor
-        xorg.libXdamage
-        xorg.libXext
-        xorg.libXfixes
-        xorg.libXi
-        xorg.libXrandr
-        xorg.libXrender
-        xorg.libXtst
-        xorg.libxcb
-        xorg.libxkbfile
-        xorg.libxshmfence
       ];
   };
 }

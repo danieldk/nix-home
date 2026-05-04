@@ -27,7 +27,7 @@
       LazyVim
     ];
 
-    extraLuaConfig = ''
+    initLua = ''
       -- bootstrap lazy.nvim, LazyVim and your plugins
       require("config.lazy");
     '';
@@ -38,7 +38,7 @@
       gcc
       gnutar
       lua51Packages.luarocks
-      nodePackages.prettier
+      prettier
       ripgrep
       tree-sitter
       zig
@@ -46,5 +46,6 @@
 
     withNodeJs = true;
     withPython3 = true;
+    withRuby = false;
   };
 }

@@ -26,9 +26,9 @@
     HUGGINGFACE_HUB_CACHE = "/scratch/daniel/.cache/huggingface/hub";
   };
 
-  home.stateVersion = "24.05";
+  home.stateVersion = "26.05";
 
-  programs.git.extraConfig = {
+  programs.git.settings = {
     credential.helper = "store";
   };
 
