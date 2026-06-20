@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    dogdns
+    doggo
     mosh
     rsync
     sshuttle
